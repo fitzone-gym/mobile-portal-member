@@ -6,7 +6,9 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        minHeight: '100%',
+        minHeight: 800,
+       
+
     },
 
     heading: {
@@ -26,7 +28,14 @@ const styles = StyleSheet.create({
     },
     btnText: {
         
+    },
+
+    GetStarted:{
+        minHeight: '100%',
+        width: 500
     }
+
+
 
 
 })

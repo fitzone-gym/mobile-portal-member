@@ -1,6 +1,6 @@
 import styles from '../styles/home.style';
 
-import { View, Text, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native';
+import { View, Text, Image, TouchableOpacity, SafeAreaView, ScrollView, ImageBackground } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 
 export default function Home() {
@@ -9,17 +9,17 @@ export default function Home() {
         <SafeAreaView>
             <Stack.Screen
                 options={{
-                    title: 'Home',
+                    title: 'fit zone',
                 }}
             />
             
             <ScrollView>
-                <View
-                style={styles.container}
-                >
-                    <Text
-                        style={styles.heading}
-                    >Home</Text>
+                <View style={styles.container}>
+                    <ImageBackground source={require('../assets/images/get-started.png')}
+                    resizeMode='cover'
+                    style={styles.GetStarted}/>
+
+
                     <TouchableOpacity
                         style={styles.btn}
                         onPress={() => {

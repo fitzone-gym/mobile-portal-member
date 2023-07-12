@@ -15,12 +15,8 @@ export default function Home() {
             />
             
             <ScrollView>
-                <View
-                style={styles.container}
-                >
-                    <Text
-                        style={styles.heading}
-                    >Member</Text>
+                <View style={styles.container} >
+                    <Text style={styles.heading}>Member</Text>
                     <Image
                     source={{
                         uri: 'https://stylioo.blob.core.windows.net/images/logo.png'
