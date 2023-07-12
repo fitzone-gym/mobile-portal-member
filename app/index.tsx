@@ -1,6 +1,6 @@
 import styles from '../styles/home.style';
 
-import { View, Text, Image, TouchableOpacity, SafeAreaView, ScrollView, ImageBackground } from 'react-native';
+import { View, Text, TouchableOpacity, SafeAreaView, ScrollView,Image, ImageBackground } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 
 export default function Home() {
@@ -12,25 +12,22 @@ export default function Home() {
                     title: 'fit zone',
                 }}
             />
-            
-            <ScrollView>
+
+            <ScrollView >
                 <View style={styles.container}>
-                    <ImageBackground source={require('../assets/images/get-started.png')}
-                    resizeMode='cover'
-                    style={styles.GetStarted}/>
+                    <ImageBackground source={require('../assets/images/sign-in.png')}
+                    
+                    style={{
+                        width: '100%',
+                        height: 700,
+                    }}/>
 
+                    <View style={styles.SignInBox}>
 
-                    <TouchableOpacity
-                        style={styles.btn}
-                        onPress={() => {
-                            router.push('/member')
-                        }}
-                    >
-                        <Text>Click</Text>
-                    </TouchableOpacity>
+                    </View>
                 </View>
             </ScrollView>
-            
+
         </SafeAreaView>
     )
 }

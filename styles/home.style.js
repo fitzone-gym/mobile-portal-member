@@ -6,9 +6,8 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        minHeight: 800,
-       
-
+        minHeight: '100%',
+    
     },
 
     heading: {
@@ -26,13 +25,19 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    btnText: {
-        
-    },
 
-    GetStarted:{
-        minHeight: '100%',
-        width: 500
+    SignInBox:{
+        width:380,
+        height:300,
+        backgroundColor: '#fff',
+        position:'absolute',
+        borderRadius:10,
+        marginTop:40,
+        backgroundColor:'#ff2'
+
+
+
+
     }
 
 
