@@ -1,7 +1,8 @@
 import styles from '../styles/home.style';
 
-import { View, Text, TouchableOpacity, SafeAreaView, ScrollView,Image, ImageBackground } from 'react-native';
+import { View, Text, TouchableOpacity, SafeAreaView, ScrollView,Image, ImageBackground, Button} from 'react-native';
 import { Stack, useRouter } from 'expo-router';
+import { Route } from 'expo-router/build/Route';
 
 export default function Home() {
     const router = useRouter()
@@ -23,7 +24,12 @@ export default function Home() {
                     }}/>
 
                     <View style={styles.SignInBox}>
-
+                        <View style={styles.SignInMain}>
+                            <Text style={styles.SignInBoxHeading1}>Increase your target to be healthier to continue exercising </Text>
+                            <Text style={styles.SignInBoxHeading2}>This application can improve yourself to have exercise smartly and be physically active</Text>
+                            <Button title="Get Started" color="#E54646" onPress={()=> {router.push('/member')}}></Button>
+                            <Text style={styles.SignInBoxHeading3}>Already have an account? <Text style={styles.SignInBoxHeading3InnerText}>Sign up</Text></Text>
+                        </View>
                     </View>
                 </View>
             </ScrollView>

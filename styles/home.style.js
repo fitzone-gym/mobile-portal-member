@@ -29,16 +29,59 @@ const styles = StyleSheet.create({
     SignInBox:{
         width:380,
         height:300,
-        backgroundColor: '#fff',
+        backgroundColor: '#222222',
         position:'absolute',
         borderRadius:10,
-        marginTop:40,
-        backgroundColor:'#ff2'
+
+    },
+
+    SignInMain:{
+        display: 'flex',
+
+    },
+
+    SignInBoxHeading1:{
+
+        padding:20,
+        fontSize:30,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        color: 'white',
+
+
+    },
+    SignInBoxHeading2:{
+        textAlign: 'center',
+        padding:10,
+        color:'#838383',
+        fontSize:16,
+
+    },
+
+    SignInBoxHeading3:{
+        textAlign: 'center',
+        padding:5,
+        color:'#838383',
+        fontSize:13,
+
+    },
+    SignInBoxHeading3InnerText:{
+        color:'#E54646',
+        fontSize:15,
+
+    },
+
+    SignInButton:{
+        color:"#E54646"
+    },
 
 
 
 
-    }
+    
+
+
+
 
 
 
