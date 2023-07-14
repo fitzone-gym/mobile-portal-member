@@ -23,7 +23,7 @@ export default function Home() {
                     <TouchableOpacity
                         style={styles.btn}
                         onPress={() => {
-                            router.push('/member')
+                            router.push('/member-profile-detailed')
                         }}
                     >
                         <Text>Click</Text>
