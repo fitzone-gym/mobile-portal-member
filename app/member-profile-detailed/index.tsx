@@ -13,6 +13,7 @@ import Unorderedlist from "react-native-unordered-list";
 import { Stack as MuiStack } from "@mui/material";
 import Button from "@mui/material/Button";
 import {Stack} from "expo-router";
+import Footer from "../footer_statusbar/index.tsx"
 
 const memberProfileDetailed = () => (
   <SafeAreaView style={styles.container}>
@@ -105,6 +106,10 @@ const memberProfileDetailed = () => (
               <Text style={styles.healthLevel}> 220</Text>
             </View>
           </MuiStack>
+          </View>
+
+          <View style={styles.footerSection}>
+            <Footer/>
           </View>
         </View>
       </ImageBackground>
