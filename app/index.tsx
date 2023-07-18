@@ -36,7 +36,7 @@ export default function Home() {
                     <TouchableOpacity
                         style={styles.btn}
                         onPress={() => {
-                            router.push('/trainner')
+                            router.push('/member')
                         }}
                     >
                         <Text>Click</Text>

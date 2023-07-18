@@ -12,7 +12,7 @@ export default function Home() {
         <SafeAreaView>
             <Stack.Screen
                 options={{
-                    title: 'Trainner',
+                    title: 'Member',
                 }}
             />
             
