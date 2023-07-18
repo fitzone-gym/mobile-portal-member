@@ -71,7 +71,7 @@ export default function Home() {
                         <TouchableOpacity
                         style={styles.trainercards}
                         onPress={()=>{
-                            router.push('trainner/trainerProfile')}}>
+                            router.push('member/trainerProfile')}}>
                             <Image
                                 style={styles.trainerimage}
                                 source={require('../../assets/images/MR.Kamal.png')}
