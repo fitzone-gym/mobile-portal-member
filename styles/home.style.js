@@ -10,6 +10,15 @@ const styles = StyleSheet.create({
     
     },
 
+    SignUpContainer: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight:100,
+        backgroundColor: 'black',
+    
+    },
+
     heading: {
         fontSize: 20,
         color: 'white'
@@ -74,6 +83,8 @@ const styles = StyleSheet.create({
     SignInButton:{
         color:"#E54646"
     },
+
+    buttonDashboard:{},
 
 
 

@@ -1,10 +1,12 @@
 import styles from '../../styles/home.style';
 
-import { View, Text, Image, SafeAreaView, ScrollView } from 'react-native';
+import { View, Text, Image, SafeAreaView, ScrollView,TouchableOpacity } from 'react-native';
 
-import { Stack } from 'expo-router';
+import { Stack, useRouter } from 'expo-router';
 
 export default function Home() {
+
+    const router = useRouter() 
 
     return (
         <SafeAreaView>
@@ -15,8 +17,7 @@ export default function Home() {
             />
             
             <ScrollView>
-                <View style={styles.container} >
-                    <Text style={styles.heading}>Member</Text>
+                <View style={styles.SignUpContainer} >
                     <Image
                     source={{
                         uri: 'https://stylioo.blob.core.windows.net/images/logo.png'
@@ -27,6 +28,13 @@ export default function Home() {
                         height: 300,
                     }}
                 />              
+                </View>
+                <TouchableOpacity style={styles.buttonDashboard} onPress={()=>{router.push('/dashboard')}}>
+                    <Text>Press Here</Text>
+                </TouchableOpacity>
+
+                <View>
+                    <Text>jhbfsojhcbsofbohsbohbsajfbjoshbfbahfbndjvbahbdvlajbhvvhbdcva</Text>
                 </View>
             </ScrollView>
             
