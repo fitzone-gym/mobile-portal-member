@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
 
     MemberNavigationBar:{
         width: 350,
-        backgroundColor:'#222222',
         height:60,
         marginLeft:13,
         marginRight:13,
@@ -26,7 +25,6 @@ const styles = StyleSheet.create({
     MessageAndNotificationNavigation:{
         width:120,
         height:60,
-        backgroundColor:'white',
         flexDirection:'row',
         justifyContent:'space-between',
         
@@ -48,6 +46,7 @@ const styles = StyleSheet.create({
         width: 350,
         height: 70,
         backgroundColor: '#222222',
+        opacity:0.7,
         borderRadius:50,
         marginTop:10,
         marginLeft:13,
@@ -104,7 +103,8 @@ const styles = StyleSheet.create({
     specialAnnouncements:{
         width:250,
         height:150,
-        backgroundColor:'white',
+        backgroundColor:'#222222',
+        opacity:0.7,
         borderRadius:20
 
     },
@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
         width:90,
         height:150,
         backgroundColor:'#222222',
+        opacity:0.7,
         borderRadius:20,
         paddingTop:10,
         paddingBottom:10,
@@ -152,6 +153,7 @@ const styles = StyleSheet.create({
         width:350,
         height:200,
         backgroundColor:'#222222',
+        opacity:0.7,
         marginLeft:13,
         marginTop:5,
         borderRadius:15,
@@ -161,6 +163,7 @@ const styles = StyleSheet.create({
         width:120,
         height:150,
         backgroundColor:'#222222',
+        opacity:0.7,
         borderRadius:20,
         paddingTop:20,
         paddingBottom:10,
