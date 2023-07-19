@@ -17,24 +17,13 @@ export default function Home() {
             />
             
             <ScrollView>
-                <View style={styles.SignUpContainer} >
-                    <Image
-                    source={{
-                        uri: 'https://stylioo.blob.core.windows.net/images/logo.png'
-                    }}
-                    // resizeMode='contain'
-                    style={{
-                        width: '100%',
-                        height: 300,
-                    }}
-                />              
-                </View>
+
                 <TouchableOpacity style={styles.buttonDashboard} onPress={()=>{router.push('/dashboard')}}>
                     <Text>Press Here</Text>
                 </TouchableOpacity>
 
                 <View>
-                    <Text>jhbfsojhcbsofbohsbohbsajfbjoshbfbahfbndjvbahbdvlajbhvvhbdcva</Text>
+                    <Text>side bar</Text>
                 </View>
             </ScrollView>
             
