@@ -27,7 +27,7 @@ export default function Home() {
                         <View style={styles.SignInMain}>
                             <Text style={styles.SignInBoxHeading1}>Increase your target to be healthier to continue exercising </Text>
                             <Text style={styles.SignInBoxHeading2}>This application can improve yourself to have exercise smartly and be physically active</Text>
-                            <Button title="Get Started" color="#E54646" onPress={()=> {router.push('/member')}}></Button>
+                            <Button title="Get Started" color="#E54646" onPress={()=> {router.push('/sign-up')}}></Button>
                             <Text style={styles.SignInBoxHeading3}>Already have an account? <Text style={styles.SignInBoxHeading3InnerText}>Sign up</Text></Text>
                         </View>
                     </View>
