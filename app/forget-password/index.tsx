@@ -4,7 +4,7 @@ import React from 'react';
 import { useRouter } from 'expo-router';
 import { Route } from 'expo-router/build/Route';
 
-import {SafeAreaView, View, TouchableOpacity, Text, ImageBackground, ScrollView, TextInput} from "react-native";
+import {SafeAreaView, View, TouchableOpacity, Text, ImageBackground, TextInput} from "react-native";
 
 
 export default function forgetPassword(){
@@ -54,7 +54,7 @@ export default function forgetPassword(){
                                 />
                             </View>
 
-                            <TouchableOpacity style={styles.ContinueButton1} onPress={()=>{router.push('/forgetPasswordOTP')}}>
+                            <TouchableOpacity style={styles.ContinueButton1} onPress={()=>{router.push('/forget-password-otp')}}>
                                 <Text style={styles.forgetPasswordButtonText}>Continue</Text>
                             </TouchableOpacity>
 
