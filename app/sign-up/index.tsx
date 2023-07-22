@@ -2,7 +2,7 @@ import styles from '../../styles/home.style';
 
 import { View, Text, Image, SafeAreaView, ScrollView,TouchableOpacity } from 'react-native';
 
-import { Stack, useRouter } from 'expo-router';
+import { useRouter } from 'expo-router';
 
 export default function Home() {
 
@@ -10,21 +10,16 @@ export default function Home() {
 
     return (
         <SafeAreaView>
-            <Stack.Screen
-                options={{
-                    title: 'Member',
-                }}
-            />
             
             <ScrollView>
 
                 <TouchableOpacity style={styles.buttonDashboard} onPress={()=>{router.push('/dashboard')}}>
-                    <Text>Press Here</Text>
+                    <Text>Sign up</Text>
                 </TouchableOpacity>
 
-                <View>
-                    <Text>side bar</Text>
-                </View>
+                <TouchableOpacity style={styles.forgetPasswordButton} onPress={()=>{router.push('/forget-password')}}>
+                    <Text>Forget password</Text>
+                </TouchableOpacity>
             </ScrollView>
             
         </SafeAreaView>

@@ -4,20 +4,11 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
         minHeight: '100%',
+
     
     },
 
-    SignUpContainer: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        minHeight:100,
-        backgroundColor: 'black',
-    
-    },
 
     heading: {
         fontSize: 20,
@@ -36,11 +27,16 @@ const styles = StyleSheet.create({
     },
 
     SignInBox:{
-        width:380,
+        
+        width:340,
         height:300,
         backgroundColor: '#222222',
         position:'absolute',
-        borderRadius:10,
+        borderRadius:20,
+        marginBottom:50,
+        top:'50%',
+        left:'5%',
+        opacity:0.7,
 
     },
 
@@ -85,6 +81,10 @@ const styles = StyleSheet.create({
     },
 
     buttonDashboard:{},
+
+    forgetPasswordButton:{
+        
+    },
 
 
 
