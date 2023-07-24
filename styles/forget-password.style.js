@@ -100,6 +100,29 @@ const styles = StyleSheet.create({
         paddingRight:'25%',
 
       },
+      otpBox:{
+        top:'21%',
+        marginLeft: 30,
+        marginRight: 30,
+      },
+
+      otpDoneButton:{
+        top:'29%',
+        width:'30%',
+        height:45,
+        left:'35%',
+        backgroundColor: '#E54646',
+        padding: 10,
+        borderRadius:20,},
+
+        doneButtonText:{
+            color:'#ffffff',
+
+            fontSize:20,
+            paddingLeft:'27%',
+            paddingRight:'27%',
+
+        },
 })
 
 export default styles
