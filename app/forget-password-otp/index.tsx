@@ -26,7 +26,7 @@ export default function forgetPasswordOTP(){
                         }}>
 
                                 <View style={styles.fillLines}>                            
-                                    <View style={styles.fillLine1}></View>
+                                    <View style={styles.fillLine3}></View>
                                     <View style={styles.fillLine1}></View>
                                     <View style={styles.fillLine3}></View>
                                 </View>
@@ -46,7 +46,7 @@ export default function forgetPasswordOTP(){
                                 </View>
 
                                 <TouchableOpacity style={styles.otpDoneButton} onPress={()=>{router.push('/reset-password')}}>
-                                    <Text style={styles.doneButtonText}>Done</Text>
+                                    <Text style={styles.doneButtonText}>Continue</Text>
                                 </TouchableOpacity>
 
                         </ImageBackground>

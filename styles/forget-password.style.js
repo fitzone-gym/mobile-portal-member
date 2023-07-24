@@ -34,10 +34,10 @@ const styles = StyleSheet.create({
         borderRadius:10,
     },
     forgetPasswordPic:{
-        width:200,
-        height:200,
+        width:50,
+        height:50,
         backgroundColor:'#FF6666',
-        top:'10%',
+        top:'5%',
         left:'24%',
         borderRadius:100
     },
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     forgetPasswordSubText:{
         top:'16%',
         left:'9%',
-        width:300
+        width:320
     },
 
     forgetPasswordSubheading:{
@@ -79,24 +79,24 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor:'#E54646',
         padding: 10,
-        width: '80%',
+        width: '83%',
         marginTop: 10,
       },
 
       ContinueButton1:{
         top:'28%',
-        width:'80%',
+        width:'83%',
         height:45,
         left:'9%',
         backgroundColor: '#E54646',
         padding: 10,
-        borderRadius:20,
+        borderRadius:10,
       },
       forgetPasswordButtonText:{
         color:'#ffffff',
 
         fontSize:20,
-        paddingLeft:'35%',
+        paddingLeft:'27%',
         paddingRight:'25%',
 
       },
@@ -107,20 +107,21 @@ const styles = StyleSheet.create({
       },
 
       otpDoneButton:{
-        top:'29%',
-        width:'30%',
+        top:'28%',
+        width:'83%',
         height:45,
-        left:'35%',
+        left:'9%',
         backgroundColor: '#E54646',
         padding: 10,
-        borderRadius:20,},
+        borderRadius:10,
+    },
 
         doneButtonText:{
             color:'#ffffff',
 
             fontSize:20,
-            paddingLeft:'27%',
-            paddingRight:'27%',
+            paddingLeft:'36%',
+            paddingRight:'25%',
 
         },
 })
