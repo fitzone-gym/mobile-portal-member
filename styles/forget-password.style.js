@@ -131,6 +131,10 @@ const styles = StyleSheet.create({
             paddingRight:'25%',
 
         },
+
+        otp:{
+            color:'#ffffff',
+        },
 })
 
 export default styles
