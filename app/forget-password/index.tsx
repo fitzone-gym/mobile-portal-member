@@ -32,7 +32,6 @@ export default function forgetPassword(){
                                 <View style={styles.fillLine3}></View>
                             </View>
 
-                            {/* <View style={styles.forgetPasswordPic}></View> */}
 
                             <View style={styles.forgetPasswordText}>
                                 <Text style={styles.forgetPasswordHeading}>Forget Password</Text>

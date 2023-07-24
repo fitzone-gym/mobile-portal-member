@@ -68,6 +68,12 @@ const styles = StyleSheet.create({
         left:'9%',
     },
 
+    emailEnterBox2:{
+        top:'26%',
+        left:'9%',
+        marginBottom:'7%',
+    },
+
     emailHeading:{
         color:'#ffffff',
     },
@@ -81,6 +87,7 @@ const styles = StyleSheet.create({
         padding: 10,
         width: '83%',
         marginTop: 10,
+        color:'#ffffff',
       },
 
       ContinueButton1:{
