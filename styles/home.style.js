@@ -70,7 +70,8 @@ const styles = StyleSheet.create({
         fontSize:13,
 
     },
-    SignInBoxHeading3InnerText:{
+    registerLink:{
+        marginTop:4,
         color:'#E54646',
         fontSize:15,
 
@@ -84,6 +85,12 @@ const styles = StyleSheet.create({
 
     forgetPasswordButton:{
         
+    },
+
+    registrationBar:{
+        flexDirection: 'row',
+        justifyContent:'center',
+        marginTop:20,
     },
 
 

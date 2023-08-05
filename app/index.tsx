@@ -22,7 +22,10 @@ export default function Home() {
                             <Text style={styles.SignInBoxHeading1}>Increase your target to be healthier to continue exercising </Text>
                             <Text style={styles.SignInBoxHeading2}>This application can improve yourself to have exercise smartly and be physically active</Text>
                             <Button title="Get Started" color="#E54646" onPress={()=> {router.push('/sign-up')}}></Button>
-                            <Text style={styles.SignInBoxHeading3}>Already have an account? <Text style={styles.SignInBoxHeading3InnerText}>Sign up</Text></Text>
+                            <View style={styles.registrationBar}>
+                                <Text style={styles.SignInBoxHeading3}>You don't have an account?</Text> 
+                                <TouchableOpacity  onPress={()=>{router.push('/Register')}}><Text style={styles.registerLink}>Register</Text></TouchableOpacity>
+                            </View>
                         </View>
                     </View>
                 </View>
