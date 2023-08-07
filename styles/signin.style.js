@@ -88,6 +88,10 @@ const styles = StyleSheet.create({
         color: 'white',
 
     },
+
+    searchIcon: {
+        padding: 10,
+    },
 })
 
 export default styles;

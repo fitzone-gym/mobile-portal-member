@@ -1,6 +1,7 @@
 import styles from '../../styles/signin.style';
 import { View, Text,TextInput, Image, SafeAreaView,ImageBackground,TouchableOpacity} from 'react-native';
 import { Stack , useRouter} from 'expo-router';
+// import Icon from 'react-native-paper/lib/typescript/src/components/Icon';
 
 export default function Home() {
 
@@ -30,7 +31,8 @@ export default function Home() {
                             </Text>
                             <View style={styles.signinTxt}>
                                 <Text style={styles.subContent}>User Name</Text>
-                                <TextInput style={styles.txtInput}  />
+
+                                <TextInput style={styles.txtInput} />
                                 <Text style={styles.subContent}>Password</Text>
                                 <TextInput style={styles.txtInput} autoCorrect={false} secureTextEntry={true} />
                                 <TouchableOpacity
