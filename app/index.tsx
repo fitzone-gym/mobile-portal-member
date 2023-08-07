@@ -41,8 +41,10 @@ export default function Home() {
                     >
                         <Text>Click</Text>
                     </TouchableOpacity>
-                    <Button icon="camera" mode="contained" onPress={() => console.log('Pressed')}>
-    Press me
+                    <Button icon="camera" mode="contained" onPress={() => {
+                            router.push('/member/memberProfile')
+                        }}>
+    memberProfile
   </Button>
   <Card>
     <Card.Title title="Card Title" subtitle="Card Subtitle" left={LeftContent} />
@@ -56,6 +58,17 @@ export default function Home() {
       <Button>Ok</Button>
     </Card.Actions>
   </Card>
+
+  <Button icon="camera" mode="contained" onPress={() => {
+                            router.push('/member/workoutSchedule')
+                        }}>
+    workoutSchedule
+  </Button>
+  <Button icon="camera" mode="contained" onPress={() => {
+                            router.push('/member/ourTrainers')
+                        }}>
+    ourTrainers
+  </Button>
                 </View>
             </ScrollView>
             

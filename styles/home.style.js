@@ -32,12 +32,10 @@ const styles = StyleSheet.create({
         marginTop:50,
         flexDirection: 'row',
         justifyContent: 'space-between',
-
     },
 
     sidebaricon:{
         marginLeft:20,
-        
     },
 
     bellicon:{
@@ -109,7 +107,7 @@ const styles = StyleSheet.create({
     },
     btn: {
         width: 300,
-        height: 5,
+        height: 100,
         backgroundColor: '#1d5a9f',
         color: 'white',
         borderRadius: 5,

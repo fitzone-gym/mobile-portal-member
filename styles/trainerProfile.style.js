@@ -6,10 +6,16 @@ const styles = StyleSheet.create({
 
     },
     
-    topcontainerimage: {
+    backgroundimage: {
         width: '100%',
-        minHeight: 700,
-        
+        minHeight: 850,
+    },
+
+    fullcontent:{
+        marginLeft:20,
+        marginRight:20,
+        marginBottom:20,
+
     },
 
     topicons:{
@@ -21,11 +27,11 @@ const styles = StyleSheet.create({
     },
 
     sidebaricon:{
-        marginLeft:20,
+
     },
 
     bellicon:{
-        marginRight:20,
+        
     },
 
     bottomcontainer:{
@@ -33,7 +39,6 @@ const styles = StyleSheet.create({
     },
 
     text:{
-        marginLeft:20,
         color: 'white',
         fontSize: 32,
         lineHeight: 84,
@@ -41,15 +46,140 @@ const styles = StyleSheet.create({
         textAlign: 'left',
       },
 
+      imageanddetails:{
+        flexDirection:'column',
+        alignItems: 'center',
+      },
+
       trainerimage:{
         width: 110,
-        height: 200,
-        marginLeft:22,
+        height: 134,
         borderTopLeftRadius: 36,
         borderTopRightRadius: 36,
         borderBottomLeftRadius: 36,
         borderBottomRightRadius: 36,
       },
+
+      basicdetails:{
+        opacity:0.8,
+        height:134,
+        width:330,
+        backgroundColor:'#222222',
+        borderTopLeftRadius: 36,
+        borderTopRightRadius: 36,
+        borderBottomLeftRadius: 36,
+        borderBottomRightRadius: 36,
+        padding:20,
+        flexDirection:'row',
+        marginTop:10,
+      },
+
+      labelofbasicinfo:{
+        color:'#E54646',
+        fontWeight: 'bold',
+      },
+
+      basicinfo:{
+        color:'#FFFFFF',
+        fontWeight: 'bold',
+        marginLeft:10,
+        fontSize:14,
+      },
+
+      workingExandmembers:{
+        flexDirection:'row',
+        alignItems: 'center',
+
+      },
+
+      Workexperience:{
+        opacity:0.8,
+        height:154,
+        width:170,
+        backgroundColor:'#222222',
+        borderTopLeftRadius: 36,
+        borderTopRightRadius: 36,
+        borderBottomLeftRadius: 36,
+        borderBottomRightRadius: 36,
+        padding:20,
+        alignItems:'center',
+        marginTop:10,
+      },
+
+      workingextext:{
+        color:'#FFFFFF',
+        fontWeight: 'bold',
+        fontSize:14,
+      },
+      workingexyers:{
+        color:'#E54646',
+        fontWeight: 'bold',
+        fontSize:60,
+      },
+
+      members:{
+
+      },
+
+      lowercontent:{
+        flexDirection:'column',
+        alignItems: 'center',
+      },
+
+      topictext:{
+        color:'#E54646',
+        fontWeight: 'bold',
+        fontSize:20,
+        paddingTop:10,
+      },
+
+      textbox:{
+        opacity:0.8,
+        minHeight:134,
+        width:330,
+        backgroundColor:'#222222',
+        borderTopLeftRadius: 36,
+        borderTopRightRadius: 36,
+        borderBottomLeftRadius: 36,
+        borderBottomRightRadius: 36,
+        padding:20,
+        marginTop:10,
+      },
+
+      detailsList: {
+        lineHeight: 50,
+      },
+      
+      detail: {
+        fontSize: 13,
+        borderWidth: 1, // Use borderWidth instead of border
+        borderColor: "white", // Specify the border color
+        borderRadius: 15,
+        padding: 5,
+        margin: 4,
+        lineHeight: 30, // lineHeight is valid in React Native
+        color: "white",
+      },
+
+      getstartedbutton:{
+          margin:20,
+          width: 330,
+          height: 50,
+          backgroundColor: '#E54646',
+          borderRadius: 10,
+          flex: 1,
+          alignItems: 'center',
+          justifyContent: 'center',
+      },
+
+      getstartedbuttonText:{
+        fontWeight: 'bold',
+        fontSize:15,
+        color: 'white',
+
+      },
+
+      
 
 })
 
