@@ -40,15 +40,15 @@ return (
 
                     <View style={styles.signinTxt}>
                         <Text style={styles.subContent}>First Name</Text>
-                        <TextInput style={styles.txtInput}  />
+                        <TextInput style={styles.txtInput} id='first_name'/>
                         <Text style={styles.subContent}>Last Name</Text>
-                        <TextInput style={styles.txtInput}/>  
+                        <TextInput style={styles.txtInput} id='last_name'/>  
                         <Text style={styles.subContent}>Email</Text>
-                        <TextInput style={styles.txtInput}/>    
+                        <TextInput style={styles.txtInput} id='email'/>    
                         <Text style={styles.subContent}>Mobile No</Text>
-                        <TextInput style={styles.txtInput}/>   
-                        <Text style={styles.subContent}>Age</Text>
-                        <TextInput style={styles.txtInput}/>
+                        <TextInput style={styles.txtInput} id='mobile_no'/>   
+                        <Text style={styles.subContent}>Gender</Text>
+                        <TextInput style={styles.txtInput} id='gender'/>
                     </View>    
 
                     <View style = {styles.terms}> 

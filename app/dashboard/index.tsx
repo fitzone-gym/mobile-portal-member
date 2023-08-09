@@ -6,11 +6,15 @@ import * as React from 'react';
 import { AppRegistry } from 'react-native';
 import { PaperProvider } from 'react-native-paper';
 
+import { useRouter } from 'expo-router';
+import { Route } from 'expo-router/build/Route';
+
 import { Avatar, Button, Card, Text } from 'react-native-paper';
 
 
 
 export default function Dashboard() {
+  const router = useRouter();
     return (
       <PaperProvider>
         <SafeAreaView>
@@ -78,6 +82,8 @@ export default function Dashboard() {
               <Text style={styles.WaterLevel}>3</Text>
               <Text style={styles.WaterMeasure}>Liters</Text>
           </View>
+
+          <TouchableOpacity onPress={()=>{router.push('/appointment')}}><Text>appointment</Text></TouchableOpacity>
 
           
 

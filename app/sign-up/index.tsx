@@ -34,7 +34,7 @@ export default function Home() {
 
                                 <TextInput style={styles.txtInput} />
                                 <Text style={styles.subContent}>Password</Text>
-                                <TextInput style={styles.txtInput} autoCorrect={false} secureTextEntry={true} />
+                                <TextInput style={styles.txtInput} autoCorrect={false} secureTextEntry={true}  />
                                 <TouchableOpacity
                                     onPress={()=>{
                                         router.push('../forget-password')
