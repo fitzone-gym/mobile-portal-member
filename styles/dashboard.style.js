@@ -139,6 +139,7 @@ const styles = StyleSheet.create({
     fontSize:10,
     },
 
+
     WorkingProgressTitle:{
         width:250,
         height:25,
@@ -190,6 +191,114 @@ const styles = StyleSheet.create({
 
     WaterMeasure:{
         color:'#E54646',
+    },
+
+    caloriesBurnOutToday:{
+        backgroundColor:'#222222',
+        height:131,
+        opacity:0.7,
+        borderRadius:20,
+        marginTop:20,
+        paddingBottom:10,
+        paddingTop:10,
+        width:'60%',
+        marginLeft:13,
+        flexDirection:'column',
+
+    },
+
+    caloriesCount:{
+        color:'white',
+        fontSize:70,
+        fontWeight:'bold',
+        textAlign:'center',
+
+    },
+
+    caloriesCountTitle:{
+        color:'#E54646',
+        fontSize:20,
+        marginBottom:5,
+        textAlign:'center',
+    },
+
+    caloriesAndMortivationBox:{
+        flexDirection:'row',
+    },
+
+    mortivational_text:{
+        color:'#ffffff',
+        fontSize:23,
+        textAlign:'left',
+        marginLeft:20,
+        marginTop:20,
+
+    },
+
+    caloriesPerDay:{
+      color:'#9C9B9B', 
+      fontSize:15,
+      textAlign:'center',
+    },
+    calories:{
+        fontSize:15,
+        color:'#E54646',
+        marginBottom:5,
+        textAlign:'center',
+    },
+
+    workOutDays:{
+        backgroundColor:'#222222',
+        height:131,
+        opacity:0.7,
+        borderRadius:20,
+        marginTop:20,
+        paddingBottom:10,
+        paddingTop:10,
+        width:'40%',
+        marginLeft:13,
+        flexDirection:'column',
+
+    },
+
+    caloriesPerDayToDay:{
+        backgroundColor:'#222222',
+        height:131,
+        opacity:0.7,
+        borderRadius:20,
+        marginTop:20,
+        paddingBottom:10,
+        paddingTop:10,
+        width:'50%',
+        marginLeft:13,
+        flexDirection:'column',
+    },
+
+    StepsPerToday:{
+        backgroundColor:'#222222',
+        height:131,
+        opacity:0.7,
+        borderRadius:20,
+        marginTop:20,
+        paddingBottom:10,
+        paddingTop:10,
+        width:'60%',
+        marginLeft:13,
+        flexDirection:'column',
+    },
+
+    waterPerDay:{
+        backgroundColor:'#222222',
+        height:131,
+        opacity:0.7,
+        borderRadius:20,
+        marginTop:20,
+        paddingBottom:10,
+        paddingTop:10,
+        width:'30%',
+        marginLeft:13,
+        flexDirection:'column',
+
     },
 
 
