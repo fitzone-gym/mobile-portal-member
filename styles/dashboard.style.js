@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
     welcome:{
         color:'#E54646',
         fontSize:15,
+        fontWeight:'bold',
     },
 
     name:{
@@ -131,12 +132,14 @@ const styles = StyleSheet.create({
         color:'#E54646',
         fontSize:35,
         marginBottom:5,
+        fontWeight:'bold',
     
     },
 
     Year:{     
         color:'#ffffff',
-    fontSize:10,
+        fontSize:10,
+        fontWeight:'bold',
     },
 
 
@@ -144,10 +147,11 @@ const styles = StyleSheet.create({
         width:250,
         height:25,
         color:'#E54646',
-        fontSize:20,
+        fontSize:15,
         fontWeight:'500',
         marginTop:20,
-        marginLeft:13
+        marginLeft:13,
+        fontWeight:'bold',
     },
 
     workoutProgress:{
@@ -156,7 +160,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#222222',
         opacity:0.7,
         marginLeft:13,
-        marginTop:5,
+        marginTop:0,
         borderRadius:15,
     },
 
@@ -178,6 +182,7 @@ const styles = StyleSheet.create({
     WaterTitle:{
         color:'#9C9B9B',
         fontSize:16,
+        
 
     },
 
@@ -191,6 +196,7 @@ const styles = StyleSheet.create({
 
     WaterMeasure:{
         color:'#E54646',
+        
     },
 
     caloriesBurnOutToday:{
@@ -212,6 +218,7 @@ const styles = StyleSheet.create({
         fontSize:70,
         fontWeight:'bold',
         textAlign:'center',
+        
 
     },
 
@@ -220,6 +227,7 @@ const styles = StyleSheet.create({
         fontSize:20,
         marginBottom:5,
         textAlign:'center',
+        fontWeight:'bold',
     },
 
     caloriesAndMortivationBox:{
@@ -227,7 +235,7 @@ const styles = StyleSheet.create({
     },
 
     mortivational_text:{
-        color:'#ffffff',
+        color:'#FFCC4D',
         fontSize:23,
         textAlign:'left',
         marginLeft:20,
@@ -239,12 +247,14 @@ const styles = StyleSheet.create({
       color:'#9C9B9B', 
       fontSize:15,
       textAlign:'center',
+      fontWeight:'bold',
     },
     calories:{
         fontSize:15,
         color:'#E54646',
         marginBottom:5,
         textAlign:'center',
+        fontWeight:'bold',
     },
 
     workOutDays:{
