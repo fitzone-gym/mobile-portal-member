@@ -122,9 +122,10 @@ export default function Dashboard() {
               <Text style={styles.WaterMeasure}>Liters</Text>
           </View> */}
 
-          <TouchableOpacity onPress={()=>{router.push('/appointment')}}><Text>appointment</Text></TouchableOpacity>
-          <TouchableOpacity onPress={()=>{router.push('/TimeSlots')}}><Text>TimeSlots</Text></TouchableOpacity>
-
+          <View style={{flexDirection:'row', gap:20}}>
+            <TouchableOpacity onPress={()=>{router.push('/appointment')}}><Text>appointment</Text></TouchableOpacity>
+            <TouchableOpacity onPress={()=>{router.push('/TimeSlots')}}><Text>TimeSlots</Text></TouchableOpacity>
+          </View>
           
 
           </ImageBackground>          
