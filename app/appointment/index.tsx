@@ -10,16 +10,26 @@ export default function appointment(){
     const router = useRouter();
     return (
         <SafeAreaView>
-            <View style={styles.upperImageBox}>
-                <ImageBackground source={require('../../assets/images/appointment.png')}
-                            style={{
-                                width:'100%',
-                                height:150,
-                            }} >
+
+                <ImageBackground source={require('../../assets/images/appointment.png')} style={{width:'100%', height:155 }}>
+                    <View style={styles.MemberNavigationBar}>
+
+                        <View style={styles.HomeNavigation}></View>
+
+                        <View style={styles.MessageAndNotificationNavigation}>
+
+                        <View style={styles.MessageBox}></View>
+                        <View style={styles.NortificationBox}></View>
+
+                        </View>
+
+                    </View> 
+
+                    <Text style={styles.appointmentHeading}>Appointment</Text>
+                    </ImageBackground>
 
 
-                </ImageBackground>
-            </View>
+            <View style={styles.calenderView}><Text>ji</Text></View>
         </SafeAreaView>
     )
 
