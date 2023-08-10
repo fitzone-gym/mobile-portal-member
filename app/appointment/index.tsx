@@ -2,11 +2,14 @@ import styles from "../../styles/appointment.style";
 
 import {View, TouchableOpacity, SafeAreaView, ImageBackground, Text, Image, ScrollView} from "react-native";
 
+
 import * as React from "react";
 import { useRouter } from "expo-router";
 import{Route} from "expo-router/build/Route";
 
 export default function appointment(){
+
+
     const router = useRouter();
     return (
         <SafeAreaView style={styles.appointmentSafeArea}>
@@ -28,7 +31,9 @@ export default function appointment(){
                 </ImageBackground>
 
 
-                <View style={styles.calenderView}></View>
+                <View style={styles.calenderView}>
+
+                </View>
 
                 <Text style={styles.specialEventHeading}>Special Events</Text>
                 <View style={styles.specialEvents}></View>
