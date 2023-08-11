@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         fontSize:30,
         fontWeight:'bold',
         marginLeft:13,
-        marginTop:15,
+        marginTop:20,
     },
 
     calenderView:{

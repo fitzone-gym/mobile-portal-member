@@ -125,6 +125,7 @@ export default function Dashboard() {
           <View style={{flexDirection:'row', gap:20}}>
             <TouchableOpacity onPress={()=>{router.push('/appointment')}}><Text>appointment</Text></TouchableOpacity>
             <TouchableOpacity onPress={()=>{router.push('/TimeSlots')}}><Text>TimeSlots</Text></TouchableOpacity>
+            <TouchableOpacity onPress={()=>{router.push('/payment')}}><Text>Payment</Text></TouchableOpacity>
           </View>
           
 
