@@ -6,6 +6,8 @@ import {View, TouchableOpacity, SafeAreaView, ImageBackground, Text, Image, Scro
 import * as React from "react";
 import { useRouter } from "expo-router";
 import{Route} from "expo-router/build/Route";
+import CalendarScreen from "../../components/CalendarScreen";
+
 
 export default function appointment(){
 
@@ -32,6 +34,7 @@ export default function appointment(){
 
 
                 <View style={styles.calenderView}>
+                    <CalendarScreen/>
 
                 </View>
 

@@ -53,11 +53,11 @@ const styles = StyleSheet.create({
     },
 
     calenderView:{
-        backgroundColor:'#222222',
+
         width:"93%",
         height:350,
         marginLeft:13,
-        marginTop:20,
+        marginTop:0,
         borderRadius:20,
 
     },
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     specialEventHeading:{
         color:'#FF5A5A',
         marginLeft:13,
-        marginTop:20,
+        marginTop:40,
         fontSize:15,
         fontWeight:'bold',
     },
