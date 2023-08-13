@@ -14,7 +14,7 @@ export default function Home() {
                 }}
             />
                 <View style={styles.container}>
-                    <ImageBackground source= {require('../../assets/images/register.png')}resizeMode='cover' style={styles.backgroundImage}>
+                    <ImageBackground source= {require('../../assets/images/login-new.png')}resizeMode='cover' style={styles.backgroundImage}>
                         <View style={styles.upper}>
                             <View style={styles.top}>
                                 <Image style= {styles.logo}source={require('../../assets/images/logo.png')}/>

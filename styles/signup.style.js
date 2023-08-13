@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
 
     form:{
         alignItems: 'center',
-        backgroundColor: 'black',
+        backgroundColor: '#222222',
         opacity: 0.8,
         margin:17,
         padding:0,

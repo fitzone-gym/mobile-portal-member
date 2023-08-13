@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     bottom:{
         alignItems: 'center',
         backgroundColor: '#222222',
-        opacity: 0.9,
+        opacity: 0.7,
         margin:30,
         padding:0,
         borderRadius:17,
@@ -77,7 +77,8 @@ const styles = StyleSheet.create({
     btn: {
         width: 250, 
         height: 50,
-        marginBottom: 30,
+        marginTop:30,
+        marginBottom: 15,
         backgroundColor: '#E54646',   
         borderRadius: 30,
         alignItems:'center',
@@ -86,6 +87,7 @@ const styles = StyleSheet.create({
     btnTxt:{
         fontSize: 20,
         color: 'white',
+        fontWeight: 'bold',
 
     },
 
