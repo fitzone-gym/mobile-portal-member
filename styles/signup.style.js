@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     },
     underTxt:{
         marginTop:35,
-        flexDirection: 'row',
+        flexDirection: 'column',
         width:"61%",
         alignItems:'center',
         justifyContent: 'space-between',
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     fontWeight: 'normal', 
     },
 
-    buttonStyle: {
+    button: {
     width: 250, 
     height: 50,
     marginBottom: 20,
