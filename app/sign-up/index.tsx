@@ -1,11 +1,30 @@
 import styles from '../../styles/signin.style';
 import { View, Text,TextInput, Image, SafeAreaView,ImageBackground,TouchableOpacity} from 'react-native';
 import { Stack , useRouter} from 'expo-router';
+import React,{useState} from 'react';
 // import Icon from 'react-native-paper/lib/typescript/src/components/Icon';
 
-export default function Home() {
+const LoginScreen=() => {
+
+    const [username,setUsername] = useState("");
+    const [password,setPassword] = useState("");
+    const [error,setError] = useState("");
+
+
+    const handleLogin = () =>{
+        //simulating a simple login logic
+        if(username === '' && password === ''){
+            setError("");
+            alert("Login successfull");
+        }
+        else{
+            setError("Invalid Username or Password");
+        }
+    };
+
 
     const router = useRouter()
+
     return (
         <SafeAreaView>
             <Stack.Screen
@@ -32,9 +51,9 @@ export default function Home() {
                             <View style={styles.signinTxt}>
                                 <Text style={styles.subContent}>User Name</Text>
 
-                                <TextInput style={styles.txtInput} />
+                                <TextInput style={styles.txtInput} value={username} onChangeText={setUsername}/>
                                 <Text style={styles.subContent}>Password</Text>
-                                <TextInput style={styles.txtInput} autoCorrect={false} secureTextEntry={true}  />
+                                <TextInput style={styles.txtInput} value={password} onChangeText={setPassword} autoCorrect={false} secureTextEntry={true}  />
                                 <TouchableOpacity
                                     onPress={()=>{
                                         router.push('../forget-password')
@@ -42,7 +61,10 @@ export default function Home() {
                                 >
                                     <Text style={styles.pwtxt}>Forget Password ?</Text>
                                 </TouchableOpacity>
-                            </View>                            
+                            </View> 
+
+                            {error ? <Text>{error}</Text> : null}  
+                                                 
                             <TouchableOpacity
                                 style={styles.btn}
                                 onPress={() => {
@@ -56,5 +78,7 @@ export default function Home() {
                 </View>
         </SafeAreaView>
     )
-}
+};
+
+export default LoginScreen;
 
