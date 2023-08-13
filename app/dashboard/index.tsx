@@ -126,6 +126,7 @@ export default function Dashboard() {
             <TouchableOpacity onPress={()=>{router.push('/appointment')}}><Text>appointment</Text></TouchableOpacity>
             <TouchableOpacity onPress={()=>{router.push('/TimeSlots')}}><Text>TimeSlots</Text></TouchableOpacity>
             <TouchableOpacity onPress={()=>{router.push('/payment')}}><Text>Payment</Text></TouchableOpacity>
+            <TouchableOpacity onPress={()=>{router.push('/message')}}><Text>Message</Text></TouchableOpacity>
           </View>
           
 
