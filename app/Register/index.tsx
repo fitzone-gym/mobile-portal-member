@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 import { View, Text, TouchableOpacity, SafeAreaView,Image, ImageBackground , TextInput,Button, Alert,} from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 import styles from '../../styles/signup.style';
+import{RadioButton} from "react-native-paper";
 
 
 import axios from 'axios';
@@ -15,29 +16,56 @@ const Registration:React.FC = () =>{
     const[last_name, setlast_name] = useState<string>("");
     const[email, setemail] = useState<any>("");
     const[mobile_no, setmobile_no] = useState<string>("");
-    const[gender, setgender] = useState<string>("");
+    const[password, setpassword] = useState<string>("");
+
+    
 
     const handleSubmit = async () =>{
 
-        console.log("handleSubmit");
-
-        // perform validation
-        if(!first_name || !last_name || !email || !mobile_no || !gender){
+        // all inputs validation
+        if(!first_name || !last_name || !email || !mobile_no || !password){
             Alert.alert('validation Error', 'please fill in all fields.');
             return;
         }
 
+        // first name validation
+        if(!isValidFirstName(first_name)){
+            setError("Invalid first name");
+            return;
+        }
+
+        // last name validation
+        if(!isValidLastName(last_name)){
+            setError("Invalid last name");
+            return;
+        }
+        // email validation
+        if(!isValidEmail(email)){
+            setError("Invalid email");
+            return;
+        }
+
+        //password validation
+        if(password.length<8){
+            setError('Password must be at least 8 characters');
+            return;
+        }
+
+
         
         // further validation can be added, like email format or password complexity checks
         try{
-            console.log("perfom validation");
-            await axios.post("http://localhost:5400/memberRegistration",{
+
+            await axios.post("http://localhost:5400/auth/register",{
                 first_name:first_name, 
                 last_name:last_name, 
                 email:email, 
                 mobile_no:mobile_no, 
-                gender:gender,
-            }).then((response) =>console.log(response.data));
+                password:password,
+            }).then((response) =>{
+                console.log(response.data)
+                router.push("/sign-up")
+            });
             
 
             // if(response.status === 201){
@@ -54,6 +82,18 @@ const Registration:React.FC = () =>{
             console.error('Error registration',error);
         }
         console.log("Registration Success");
+    };
+
+    const isValidEmail=(email:string):boolean =>{
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); 
+    };
+
+    const isValidFirstName=(first_name:string):boolean =>{
+        return /^[A-Za-z]+$/.test(first_name);
+    };
+
+    const isValidLastName=(last_name:string):boolean =>{
+        return /^[A-Za-z]+$/.test(last_name);
     };
 
 
@@ -85,8 +125,8 @@ const Registration:React.FC = () =>{
                             <TextInput style={styles.txtInput} id='email' value={email} onChange={(value => setemail(value.nativeEvent.text))}/>    
                             <Text style={styles.subContent}>Mobile No</Text>
                             <TextInput style={styles.txtInput} id='mobile_no' value={mobile_no} onChange={(value => setmobile_no(value.nativeEvent.text))}/>   
-                            <Text style={styles.subContent}>Gender</Text>
-                            <TextInput style={styles.txtInput} id='gender'value={gender} onChange={(value => setgender(value.nativeEvent.text))}/>
+                            <Text style={styles.subContent}>Password</Text>
+                            <TextInput style={styles.txtInput} id='gender'value={password} onChange={(value => setpassword(value.nativeEvent.text))}/>
                         </View>    
 
                         <View style = {styles.terms}> 
@@ -129,6 +169,10 @@ export default Registration
 
 
 
+
+function setError(arg0: string) {
+    throw new Error('Function not implemented.');
+}
 // old written function
 // function registration(){
 //     const[first_name, setfirst_name] = useState("");

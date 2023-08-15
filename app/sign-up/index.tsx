@@ -1,24 +1,47 @@
 import styles from '../../styles/signin.style';
-import { View, Text,TextInput, Image, SafeAreaView,ImageBackground,TouchableOpacity} from 'react-native';
+import { View, Text,TextInput, Image, SafeAreaView,ImageBackground,TouchableOpacity,Button} from 'react-native';
 import { Stack , useRouter} from 'expo-router';
 import React,{useState} from 'react';
+import axios from 'axios';
 // import Icon from 'react-native-paper/lib/typescript/src/components/Icon';
 
-const LoginScreen=() => {
+const LoginScreen: React.FC =() => {
 
-    const [username,setUsername] = useState("");
+    const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
     const [error,setError] = useState("");
 
 
-    const handleLogin = () =>{
+    const handleLogin = async () =>{
         //simulating a simple login logic
-        if(username === '' && password === ''){
-            setError("");
-            alert("Login successfull");
+        if(email === '' || password === ''){
+            setError("Invalid Username or Password");
+            alert("Invalid Username or Password")
         }
         else{
-            setError("Invalid Username or Password");
+            setError("");
+            
+            try {
+                const response = await axios.post("http://localhost:5400/auth/login", {
+                    email: email,
+                    password: password
+                })
+                
+                console.log("tezdst");
+                console.log(response.data);
+                
+
+                    if(response.data.success){
+                       const currentUser = response.data.data;
+                       console.log("login successful");  
+                       // if cookie is set else add JWT token sessoin, local storage 
+                       // add to the session
+                       // state application state
+                       //define the route                       
+                    }
+            }catch(err){
+                console.log(err);  
+            }
         }
     };
 
@@ -49,9 +72,9 @@ const LoginScreen=() => {
                                 Sign In
                             </Text>
                             <View style={styles.signinTxt}>
-                                <Text style={styles.subContent}>User Name</Text>
+                                <Text style={styles.subContent}>Email</Text>
 
-                                <TextInput style={styles.txtInput} value={username} onChangeText={setUsername}/>
+                                <TextInput style={styles.txtInput} value={email} onChangeText={setEmail}/>
                                 <Text style={styles.subContent}>Password</Text>
                                 <TextInput style={styles.txtInput} value={password} onChangeText={setPassword} autoCorrect={false} secureTextEntry={true}  />
                                 <TouchableOpacity
@@ -67,9 +90,7 @@ const LoginScreen=() => {
                                                  
                             <TouchableOpacity
                                 style={styles.btn}
-                                onPress={() => {
-                                    router.push('../dashboard')
-                                }}
+                                onPress={handleLogin}
                             >
                                 <Text style={styles.btnTxt}>Sign in</Text>
                             </TouchableOpacity>
@@ -78,7 +99,9 @@ const LoginScreen=() => {
                 </View>
         </SafeAreaView>
     )
+    
 };
 
+// router.push('../dashboard')
 export default LoginScreen;
 
