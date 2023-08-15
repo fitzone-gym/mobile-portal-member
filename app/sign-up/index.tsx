@@ -27,13 +27,13 @@ const LoginScreen: React.FC =() => {
                     password: password
                 })
                 
-                console.log("tezdst");
                 console.log(response.data);
                 
 
                     if(response.data.success){
                        const currentUser = response.data.data;
-                       console.log("login successful");  
+                       console.log(currentUser);  
+                        router.push('../dashboard')
                        // if cookie is set else add JWT token sessoin, local storage 
                        // add to the session
                        // state application state

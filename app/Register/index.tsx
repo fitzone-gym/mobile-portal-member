@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import { View, Text, TouchableOpacity, SafeAreaView,Image, ImageBackground , TextInput,Button, Alert,} from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 import styles from '../../styles/signup.style';
-import{RadioButton} from "react-native-paper";
+
 
 
 import axios from 'axios';
@@ -18,44 +18,44 @@ const Registration:React.FC = () =>{
     const[mobile_no, setmobile_no] = useState<string>("");
     const[password, setpassword] = useState<string>("");
 
-    
+
 
     const handleSubmit = async () =>{
 
         // all inputs validation
-        if(!first_name || !last_name || !email || !mobile_no || !password){
-            Alert.alert('validation Error', 'please fill in all fields.');
-            return;
-        }
+        // if(!first_name || !last_name || !email || !mobile_no || !password){
+        //     Alert.alert('validation Error', 'please fill in all fields.');
+        //     return;
+        // }
 
-        // first name validation
-        if(!isValidFirstName(first_name)){
-            setError("Invalid first name");
-            return;
-        }
+        // // first name validation
+        // if(!isValidFirstName(first_name)){
+        //     setError("Invalid first name");
+        //     return;
+        // }
 
-        // last name validation
-        if(!isValidLastName(last_name)){
-            setError("Invalid last name");
-            return;
-        }
-        // email validation
-        if(!isValidEmail(email)){
-            setError("Invalid email");
-            return;
-        }
+        // // last name validation
+        // if(!isValidLastName(last_name)){
+        //     setError("Invalid last name");
+        //     return;
+        // }
+        // // email validation
+        // if(!isValidEmail(email)){
+        //     setError("Invalid email");
+        //     return;
+        // }
 
-        //password validation
-        if(password.length<8){
-            setError('Password must be at least 8 characters');
-            return;
-        }
+        // //password validation
+        // if(password.length<8){
+        //     setError('Password must be at least 8 characters');
+        //     return;
+        // }
 
 
         
         // further validation can be added, like email format or password complexity checks
         try{
-
+            console.log(password);
             await axios.post("http://localhost:5400/auth/register",{
                 first_name:first_name, 
                 last_name:last_name, 
@@ -64,7 +64,7 @@ const Registration:React.FC = () =>{
                 password:password,
             }).then((response) =>{
                 console.log(response.data)
-                router.push("/sign-up")
+                // router.push("/sign-up")
             });
             
 
