@@ -84,6 +84,35 @@ const styles = StyleSheet .create({
         padding:10,
     },
 
+    workoutTitle:{
+      flexDirection:'row',
+      margin:5,
+    },
+
+    itemTitle:{
+      flex:2,
+      color:'#838383',
+      fontWeight: 'bold',
+      fontSize:15,
+      paddingLeft:20,
+    },
+
+    setcountTitle:{
+      flex:1,
+      color:'#838383',
+      fontWeight: 'bold',
+      fontSize:15,
+      paddingLeft:20,
+    },
+
+    repcountTitle:{
+      flex:1,
+      color:'#838383',
+      fontWeight: 'bold',
+      fontSize:15,
+      paddingLeft:20,
+    },
+
 
     workouts:{
         flexDirection:'column',

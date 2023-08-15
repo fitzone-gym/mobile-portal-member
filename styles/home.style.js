@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        minHeight: 189,
+        minHeight: 160,
         width:'100%',
     },
 
@@ -26,6 +26,10 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
     },
+
+    cardContent:{
+        flexDirection: 'row',
+      },
 
     topicons:{
         flex: 1,

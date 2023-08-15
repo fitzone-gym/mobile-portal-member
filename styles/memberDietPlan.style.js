@@ -3,42 +3,52 @@ import { StyleSheet } from 'react-native'
 const styles = StyleSheet.create({
 
     fullbody:{
-
+        backgroundColor: '#1E1E1E',
     },
-    
-    backgroundimage: {
+
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: 500,
+        width:'100%',
+    },
+
+    topcontainer: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: 360,
+        width:'100%',
+    },
+
+    topcontainerimage: {
         width: '100%',
-        height: 1850,
+        height: '100%',
     },
 
-    fullcontent:{
-        marginLeft:20,
-        marginRight:20,
-        marginBottom:20,
-
-    },
+    cardContent:{
+        flexDirection: 'row',
+      },
 
     topicons:{
+        flex: 1,
         marginTop:50,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        // backgroundColor: 'red',
-        // height:100,
     },
 
     sidebaricon:{
-
+        marginLeft:20,
     },
 
     bellicon:{
-        
-    },
-
-    bottomcontainer:{
-        
+        marginRight:20,
     },
 
     text:{
+        marginLeft:20,
+        marginBottom:10,
         color: 'white',
         fontSize: 32,
         lineHeight: 84,
@@ -46,55 +56,39 @@ const styles = StyleSheet.create({
         textAlign: 'left',
       },
 
-      imageanddetails:{
-        flexDirection:'column',
-        alignItems: 'center',
-      },
-
-      imagepicture:{
-        margin:10,
-        width: 110,
-        height: 134,
-        borderTopLeftRadius: 36,
-        borderTopRightRadius: 36,
-        borderBottomLeftRadius: 36,
-        borderBottomRightRadius: 36,
-      },
-
-      basicdetails:{
+      extrasmallbox:{
+        flex:1,
         opacity:0.8,
-        height:134,
+        minHeight:30,
         backgroundColor:'#222222',
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
-        padding:20,
-        flexDirection:'row',
+        justifyContent: 'center',
+        alignItems:'center',
+        padding:10,
+        margin:5,
         marginTop:10,
+        flexDirection:'row',
+
       },
 
-      labelofbasicinfo:{
+      Extrasmalltext:{
+        fontSize:10,
         color:'#E54646',
         fontWeight: 'bold',
       },
-
-      basicinfo:{
+      Extrasmalltextvalue:{
+        fontSize:10,
         color:'#FFFFFF',
         fontWeight: 'bold',
-        marginLeft:10,
-        fontSize:14,
-      },
-
-      editbutton:{
-        marginTop:10,
-        textColor:'red',
-        textColor:'#E54646',
       },
 
       lowercontent:{
-        flexDirection:'column',
-        alignItems: 'center',
+        // flexDirection:'column',
+        // alignItems: 'center',
+        margin:20,
       },
 
       topictext:{
@@ -116,7 +110,7 @@ const styles = StyleSheet.create({
         marginTop:10,
       },
 
-      workingExandmembers:{
+      textboxcontent:{
         flexDirection:'row',
         alignItems: 'center',
 
@@ -184,23 +178,12 @@ const styles = StyleSheet.create({
 
       },
 
-      packagedetails:{
-        color:'#FFCC4D',
+      textboxtext:{
+        color:'#FFFFFF',
         fontWeight: 'bold',
         marginLeft:10,
         fontSize:14,
       },
-
-      trainerimage:{
-        margin:10,
-        alignItems: 'center',
-      },
-
-      button:{
-        backgroundColor: '#E54646',
-      },
-
-      
 
 })
 

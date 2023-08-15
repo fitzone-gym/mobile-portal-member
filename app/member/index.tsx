@@ -3,16 +3,40 @@ import styles from '../../styles/home.style';
 import { View, Text, Image, SafeAreaView, ScrollView, ImageBackground, TouchableOpacity, FlatList } from 'react-native';
 
 import { Stack, useRouter } from 'expo-router';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+
+import axios from "axios";
+
+interface Trainer{
+    id:string;
+    first_name:string;
+    last_name:string;
+    profile_picture:string;
+}
+
+
 
 export default function Home() {
+
+    const [trainerDetails, setTrainerDetails] = useState<Trainer[]>([]);
+
+    useEffect(() => {
+        axios
+            .get("http://localhost:5400/ourTrainers")
+            .then((response) => {
+                setTrainerDetails(response.data.data);
+                console.log(trainerDetails)
+            })
+            .catch((error) => console.error(error));
+    }, []);
+
     const router = useRouter()
 
     return (
         <SafeAreaView>
             <Stack.Screen
                 options={{
-                    title: 'Member',
+                    title: 'Our Trainers',
                 }}
             />
             
@@ -42,104 +66,38 @@ export default function Home() {
                             </TouchableOpacity>
                         </View>
                         <Text style={styles.text}>Our trainers</Text>
+
+                        <Image
+                            // style={styles.tinyLogo}
+                            source={require('../../assets/images/Fitzone Logo.jpg')}
+                        />
                     
                     </ImageBackground>              
                 </View>
 
-                    {/* <FlatList
-                        data={[1,2,3,4]}
-                        renderItem={() => {
-                            return(
-                                <View
-                                style={styles.trainercards}>
-                                    <Text
-                                        style={styles.trainercardtext}
-                                    >trainercard</Text>
-                                </View>
-                            )
-                        }}
-                        keyExtractor={item => `${item}`}
-                        // horizorntal
-                        numColumns={3}
-
-                    
-                    /> */}
-
                 <View
                 style={styles.bottomcontainer}>
+
+                   {trainerDetails.map((trainer) => (
 
                         <TouchableOpacity
                         style={styles.trainercards}
                         onPress={()=>{
-                            router.push('member/trainerProfile')}}>
+                            router.push('member/trainerProfile')}} key={trainer.id}>
                             <Image
                                 style={styles.trainerimage}
-                                source={require('../../assets/images/MR.Kamal.png')}
+                                source={{ uri:`../../assets/images/Trainers/${trainer.profile_picture}`}}
                             />
                             <Text
                                 style={styles.trainercardname}
-                            >Mr. Kamal suraweera</Text>
+                            >{trainer.first_name}&nbsp;{trainer.last_name}</Text>
                             <Text
                                 style={styles.trainercardtext}
                             >9 Members</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity
-                        style={styles.trainercards}>
-                            <Image
-                                style={styles.trainerimage}
-                                source={require('../../assets/images/Mr.Maduka.png')}
-                            />
-                            <Text
-                                style={styles.trainercardname}
-                            >Mr. Maduka perera</Text>
-                            <Text
-                                style={styles.trainercardtext}
-                            >9 Members</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity
-                        style={styles.trainercards}>
-                            <Image
-                                style={styles.trainerimage}
-                                source={require('../../assets/images/Mr.Lakmal.png')}
-                            />
-                            <Text
-                                style={styles.trainercardname}
-                            >Mr. Lakmal rathnayake</Text>
-                            <Text
-                                style={styles.trainercardtext}
-                            >9 Members</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity
-                        style={styles.trainercards}>
-                            <Image
-                                style={styles.trainerimage}
-                                source={require('../../assets/images/Ms.Nadheeka.png')}
-                            />
-                            <Text
-                                style={styles.trainercardname}
-                            >Ms. Nadheeka silva</Text>
-                            <Text
-                                style={styles.trainercardtext}
-                            >9 Members</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity
-                        style={styles.trainercards}>
-                            <Image
-                                style={styles.trainerimage}
-                                source={require('../../assets/images/f.png')}
-                            />
-                            <Text
-                                style={styles.trainercardname}
-                            >Mr.Trainer</Text>
-                            <Text
-                                style={styles.trainercardtext}
-                            >9 Members</Text>
-
-                        </TouchableOpacity>
+                        )
+                   )}
 
                     </View>
                 

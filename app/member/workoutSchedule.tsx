@@ -12,7 +12,7 @@ export default function workoutSchedule(){
         <PaperProvider>
             <SafeAreaView>
                 <Stack.Screen
-                options={{title:'Trainer Profile'}}/>
+                options={{title:'Workout Schedule'}}/>
                 <ScrollView>
                     <View style={styles.fullbody}>
                         <View style={styles.topcontainer}>
@@ -54,6 +54,12 @@ export default function workoutSchedule(){
                         </View>
 
                         <View style={styles.bottomcontainer}>
+
+                            <View style={styles.workoutTitle}>
+                                <Text style={styles.itemTitle}>Exercise</Text>
+                                <Text style={styles.setcountTitle}>Sets</Text>
+                                <Text style={styles.repcountTitle}>Reps</Text>
+                            </View>
 
                             <View style={styles.workouts}>
                                     

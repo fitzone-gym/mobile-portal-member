@@ -7,7 +7,7 @@ import React from 'react';
 import { Button, Card, PaperProvider } from 'react-native-paper';
 
 
-export default function trainerProfile(){
+export default function memberProfile(){
 
     const router = useRouter()
 
@@ -63,6 +63,12 @@ export default function trainerProfile(){
                                             <Text style={styles.basicinfo}>anuradhaperera@gmail.com</Text>
                                         </View>
                                     </View>
+
+                                        <Button style={styles.editbutton} icon="pencil" mode="outlined" onPress={() => { router.push('/member/memberDetailUpdate')}} textColor='#E54646'>
+                                            Edit Profile
+                                        </Button>
+
+
                                 </View>
 
                                 <View>
@@ -122,6 +128,10 @@ export default function trainerProfile(){
                                         <Text style={styles.topictext}>My package</Text>
                                         <View style={styles.textbox}>
                                             <Text style={styles.packagedetails}>premium annual package</Text>
+                                            <Text style={styles.packagedetails}>    3 Full body messages remaining</Text>
+                                            <Text style={styles.packagedetails}>    3 foot messages remaining</Text>
+                                            <Text style={styles.packagedetails}>    4 steam spa remaining</Text>
+
                                         </View>
                                 </View>
 

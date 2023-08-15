@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
 
       lowercontent:{
         flexDirection:'column',
-        alignItems: 'center',
+        // alignItems: 'center',
       },
 
       topictext:{
@@ -146,6 +146,19 @@ const styles = StyleSheet.create({
         marginTop:10,
       },
 
+      newtextbox:{
+        opacity:0.8,
+        minHeight:134,
+        // width:300,
+        backgroundColor:'#222222',
+        padding:10,
+        marginTop:10,
+        borderTopLeftRadius: 36,
+        borderTopRightRadius: 36,
+        borderBottomLeftRadius: 36,
+        borderBottomRightRadius: 36,
+      },
+
       detailsList: {
         lineHeight: 50,
       },
@@ -161,23 +174,42 @@ const styles = StyleSheet.create({
         color: "white",
       },
 
-      getstartedbutton:{
-          margin:20,
-          width: 330,
-          height: 50,
-          backgroundColor: '#E54646',
-          borderRadius: 10,
-          flex: 1,
-          alignItems: 'center',
-          justifyContent: 'center',
+      startedbutton:{
+        margin:20,
+        backgroundColor: '#E54646',
       },
 
-      getstartedbuttonText:{
-        fontWeight: 'bold',
-        fontSize:15,
-        color: 'white',
-
+      textboxtext:{
+        color:'#FFFFFF',
+        fontWeight: 500,
+        marginLeft:10,
+        fontSize:14,
       },
+
+      textboxtexttitle:{
+        color:'#838383',
+        fontWeight:'bold',
+        marginBottom:10,
+        fontSize:14,
+      },
+
+      // getstartedbutton:{
+      //     margin:20,
+      //     width: 330,
+      //     height: 50,
+      //     backgroundColor: '#E54646',
+      //     borderRadius: 10,
+      //     flex: 1,
+      //     alignItems: 'center',
+      //     justifyContent: 'center',
+      // },
+
+      // getstartedbuttonText:{
+      //   fontWeight: 'bold',
+      //   fontSize:15,
+      //   color: 'white',
+
+      // },
 
       
 

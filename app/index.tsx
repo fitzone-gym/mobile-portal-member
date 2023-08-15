@@ -33,20 +33,28 @@ export default function Home() {
                     <Text
                         style={styles.heading}
                     >Home</Text>
-                    <TouchableOpacity
+                    {/* <TouchableOpacity
                         style={styles.btn}
                         onPress={() => {
                             router.push('/member')
                         }}
                     >
                         <Text>Click</Text>
-                    </TouchableOpacity>
-                    <Button icon="camera" mode="contained" onPress={() => {
+                    </TouchableOpacity> */}
+
+                    <Button mode="contained" onPress={() => {
+                            router.push('/member')
+                        }}>
+    Our trainers
+  </Button>
+
+
+                    <Button mode="contained" onPress={() => {
                             router.push('/member/memberProfile')
                         }}>
     memberProfile
   </Button>
-  <Card>
+  {/* <Card>
     <Card.Title title="Card Title" subtitle="Card Subtitle" left={LeftContent} />
     <Card.Content>
       <Text variant="titleLarge">Card title</Text>
@@ -57,18 +65,21 @@ export default function Home() {
       <Button>Cancel</Button>
       <Button>Ok</Button>
     </Card.Actions>
-  </Card>
+  </Card> */}
 
-  <Button icon="camera" mode="contained" onPress={() => {
-                            router.push('/member/workoutSchedule')
-                        }}>
-    workoutSchedule
-  </Button>
-  <Button icon="camera" mode="contained" onPress={() => {
+  <Button mode="contained" onPress={() => {router.push('/member/workoutSchedule')}}>workoutSchedule</Button>
+  {/* <Button  mode="contained" onPress={() => {
                             router.push('/member/ourTrainers')
                         }}>
     ourTrainers
+  </Button> */}
+
+  <Button  mode="contained" onPress={() => {
+                            router.push('/member/memberDietPlan')
+                        }}>
+    Diet Plan
   </Button>
+  
                 </View>
             </ScrollView>
             
