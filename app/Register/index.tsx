@@ -19,27 +19,41 @@ const Registration:React.FC = () =>{
 
     const handleSubmit = async () =>{
 
+        console.log("handleSubmit");
+
         // perform validation
         if(!first_name || !last_name || !email || !mobile_no || !gender){
             Alert.alert('validation Error', 'please fill in all fields.');
             return;
         }
 
+        
         // further validation can be added, like email format or password complexity checks
         try{
-            const response = await axios.post("http://localhost:5400/memberRegisteration",{first_name, last_name, email, mobile_no, gender});
+            console.log("perfom validation");
+            await axios.post("http://localhost:5400/memberRegistration",{
+                first_name:first_name, 
+                last_name:last_name, 
+                email:email, 
+                mobile_no:mobile_no, 
+                gender:gender,
+            }).then((response) =>console.log(response.data));
+            
 
-            if(response.status === 201){
-                Alert.alert('Registration Successful', 'You have been registered successfully!');
-            }
-            else{
-                Alert.alert('Registration Failed', 'An error occurred during registration.');
-            }
+            // if(response.status === 201){
+            //     Alert.alert('Registration Successful', 'You have been registered successfully!');
+            // }
+            // else{
+            //     Alert.alert('Registration Failed', 'An error occurred during registration.');
+            // }
         }
+
+        
         catch(error){
             Alert.alert('Error', 'An error occurred during registration.');
             console.error('Error registration',error);
         }
+        console.log("Registration Success");
     };
 
 
