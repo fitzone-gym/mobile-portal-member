@@ -22,7 +22,7 @@ export default function Home() {
 
     useEffect(() => {
         axios
-            .get("http://localhost:5400/ourTrainers")
+            .get("http://192.168.75.140:5400/ourTrainers")
             .then((response) => {
                 setTrainerDetails(response.data.data);
                 console.log(trainerDetails)
@@ -66,11 +66,6 @@ export default function Home() {
                             </TouchableOpacity>
                         </View>
                         <Text style={styles.text}>Our trainers</Text>
-
-                        <Image
-                            // style={styles.tinyLogo}
-                            source={require('../../assets/images/Fitzone Logo.jpg')}
-                        />
                     
                     </ImageBackground>              
                 </View>
@@ -83,10 +78,16 @@ export default function Home() {
                         <TouchableOpacity
                         style={styles.trainercards}
                         onPress={()=>{
-                            router.push('member/trainerProfile')}} key={trainer.id}>
+                            router.push({
+                                pathname:"member/trainerProfile", 
+                                params:{id:trainer.id}
+                                })
+                            }} 
+                            key={trainer.id}>
                             <Image
                                 style={styles.trainerimage}
-                                source={{ uri:`../../assets/images/Trainers/${trainer.profile_picture}`}}
+                                // source={{ uri:`../../assets/images/Trainers/${trainer.profile_picture}`}}
+                                source={{ uri:`https://stylioo.blob.core.windows.net/images/${trainer.profile_picture}`}}
                             />
                             <Text
                                 style={styles.trainercardname}

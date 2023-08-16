@@ -14,13 +14,29 @@ import Unorderedlist from "react-native-unordered-list";
 import styles from "../../styles/hireTrainer.style";
 import { Button } from "react-native-paper";
 
-const details = [
-  { key: "Name", value: "Anne Karona" },
-  { key: "Age", value: "25" },
-  { key: "Gender", value: "Male" },
-  { key: "Mobile Number", value: "071-4554455" },
-  { key: "Email", value: "Ann@gmail.com" },
-];
+import axios from "axios";
+
+type TrainerType = {
+    id:string
+    first_name:string
+    last_name:string
+    profile_picture:string
+    working_experience:number
+    qualification:string
+    age:number
+    dob:string
+    phone_no:number
+    email:string
+    gender:string
+}
+
+// const details = [
+//   { key: "Name", value: "Anne Karona" },
+//   { key: "Age", value: "25" },
+//   { key: "Gender", value: "Male" },
+//   { key: "Mobile Number", value: "071-4554455" },
+//   { key: "Email", value: "Ann@gmail.com" },
+// ];
 
 const TrainerProfile = () => (
   <SafeAreaView style={styles.container}>

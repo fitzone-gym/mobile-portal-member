@@ -2,14 +2,43 @@ import styles from '../../styles/trainerProfile.style';
 
 import { View, Text, Image, SafeAreaView, ScrollView, ImageBackground, TouchableOpacity } from 'react-native';
 
-import { Stack, useRouter } from 'expo-router';
-import React from 'react';
+import { Stack, useRouter, useLocalSearchParams } from 'expo-router';
+import React, { useEffect, useState } from 'react';
 import { Button, Card, PaperProvider} from 'react-native-paper';
+
+import axios from "axios";
+
+type TrainerType = {
+    id:string
+    first_name:string
+    last_name:string
+    profile_picture:string
+    working_experience:number
+    qualification:string
+    age:number
+    dob:string
+    phone_no:number
+    email:string
+    gender:string
+}
 
 
 export default function trainerProfile(){
 
     const router = useRouter()
+    const localSearchParams = useLocalSearchParams()
+    
+    const[trainerDetails, setTrainerDetails] = useState<TrainerType>();
+    
+    useEffect(() => {
+        axios
+            .get(`http://192.168.75.140:5400/ourTrainers/${localSearchParams.id}`)
+            .then((response) =>{
+                setTrainerDetails(response.data.data);
+                console.log(response.data.data)
+            })
+            .catch((error) => console.error(error))
+    }, []);
 
     return(
         <PaperProvider>
@@ -19,7 +48,7 @@ export default function trainerProfile(){
 
             <ScrollView style={styles.fullbody}>
 
-
+                
 
                 <ImageBackground
                     source={
@@ -46,7 +75,8 @@ export default function trainerProfile(){
                                 <View style={styles.imageanddetails}>
                                     <Image
                                         style={styles.trainerimage}
-                                        source={require('../../assets/images/Trainers/Kithsandu.jpg')}
+                                        // source={{ uri:`../../assets/images/Trainers/${trainerDetails?.profile_picture}`}}
+                                        source={{ uri:`https://stylioo.blob.core.windows.net/images/${trainerDetails?.profile_picture}`}}
                                         resizeMode='cover'
                                     />
                                     <View style={styles.basicdetails}>
@@ -58,11 +88,11 @@ export default function trainerProfile(){
                                             <Text style={styles.labelofbasicinfo}>Email</Text>
                                         </View>
                                         <View>
-                                            <Text style={styles.basicinfo}>Kithsandu Rathnayake</Text>
-                                            <Text style={styles.basicinfo}>29</Text>
-                                            <Text style={styles.basicinfo}>Male</Text>
-                                            <Text style={styles.basicinfo}>0717591952</Text>
-                                            <Text style={styles.basicinfo}>krathnayake@gmail.com</Text>
+                                            <Text style={styles.basicinfo}>{trainerDetails?.first_name}&nbsp;{trainerDetails?.last_name}</Text>
+                                            <Text style={styles.basicinfo}>{trainerDetails?.age}</Text>
+                                            <Text style={styles.basicinfo}>{trainerDetails?.gender === 'M' ? 'Male' : 'Female'}</Text>
+                                            <Text style={styles.basicinfo}>0{trainerDetails?.phone_no}</Text>
+                                            <Text style={styles.basicinfo}>{trainerDetails?.email}</Text>
                                         </View>
                                     </View>
                                 </View>
@@ -70,7 +100,7 @@ export default function trainerProfile(){
                                 <View style={styles.workingExandmembers}>
                                     <View style={styles.Workexperience}>
                                         <Text style={styles.workingextext}>Working Experience</Text>
-                                        <Text style={styles.workingexyers}>8</Text>
+                                        <Text style={styles.workingexyers}>{trainerDetails?.working_experience}</Text>
                                         <Text style={styles.workingextext}>Years</Text>
                                     </View>
                                     <View style={styles.members}>
@@ -82,11 +112,10 @@ export default function trainerProfile(){
                                     <View >
                                             <Text style={styles.topictext}>Qualification</Text>
                                             <View style={styles.newtextbox}>
-                                                <Text style={styles.textboxtext}>NVQ 6</Text>
+                                                <Text style={styles.textboxtext}>{trainerDetails?.qualification}</Text>
                                                 <Text style={styles.textboxtext}>Physical and gymnasium diploma in open university of sri lanka</Text>
                                                 <Text style={styles.textboxtext}>International physiotherapy diploma in KAU health university</Text>
                                                 <Text style={styles.textboxtext}>Valid and Qualified personal trainer from health ministry</Text>
-                                                <Text style={styles.textboxtext}>8 years nutrition experience</Text>
                                                 
                                             </View>
                                     </View>

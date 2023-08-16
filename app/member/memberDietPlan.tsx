@@ -54,7 +54,7 @@ export default function memberDietPlan(){
                             <Text style={styles.Extrasmalltextvalue}> 22</Text>
                         </View>
                         <View style={styles.extrasmallbox}>
-                            <Text style={styles.Extrasmalltext}>BPR :</Text>
+                            <Text style={styles.Extrasmalltext}>BMR :</Text>
                             <Text style={styles.Extrasmalltextvalue}></Text>
                         </View>
                     </View>
@@ -97,7 +97,7 @@ export default function memberDietPlan(){
                             <Text style={styles.workingextext}>grams per day</Text>
                         </View>
                         <View style={styles.smallbox}>
-                            <Text style={styles.workingextext}></Text>
+                            <Text style={styles.workingextext}>Water</Text>
                             <Text style={styles.workingexyers}>20</Text>
                             <Text style={styles.workingextext}>grams per day</Text>
                         </View>
@@ -133,7 +133,7 @@ export default function memberDietPlan(){
                     </View>
                 </View>
             </ScrollView>
-            
+
         </SafeAreaView>
         </PaperProvider>
     )

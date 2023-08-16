@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
       Workexperience:{
         opacity:0.8,
         height:154,
-        width:170,
+        width:200,
         backgroundColor:'#222222',
         borderTopLeftRadius: 36,
         borderTopRightRadius: 36,
