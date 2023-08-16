@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   ImageBackground,
   StyleSheet,
@@ -9,8 +9,8 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
-import { Stack } from "expo-router";
-import Unorderedlist from "react-native-unordered-list";
+import { Stack, useLocalSearchParams, useRouter } from "expo-router";
+// import Unorderedlist from "react-native-unordered-list";
 import styles from "../../styles/hireTrainer.style";
 import { Button } from "react-native-paper";
 
@@ -30,20 +30,27 @@ type TrainerType = {
     gender:string
 }
 
-// const details = [
-//   { key: "Name", value: "Anne Karona" },
-//   { key: "Age", value: "25" },
-//   { key: "Gender", value: "Male" },
-//   { key: "Mobile Number", value: "071-4554455" },
-//   { key: "Email", value: "Ann@gmail.com" },
-// ];
+export default function trainerProfile(){
 
-const TrainerProfile = () => (
+  const router = useRouter()
+  const localSearchParams = useLocalSearchParams()
+  
+  const[trainerDetails, setTrainerDetails] = useState<TrainerType>();
+  
+  useEffect(() => {
+      axios
+          .get(`http://localhost:5400/ourTrainers/${localSearchParams.id}`)
+          .then((response) =>{
+              setTrainerDetails(response.data.data);
+              console.log(response.data.data)
+          })
+          .catch((error) => console.error(error))
+  }, []);
+  return(
   <SafeAreaView style={styles.container}>
     <Stack.Screen
       options={{
         title: "",
-        headerLeft: null,
       }}
     />
     <ScrollView style={styles.back}>
@@ -59,7 +66,8 @@ const TrainerProfile = () => (
           <View style={styles.profile}>
             <View>
               <Image
-                source={require("../../assets/images/Trainers/Kithsandu.jpg")}
+                // source={{ uri:`../../assets/images/Trainers/${trainerDetails?.profile_picture}`}}
+                source={{ uri:`https://stylioo.blob.core.windows.net/images/${trainerDetails?.profile_picture}`}}
                 style={styles.trainerImage}
               />
             </View>
@@ -73,11 +81,11 @@ const TrainerProfile = () => (
                 <Text style={styles.labelofbasicinfo}>Email</Text>
             </View>
             <View>
-                <Text style={styles.basicinfo}>Kithsandu Rathnayake</Text>
-                <Text style={styles.basicinfo}>29</Text>
-                <Text style={styles.basicinfo}>Male</Text>
-                <Text style={styles.basicinfo}>0717591952</Text>
-                <Text style={styles.basicinfo}>krathnayake@gmail.com</Text>
+              <Text style={styles.basicinfo}>{trainerDetails?.first_name}&nbsp;{trainerDetails?.last_name}</Text>
+              <Text style={styles.basicinfo}>{trainerDetails?.age}</Text>
+              <Text style={styles.basicinfo}>{trainerDetails?.gender === 'M' ? 'Male' : 'Female'}</Text>
+              <Text style={styles.basicinfo}>0{trainerDetails?.phone_no}</Text>
+              <Text style={styles.basicinfo}>{trainerDetails?.email}</Text>
             </View>
         </View>
               
@@ -198,6 +206,5 @@ const TrainerProfile = () => (
 
     </ScrollView>
   </SafeAreaView>
-);
-
-export default TrainerProfile;
+  )
+}

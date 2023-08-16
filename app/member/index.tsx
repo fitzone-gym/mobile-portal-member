@@ -22,7 +22,7 @@ export default function Home() {
 
     useEffect(() => {
         axios
-            .get("http://192.168.75.140:5400/ourTrainers")
+            .get("http://localhost:5400/ourTrainers")
             .then((response) => {
                 setTrainerDetails(response.data.data);
                 console.log(trainerDetails)
@@ -51,20 +51,7 @@ export default function Home() {
                     }
                     resizeMode='cover'
                     style={styles.topcontainerimage}>
-                        <View style={styles.topicons}>
-                            <TouchableOpacity>
-                                <Image
-                                    style={styles.sidebaricon}
-                                    source={require('../../assets/images/Sidebarimage.png')}
-                                />
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <Image
-                                    style={styles.bellicon}
-                                    source={require('../../assets/images/bell.png')}
-                                />
-                            </TouchableOpacity>
-                        </View>
+
                         <Text style={styles.text}>Our trainers</Text>
                     
                     </ImageBackground>              

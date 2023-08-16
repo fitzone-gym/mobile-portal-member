@@ -93,7 +93,8 @@ const Registration:React.FC = () =>{
                         
                         <View style={styles.underTxt}>
 
-                            <Button title='Update Details' onPress={handleSubmit}  style={styles.button} textStyle={styles.titleStyle}></Button>
+                            <Button title='Update Details' onPress={handleSubmit} color="#E54646"
+                            style={styles.updatebutton} textStyle={styles.titleStyle}></Button>
                             
                             {/* <View style={{flexDirection:'row'}}>
                                 <Text style={styles.RegisterToSignIn}>Already have an account?</Text>
@@ -101,9 +102,7 @@ const Registration:React.FC = () =>{
                             </View> */}
 
                         </View>
-                        <Button mode="contained" onPress={() => {router.push('/member/workoutSchedule')}}>workoutSchedule</Button>
-
-
+                        
                     </View>
                 </ImageBackground>
             </View>
