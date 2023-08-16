@@ -1,15 +1,22 @@
+import React from 'react';
 import styles from '../styles/home.style';
 
 import { View, Text, TouchableOpacity, SafeAreaView, ScrollView,Image, ImageBackground, Button} from 'react-native';
-import { useRouter } from 'expo-router';
+
 import { Route } from 'expo-router/build/Route';
+
+import { Stack, useRouter } from 'expo-router';
+import { PaperProvider } from 'react-native-paper';
+
+
 
 export default function Home() {
     const router = useRouter()
     return (
+        <PaperProvider>
         <SafeAreaView>
 
-                <View style={styles.container}>
+                <View style={styles.containerHome}>
                     <ImageBackground source={require('../assets/images/sign-in.png')}
                     
                     style={{
@@ -32,5 +39,7 @@ export default function Home() {
             
 
         </SafeAreaView>
+        </PaperProvider>
     )
 }
+
