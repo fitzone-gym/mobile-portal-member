@@ -10,13 +10,13 @@ export default function Message(){
         <SafeAreaView>
             <ScrollView style={styles.messageView}>
 
-                <View style={styles.MemberNavigationBar}>
+                {/* <View style={styles.MemberNavigationBar}>
                     <View style={styles.HomeNavigation}></View>
                     <View style={styles.MessageAndNotificationNavigation}>
                         <View style={styles.MessageBox}></View>
                         <View style={styles.NortificationBox}></View>
                     </View>
-                </View>
+                </View> */}
 
                 <Text style={styles.Heading}>Message</Text>
 

@@ -19,15 +19,7 @@ export default function appointment(){
 
                 <ImageBackground source={require('../../assets/images/appointment.png')} style={{width:'100%', height:155 }}>
 
-                    <View style={styles.MemberNavigationBar}>
-                        <View style={styles.HomeNavigation}></View>
 
-                        <View style={styles.MessageAndNotificationNavigation}>
-                            <View style={styles.MessageBox}></View>
-                            <View style={styles.NortificationBox}></View>
-                        </View>
-
-                    </View> 
 
                     <Text style={styles.appointmentHeading}>Appointment</Text>
                 </ImageBackground>

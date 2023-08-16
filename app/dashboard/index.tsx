@@ -28,7 +28,7 @@ export default function Dashboard() {
 
 
 
-          <View style={styles.MemberNavigationBar}>
+          {/* <View style={styles.MemberNavigationBar}>
 
             <View style={styles.HomeNavigation}></View>
 
@@ -39,7 +39,7 @@ export default function Dashboard() {
 
             </View>
 
-          </View> 
+          </View>  */}
 
 
 

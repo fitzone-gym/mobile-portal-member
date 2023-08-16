@@ -17,7 +17,7 @@ export default function appointment(){
 
                 <ImageBackground source={require('../../assets/images/payment.png')} style={{width:'100%', height:155, marginBottom:10 }}>
 
-                    <View style={styles.MemberNavigationBar}>
+                    {/* <View style={styles.MemberNavigationBar}>
                         <View style={styles.HomeNavigation}></View>
 
                         <View style={styles.MessageAndNotificationNavigation}>
@@ -25,7 +25,7 @@ export default function appointment(){
                             <View style={styles.NortificationBox}></View>
                         </View>
 
-                    </View> 
+                    </View>  */}
 
                     <Text style={styles.paymentHeading}>Payments</Text>
                 </ImageBackground>
