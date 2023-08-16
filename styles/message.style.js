@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
         marginLeft:13,
         marginTop:20,
         backgroundColor:'#ffffff',
+        flexDirection:'row',
     },
 
     activeUser:{},
@@ -64,6 +65,30 @@ const styles = StyleSheet.create({
     activeUserPic:{},
 
     activeUserName:{},
+
+    RecentChats:{
+
+        width:'93%',
+        marginLeft:13,
+        marginTop:25,
+        height:70,
+        flexDirection:'row'
+    },
+
+    RecentChatPic:{
+        backgroundColor:'red',
+        height:70,
+        width:70,
+    },
+
+    ChatNameAndMessage:{
+        flexDirection:'row'
+    },
+
+    ChatNameAndUnreadMessage:{
+        marginLeft:10,
+        marginTop:10,
+    },
 });
 
 export default styles;
