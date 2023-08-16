@@ -156,6 +156,31 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
     },
 
+    special_event_date:{ 
+        color:'#747474',
+        fontSize:15,
+        fontWeight:'bold',
+        marginLeft:15,
+        marginTop:10,
+    },
+
+    special_event_heading:{
+        textAlign:'center',
+        fontSize:18,
+        fontWeight:'bold',
+        marginTop:10,
+        color:'#FF5A5A',
+
+    },
+
+    special_event_body:{
+        color:'#ffffff',
+        fontSize:13,
+        // marginLeft:15,
+        marginTop:10,
+        textAlign:'center',
+    },
+
 
 
 });
