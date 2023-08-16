@@ -32,7 +32,7 @@ export default function trainerProfile(){
     
     useEffect(() => {
         axios
-            .get(`http://192.168.75.140:5400/ourTrainers/${localSearchParams.id}`)
+            .get(`http://localhost:5400/ourTrainers/${localSearchParams.id}`)
             .then((response) =>{
                 setTrainerDetails(response.data.data);
                 console.log(response.data.data)
@@ -57,20 +57,7 @@ export default function trainerProfile(){
                     resizeMode='cover'
                     style={styles.backgroundimage}>
                         <View style={styles.fullcontent}>
-                            <View style={styles.topicons}>
-                                <TouchableOpacity>
-                                    <Image
-                                        style={styles.sidebaricon}
-                                        source={require('../../assets/images/Sidebarimage.png')}
-                                    />
-                                </TouchableOpacity>
-                                <TouchableOpacity>
-                                    <Image
-                                        style={styles.bellicon}
-                                        source={require('../../assets/images/bell.png')}
-                                    />
-                                </TouchableOpacity>
-                            </View>
+
                                 <Text style={styles.text}>Trainer Profile</Text>
                                 <View style={styles.imageanddetails}>
                                     <Image
@@ -160,7 +147,11 @@ export default function trainerProfile(){
                                     </View>
 
 
-                                    <Button style={styles.startedbutton}  mode="contained" onPress={() => {router.push('/member/hireTrainer') }} textColor='#FFFFFF'>
+                                    <Button style={styles.startedbutton}  mode="contained" onPress={() => {router.push
+                                        ({
+                                            pathname:"member/hireTrainer", 
+                                            params:{id:trainerDetails?.id}
+                                            }) }} textColor='#FFFFFF'>
                                         Get Started
                                     </Button>
 

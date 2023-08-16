@@ -22,20 +22,7 @@ export default function workoutSchedule(){
                             }
                             resizeMode='cover'
                             style={styles.topcontainerimage}>
-                                <View style={styles.topicons}>
-                                    <TouchableOpacity>
-                                        <Image
-                                            style={styles.sidebaricon}
-                                            source={require('../../assets/images/Sidebarimage.png')}
-                                        />
-                                    </TouchableOpacity>
-                                    <TouchableOpacity>
-                                        <Image
-                                            style={styles.bellicon}
-                                            source={require('../../assets/images/bell.png')}
-                                        />
-                                    </TouchableOpacity>
-                                </View>
+
                                 <Text style={styles.text}>Workout schedule</Text>
                                 <View style={styles.medicheckup}>
                                     <View style={styles.smallbox}>

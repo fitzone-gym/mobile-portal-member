@@ -28,20 +28,7 @@ export default function memberDietPlan(){
                     }
                     resizeMode='cover'
                     style={styles.topcontainerimage}>
-                        <View style={styles.topicons}>
-                            <TouchableOpacity>
-                                <Image
-                                    style={styles.sidebaricon}
-                                    source={require('../../assets/images/Sidebarimage.png')}
-                                />
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <Image
-                                    style={styles.bellicon}
-                                    source={require('../../assets/images/bell.png')}
-                                />
-                            </TouchableOpacity>
-                        </View>
+
                         <Text style={styles.text}>Diet Plan</Text>
 
                         <View style={styles.textboxcontent}>
@@ -98,29 +85,35 @@ export default function memberDietPlan(){
                         </View>
                         <View style={styles.smallbox}>
                             <Text style={styles.workingextext}>Water</Text>
-                            <Text style={styles.workingexyers}>20</Text>
-                            <Text style={styles.workingextext}>grams per day</Text>
+                            <Text style={styles.workingexyers}>3.7</Text>
+                            <Text style={styles.workingextext}>liters per day</Text>
                         </View>
                     </View>
 
                     <View >
                         <Text style={styles.topictext}>Breakfast</Text>
                         <View style={styles.textbox}>
-                            <Text style={styles.textboxtext}>premium annual package </Text>
+                            <Text style={styles.textboxtext}>Scrambled eggs with spinach and tomatoes</Text>
+                            <Text style={styles.textboxtext}>Whole-grain toast</Text>
+                            <Text style={styles.textboxtext}>Greek yogurt with berries</Text>
                         </View>
                     </View>
 
                     <View >
                         <Text style={styles.topictext}>Lunch</Text>
                         <View style={styles.textbox}>
-                            <Text style={styles.textboxtext}>premium annual package</Text>
+                            <Text style={styles.textboxtext}>Grilled chicken breast</Text>
+                            <Text style={styles.textboxtext}>Quinoa salad with mixed vegetables (bell peppers, cucumbers, carrots)</Text>
+                            <Text style={styles.textboxtext}>Mixed greens with olive oil and balsamic vinegar dressing</Text>
                         </View>
                     </View>
 
                     <View >
                         <Text style={styles.topictext}>Dinner</Text>
                         <View style={styles.textbox}>
-                            <Text style={styles.textboxtext}>premium annual package</Text>
+                            <Text style={styles.textboxtext}>Baked salmon</Text>
+                            <Text style={styles.textboxtext}>Steamed broccoli</Text>
+                            <Text style={styles.textboxtext}>Sweet potato</Text>
                         </View>
                     </View>
 
@@ -129,6 +122,7 @@ export default function memberDietPlan(){
                         <View style={styles.textbox}>
                             <Text style={styles.textboxtext}>MonsterPower high protine supplement - 10g per day</Text>
                             <Text style={styles.textboxtext}>C4 5g per every work out days -  30 min before start workout</Text>
+                            <Text style={styles.textboxtext}>Whey Protein</Text>
                         </View>
                     </View>
                 </View>

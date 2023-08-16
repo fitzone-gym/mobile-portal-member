@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     fontWeight: 'normal', 
     },
 
-    button: {
+    updatebutton: {
     width: 250, 
     height: 50,
     marginBottom: 20,

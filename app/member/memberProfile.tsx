@@ -26,25 +26,12 @@ export default function memberProfile(){
                     resizeMode='cover'
                     style={styles.backgroundimage}>
                         <View style={styles.fullcontent}>
-                            <View style={styles.topicons}>
-                                <TouchableOpacity>
-                                    <Image
-                                        style={styles.sidebaricon}
-                                        source={require('../../assets/images/Sidebarimage.png')}
-                                    />
-                                </TouchableOpacity>
-                                <TouchableOpacity>
-                                    <Image
-                                        style={styles.bellicon}
-                                        source={require('../../assets/images/bell.png')}
-                                    />
-                                </TouchableOpacity>
-                            </View>
+                            
                                 <Text style={styles.text}>My Profile</Text>
                                 <View style={styles.imageanddetails}>
                                     <Image
                                         style={styles.imagepicture}
-                                        source={require('../../assets/images/Member.jpg')}
+                                        source={require('../../assets/images/Punsara.jpg')}
                                         resizeMode='cover'
                                     />
                                     <View style={styles.basicdetails}>
@@ -56,11 +43,11 @@ export default function memberProfile(){
                                             <Text style={styles.labelofbasicinfo}>Email</Text>
                                         </View>
                                         <View>
-                                            <Text style={styles.basicinfo}>Anuradha Perera</Text>
-                                            <Text style={styles.basicinfo}>29</Text>
+                                            <Text style={styles.basicinfo}>Punsara Deshan</Text>
+                                            <Text style={styles.basicinfo}>25</Text>
                                             <Text style={styles.basicinfo}>Male</Text>
-                                            <Text style={styles.basicinfo}>Mobile No</Text>
-                                            <Text style={styles.basicinfo}>anuradhaperera@gmail.com</Text>
+                                            <Text style={styles.basicinfo}>0717591952</Text>
+                                            <Text style={styles.basicinfo}>punsaradeshana@gmail.com</Text>
                                         </View>
                                     </View>
 
@@ -127,7 +114,7 @@ export default function memberProfile(){
                                 <View >
                                         <Text style={styles.topictext}>My package</Text>
                                         <View style={styles.textbox}>
-                                            <Text style={styles.packagedetails}>premium annual package</Text>
+                                            <Text style={styles.packagedetails}>Premium annual package</Text>
                                             <Text style={styles.packagedetails}>    3 Full body messages remaining</Text>
                                             <Text style={styles.packagedetails}>    3 foot messages remaining</Text>
                                             <Text style={styles.packagedetails}>    4 steam spa remaining</Text>
@@ -138,16 +125,17 @@ export default function memberProfile(){
                                 <View style={styles.trainerimage}>
                                     <Text style={styles.topictext}>My Trainer</Text>
                                     <TouchableOpacity onPress={() => {
-                                        router.push('/member/trainerProfile')
+                                        router.push('/member/trainerProfile?id=10005')
                                     }}>
                                     <Image
                                             style={styles.imagepicture}
-                                            source={require('../../assets/images/Trainer.jpg')}
+                                            // source={require('../../assets/images/Trainer.jpg')}
+                                            source={{ uri:"https://stylioo.blob.core.windows.net/images/Devin.jpg"}}
                                             resizeMode='cover'
                                     />
                                     </TouchableOpacity>
                                     <Button style={styles.button} mode="contained" onPress={() => {
-                                                                router.push('/member/trainerProfile')
+                                                                router.push('/member/trainerProfile?id=10005')
                                                             }}>
                                         View details
                                     </Button>
