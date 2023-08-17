@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Card, PaperProvider} from 'react-native-paper';
 
 import axios from "axios";
+import baseUrl from '../../baseUrl';
 
 type TrainerType = {
     id:string
@@ -32,7 +33,7 @@ export default function trainerProfile(){
     
     useEffect(() => {
         axios
-            .get(`http://localhost:5400/ourTrainers/${localSearchParams.id}`)
+            .get(`${baseUrl}/ourTrainers/${localSearchParams.id}`)
             .then((response) =>{
                 setTrainerDetails(response.data.data);
                 console.log(response.data.data)

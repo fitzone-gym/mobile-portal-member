@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
         position:'absolute',
         borderRadius:20,
         marginBottom:50,
-        top:'50%',
+        top:'45%',
         left:'5%',
         opacity:0.7,
 
@@ -191,6 +191,20 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         marginTop:20,
     },
+    button: {
+        width: 250, 
+        height: 50,
+        // marginBottom: 20,
+        backgroundColor: '#E54646',   
+        borderRadius: 30,
+        alignItems: 'center',
+        justifyContent: 'center',
+        },
+    
+        titleStyle:{
+            fontSize: 20,
+            color: 'white',
+        },
 
 
 

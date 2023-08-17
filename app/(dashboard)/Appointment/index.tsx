@@ -1,4 +1,4 @@
-import styles from "../../styles/appointment.style";
+import styles from "../../../styles/appointment.style";
 
 import {View, TouchableOpacity, SafeAreaView, ImageBackground, Text, Image, ScrollView} from "react-native";
 
@@ -6,7 +6,7 @@ import {View, TouchableOpacity, SafeAreaView, ImageBackground, Text, Image, Scro
 import * as React from "react";
 import { useRouter } from "expo-router";
 import{Route} from "expo-router/build/Route";
-import CalendarScreen from "../../components/CalendarScreen";
+import CalendarScreen from "../../../components/CalendarScreen";
 
 
 export default function appointment(){
@@ -17,7 +17,7 @@ export default function appointment(){
         <SafeAreaView style={styles.appointmentSafeArea}>
             <ScrollView>
 
-                <ImageBackground source={require('../../assets/images/appointment.png')} style={{width:'100%', height:155 }}>
+                <ImageBackground source={require('../../../assets/images/appointment.png')} style={{width:'100%', height:155 }}>
 
 
 

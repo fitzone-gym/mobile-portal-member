@@ -8,6 +8,7 @@ import styles from '../../styles/signup.style';
 
 
 import axios from 'axios';
+import baseUrl from '../../baseUrl';
 // import CheckBox from '@react-native-community/checkbox';
 
 //chat gpt function
@@ -56,7 +57,7 @@ const Registration:React.FC = () =>{
         // further validation can be added, like email format or password complexity checks
         try{
             console.log(password);
-            await axios.post("http://localhost:5400/auth/register",{
+            await axios.post(`${baseUrl}/auth/register`,{
                 first_name:first_name, 
                 last_name:last_name, 
                 email:email, 
@@ -150,7 +151,7 @@ const Registration:React.FC = () =>{
                         
                         <View style={styles.underTxt}>
 
-                            <Button title='Registration' onPress={handleSubmit} style={styles.button} textStyle={styles.titleStyle}/>
+                            <TouchableOpacity onPress={handleSubmit} style={styles.button}><Text style={styles.titleStyle}>Registration</Text></TouchableOpacity>
                             <View style={{flexDirection:'row'}}>
                                 <Text style={styles.RegisterToSignIn}>Already have an account?</Text>
                                 <TouchableOpacity onPress={()=>{router.push('/sign-up')}}><Text style={styles.pwtxt}>Sign in</Text></TouchableOpacity>

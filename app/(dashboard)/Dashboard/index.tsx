@@ -1,4 +1,4 @@
-import styles from "../../styles/dashboard.style";
+import styles from "../../../styles/dashboard.style";
 
 import {View, TouchableOpacity, SafeAreaView, ImageBackground, ScrollView} from 'react-native';
 
@@ -10,6 +10,7 @@ import { useRouter } from 'expo-router';
 import { Route } from 'expo-router/build/Route';
 
 import { Avatar, Button, Card, Text } from 'react-native-paper';
+import { Image } from "react-native";
 
 
 
@@ -20,7 +21,7 @@ export default function Dashboard() {
         <SafeAreaView>
           <ScrollView>
           <View style={styles.MainContainer}>
-            <ImageBackground source={require('../../assets/images/member-dashboard.png')}
+            <ImageBackground source={require('../../../assets/images/member-dashboard.png')}
                                 style={{
                         width: '100%',
                         height: "100%",
@@ -45,10 +46,16 @@ export default function Dashboard() {
 
           <View style={styles.HeadMemberProfileBar}>
 
-            <View style={styles.MemberProfilePic}></View>
+              <Image
+              style={styles.MemberProfilePic}
+              resizeMode="cover"
+              source={{
+                uri: 'https://stylioo.blob.core.windows.net/images/Punsara.jpg'
+              }}
+              />
             <View style={styles.WelcomeNameBar}>
               <Text style={styles.welcome}>Welcome</Text>
-              <Text style={styles.name}>Anuradha Perera</Text>
+              <Text style={styles.name}>Punsara Deshan</Text>
             </View>
 
           </View>

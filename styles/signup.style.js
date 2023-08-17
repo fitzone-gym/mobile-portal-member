@@ -80,6 +80,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     backgroundColor: '#E54646',   
     borderRadius: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
     },
 
     titleStyle:{

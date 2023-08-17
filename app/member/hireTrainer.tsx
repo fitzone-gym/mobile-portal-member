@@ -15,6 +15,7 @@ import styles from "../../styles/hireTrainer.style";
 import { Button } from "react-native-paper";
 
 import axios from "axios";
+import baseUrl from "../../baseUrl";
 
 type TrainerType = {
     id:string
@@ -39,7 +40,7 @@ export default function trainerProfile(){
   
   useEffect(() => {
       axios
-          .get(`http://localhost:5400/ourTrainers/${localSearchParams.id}`)
+          .get(`${baseUrl}/ourTrainers/${localSearchParams.id}`)
           .then((response) =>{
               setTrainerDetails(response.data.data);
               console.log(response.data.data)
