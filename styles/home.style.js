@@ -65,17 +65,19 @@ const styles = StyleSheet.create({
         backgroundColor: '#1E1E1E',
         flexWrap: 'wrap',
         minHeight: 550,
+        
     },
 
     trainercards:{
         backgroundColor:'#222222',
         height:158,
-        width: 170,
+        width: 150,
         margin: 10,
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
+        marginLeft:20,
     },
 
     trainerimage:{

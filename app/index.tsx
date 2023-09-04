@@ -22,7 +22,7 @@ export default function Home() {
                     
                     style={{
                         width: '100%',
-                        height: 700,
+                        height: 800,
                     }}/>
 
                     <View style={styles.SignInBox}>

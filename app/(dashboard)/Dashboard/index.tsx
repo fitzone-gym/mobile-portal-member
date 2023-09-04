@@ -67,6 +67,9 @@ export default function Dashboard() {
 
           <View style={styles.specialAnnouncementAndDateBox}>
             <View style={styles.specialAnnouncements}>
+            <Text style={styles.special_event_date}>29th Aug 2023</Text>
+                    <Text style={styles.special_event_heading}>New Zumba Class</Text>
+                    <Text style={styles.special_event_body}>Starting 29 th July on ward. Zumba class for all age members. From begin to end. Conducting by highly qualified zumba masters. </Text>
               
             </View>
             <View style={styles.DateBox}>

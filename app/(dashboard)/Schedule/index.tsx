@@ -70,6 +70,31 @@ export default function workoutSchedule(){
                                     <Text style={styles.repcount}>12 reps</Text>
                                         
                                     </View>
+
+                                    <View style={styles.textbox}>
+                                    <Text style={styles.item}>Dumbblee Pullover</Text>
+                                    <Text style={styles.setcount}>1 set</Text>
+                                    <Text style={styles.repcount}>12 reps</Text>
+                                        
+                                    </View>
+                                    <View style={styles.textbox}>
+                                    <Text style={styles.item}>Dumbblee Press</Text>
+                                    <Text style={styles.setcount}>1 set</Text>
+                                    <Text style={styles.repcount}>12 reps</Text>
+                                        
+                                    </View>
+                                    <View style={styles.textbox}>
+                                    <Text style={styles.item}>Chest Press</Text>
+                                    <Text style={styles.setcount}>1 set</Text>
+                                    <Text style={styles.repcount}>12 reps</Text>
+                                        
+                                    </View>
+                                    <View style={styles.textbox}>
+                                    <Text style={styles.item}>Sholder Press</Text>
+                                    <Text style={styles.setcount}>1 set</Text>
+                                    <Text style={styles.repcount}>12 reps</Text>
+                                        
+                                    </View>
                             </View>
 
                         </View>
