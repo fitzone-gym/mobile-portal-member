@@ -154,7 +154,7 @@ const Registration:React.FC = () =>{
                             <TouchableOpacity onPress={handleSubmit} style={styles.button}><Text style={styles.titleStyle}>Registration</Text></TouchableOpacity>
                             <View style={{flexDirection:'row'}}>
                                 <Text style={styles.RegisterToSignIn}>Already have an account?</Text>
-                                <TouchableOpacity onPress={()=>{router.push('/sign-up')}}><Text style={styles.pwtxt}>Sign in</Text></TouchableOpacity>
+                                <TouchableOpacity onPress={()=>{router.push('/sign-in')}}><Text style={styles.pwtxt}>Sign in</Text></TouchableOpacity>
                             </View>
 
                         </View>

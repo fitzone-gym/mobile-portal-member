@@ -15,6 +15,7 @@ const LoginScreen: React.FC =() => {
 
     const handleLogin = async () =>{
         //simulating a simple login logic
+
         if(email === '' || password === ''){
             setError("Invalid Username or Password");
             alert("Invalid Username or Password")
@@ -95,6 +96,7 @@ const LoginScreen: React.FC =() => {
                             >
                                 <Text style={styles.btnTxt}>Sign in</Text>
                             </TouchableOpacity>
+                            
                         </View>
                     </ImageBackground>
                 </View>
