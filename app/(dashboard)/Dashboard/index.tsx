@@ -81,9 +81,9 @@ export default function Dashboard() {
               
             </View>
             <View style={styles.DateBox}>
-              <Text style={styles.Date}>29</Text>
-              <Text style={styles.Month}>July</Text>
-              <Text style={styles.Year}>2023</Text>
+              <Text style={styles.Date}>{new Date().getDate()}</Text>
+              <Text style={styles.Month}>{new Intl.DateTimeFormat('en-US',{month:'long'}).format(new Date())}</Text>
+              <Text style={styles.Year}>{new Date().getFullYear()}</Text>
             </View>
           </View>
 
