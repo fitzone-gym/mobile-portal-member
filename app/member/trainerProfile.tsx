@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Card, PaperProvider} from 'react-native-paper';
 
 import axios from "axios";
-import baseUrl from '../../baseUrl';
+import baseUrl from '../../axios';
 
 type TrainerType = {
     id:string

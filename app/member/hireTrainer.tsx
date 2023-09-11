@@ -15,7 +15,7 @@ import styles from "../../styles/hireTrainer.style";
 import { Button } from "react-native-paper";
 
 import axios from "axios";
-import baseUrl from "../../baseUrl";
+import baseUrl from "../../axios";
 
 type TrainerType = {
     id:string

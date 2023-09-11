@@ -7,7 +7,7 @@ import React, {useEffect, useState} from 'react';
 
 import axios from "axios";
 
-import baseUrl from '../../../baseUrl';
+import baseUrl from '../../../axios';
 
 interface Trainer{
     id:string;
