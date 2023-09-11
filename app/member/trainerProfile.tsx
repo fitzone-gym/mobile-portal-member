@@ -6,8 +6,8 @@ import { Stack, useRouter, useLocalSearchParams } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import { Button, Card, PaperProvider} from 'react-native-paper';
 
-import axios from "axios";
-import baseUrl from '../../baseUrl';
+import axios from "../../axios";
+// import baseUrl from '../../axios';
 
 type TrainerType = {
     id:string
@@ -21,6 +21,7 @@ type TrainerType = {
     phone_no:number
     email:string
     gender:string
+    review:string
 }
 
 
@@ -33,7 +34,7 @@ export default function trainerProfile(){
     
     useEffect(() => {
         axios
-            .get(`${baseUrl}/ourTrainers/${localSearchParams.id}`)
+            .get(`/ourTrainers/${localSearchParams.id}`)
             .then((response) =>{
                 setTrainerDetails(response.data.data);
                 console.log(response.data.data)
@@ -121,10 +122,7 @@ export default function trainerProfile(){
                                             <Card  style={styles.newtextbox}>
                                                 <Card.Content>
                                                 <Text style={styles.textboxtexttitle}>Kumara Dharmasiri</Text>
-                                                <Text style={styles.textboxtext}>Wow, I can't thank my gym trainer enough for the incredible progress I've made! Their expertise,
-                                                                        motivation, and personalized workout plans have truly transformed my fitness journey.
-                                                                        I feel stronger, healthier, and more confident than ever before.  Highly recommend this amazing
-                                                                        gym trainer to anyone looking to achieve their fitness goals and beyond!</Text>
+                                                <Text style={styles.textboxtext}>{trainerDetails?.review}</Text>
                                                 </Card.Content>
                                             </Card>
 

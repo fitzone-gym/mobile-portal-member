@@ -5,9 +5,9 @@ import { View, Text, Image, SafeAreaView, ScrollView, ImageBackground, Touchable
 import { Stack, useRouter } from 'expo-router';
 import React, {useEffect, useState} from 'react';
 
-import axios from "axios";
+import axios from "../../../axios";
 
-import baseUrl from '../../../baseUrl';
+// import baseUrl from '../../../axios';
 
 interface Trainer{
     id:string;
@@ -23,7 +23,7 @@ export default function Home() {
 
     useEffect(() => {
         axios
-            .get(`${baseUrl}/ourTrainers`)
+            .get("/ourTrainers")
             .then((response) => {
                 setTrainerDetails(response.data.data);
                 console.log(trainerDetails)

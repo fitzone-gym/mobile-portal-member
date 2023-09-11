@@ -3,7 +3,7 @@ import { View, Text,TextInput, Image, SafeAreaView,ImageBackground,TouchableOpac
 import { Stack , useRouter} from 'expo-router';
 import React,{useState} from 'react';
 import axios from 'axios';
-import baseUrl from '../../baseUrl';
+import baseUrl from '../../axios';
 // import Icon from 'react-native-paper/lib/typescript/src/components/Icon';
 
 const LoginScreen: React.FC =() => {
