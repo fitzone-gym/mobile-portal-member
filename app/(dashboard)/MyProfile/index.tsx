@@ -3,13 +3,39 @@ import styles from '../../../styles/memberProfile.style';
 import { View, Text, Image, SafeAreaView, ScrollView, ImageBackground, TouchableOpacity } from 'react-native';
 
 import { Stack, useRouter } from 'expo-router';
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Card, PaperProvider } from 'react-native-paper';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { removeUser } from '../../redux/features/userSlice';
 
 
 export default function memberProfile(){
 
+    const user = useAppSelector(state => state.user)
+    const dispatch = useAppDispatch()
+
+    // currentUser.id -> axios.get(/profie/:id) --> myData
+    
+    // const [currentUser, setCurrentUser] = useState<any>()
+    
+    // const getMyData = async () => {
+    //     const res = axios.get(`${baseUrl}/myprofile/${user.id}`)
+    //     if(res.data.success) {
+    //         setCurrentUser(res.data.data)
+    //     }
+    // }
+
+    // useEffect(() => {
+    //     getMyData()
+    // }, [])
+        
     const router = useRouter()
+
+
+    const handleSignout = () => {
+        dispatch(removeUser())
+        router.push('/sign-in')
+    }
 
     return(
         <PaperProvider>
@@ -43,7 +69,7 @@ export default function memberProfile(){
                                             <Text style={styles.labelofbasicinfo}>Email</Text>
                                         </View>
                                         <View>
-                                            <Text style={styles.basicinfo}>Punsara Deshan</Text>
+                                            <Text style={styles.basicinfo}>{user.first_name}</Text>
                                             <Text style={styles.basicinfo}>25</Text>
                                             <Text style={styles.basicinfo}>Male</Text>
                                             <Text style={styles.basicinfo}>0717591952</Text>
@@ -53,6 +79,9 @@ export default function memberProfile(){
 
                                         <Button style={styles.editbutton} icon="pencil" mode="outlined" onPress={() => { router.push('/member/memberDetailUpdate')}} textColor='#E54646'>
                                             Edit Profile
+                                        </Button>
+                                        <Button style={styles.editbutton} icon="signout" mode="outlined" onPress={handleSignout} textColor='#E54646'>
+                                            Sign Out
                                         </Button>
 
 

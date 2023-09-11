@@ -11,11 +11,19 @@ import { Route } from 'expo-router/build/Route';
 
 import { Avatar, Button, Card, Text } from 'react-native-paper';
 import { Image } from "react-native";
+import { useAppSelector } from "../../redux/store";
 
 
 
 export default function Dashboard() {
   const router = useRouter();
+
+  const currentUser = useAppSelector(state => state.user)
+
+  console.log(currentUser);
+  
+
+
     return (
       <PaperProvider>
         <SafeAreaView>
@@ -55,7 +63,7 @@ export default function Dashboard() {
               />
             <View style={styles.WelcomeNameBar}>
               <Text style={styles.welcome}>Welcome</Text>
-              <Text style={styles.name}>Punsara Deshan</Text>
+              <Text style={styles.name}>{currentUser.first_name}</Text>
             </View>
 
           </View>

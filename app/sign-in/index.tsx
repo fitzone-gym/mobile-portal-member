@@ -4,9 +4,26 @@ import { Stack , useRouter} from 'expo-router';
 import React,{useState} from 'react';
 import axios from 'axios';
 import baseUrl from '../../baseUrl';
+import {useSelector, useDispatch} from 'react-redux';
+import {Provider} from 'react-redux';
+import store, { pstore, useAppDispatch } from '../redux/store';
+import { setUser } from '../redux/features/userSlice';
+import { PersistGate } from 'redux-persist/integration/react';
 // import Icon from 'react-native-paper/lib/typescript/src/components/Icon';
 
+
 const LoginScreen: React.FC =() => {
+    return <Provider store={store}>
+            <PersistGate loading={null} persistor={pstore}>
+            <Login />
+             </PersistGate>
+
+    // </Provider>;
+
+}
+const Login: React.FC =() => {   
+
+    const dispatch = useAppDispatch()
 
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
@@ -24,23 +41,42 @@ const LoginScreen: React.FC =() => {
             setError("");
             
             try {
-                const response = await axios.post(`${baseUrl}/auth/login`, {
+                axios.post(`${baseUrl}/auth/login`, {
                     email: email,
                     password: password
+                }).then((response)=>{
+                    // console.log(response.data.result[0].id)
+                    // console.log(response.data)
+                    if(response.data.success){
+                        const currentUser = response.data.data;
+                        console.log(currentUser);  
+
+                        dispatch(setUser({
+                            id:currentUser.id,
+                            first_name: currentUser.first_name,
+                            image: currentUser.image
+                        }))
+                        // dispatch(setUser(currentUser.id))
+                        router.push('(dashboard)/Dashboard')
+                               // if cookie is set else add JWT token sessoin, local storage 
+                               // add to the session
+                               // state application state
+                               //define the route                       
+                            }
                 })
                 
-                console.log(response.data);
+                // console.log(response.data);
                 
 
-                    if(response.data.success){
-                       const currentUser = response.data.data;
-                       console.log(currentUser);  
-                        router.push('(dashboard)/Dashboard')
-                       // if cookie is set else add JWT token sessoin, local storage 
-                       // add to the session
-                       // state application state
-                       //define the route                       
-                    }
+                //     if(response.data.success){
+                //        const currentUser = response.data.data;
+                //        console.log(currentUser);  
+                //         router.push('(dashboard)/Dashboard')
+                //        // if cookie is set else add JWT token sessoin, local storage 
+                //        // add to the session
+                //        // state application state
+                //        //define the route                       
+                //     }
             }catch(err){
                 console.log(err);  
             }
