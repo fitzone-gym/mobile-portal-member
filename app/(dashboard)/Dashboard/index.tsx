@@ -63,7 +63,7 @@ export default function Dashboard() {
               />
             <View style={styles.WelcomeNameBar}>
               <Text style={styles.welcome}>Welcome</Text>
-              <Text style={styles.name}>{currentUser.first_name}</Text>
+              <Text style={styles.name}>{currentUser.first_name}&nbsp;{currentUser.last_name}</Text>
             </View>
 
           </View>

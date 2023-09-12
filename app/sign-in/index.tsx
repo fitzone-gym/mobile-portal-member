@@ -2,8 +2,8 @@ import styles from '../../styles/signin.style';
 import { View, Text,TextInput, Image, SafeAreaView,ImageBackground,TouchableOpacity,Button} from 'react-native';
 import { Stack , useRouter} from 'expo-router';
 import React,{useState} from 'react';
-import axios from 'axios';
-import baseUrl from '../../axios';
+import axios from '../../axios';
+// import baseUrl from '../../axios';
 import {useSelector, useDispatch} from 'react-redux';
 import {Provider} from 'react-redux';
 import store, { pstore, useAppDispatch } from '../redux/store';
@@ -41,7 +41,7 @@ const Login: React.FC =() => {
             setError("");
             
             try {
-                axios.post(`${baseUrl}/auth/login`, {
+                axios.post('/auth/login', {
                     email: email,
                     password: password
                 }).then((response)=>{
@@ -52,9 +52,10 @@ const Login: React.FC =() => {
                         console.log(currentUser);  
 
                         dispatch(setUser({
-                            id:currentUser.id,
+                            id: currentUser.id,
                             first_name: currentUser.first_name,
-                            image: currentUser.image
+                            image: currentUser.image,
+                            last_name: ''
                         }))
                         // dispatch(setUser(currentUser.id))
                         router.push('(dashboard)/Dashboard')
