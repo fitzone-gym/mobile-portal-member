@@ -3,6 +3,8 @@ import styles from "../../../styles/dashboard.style";
 import {View, TouchableOpacity, SafeAreaView, ImageBackground, ScrollView} from 'react-native';
 
 import * as React from 'react';
+import { useEffect,useState } from "react";
+import {Stack, useLocalSearchParams } from "expo-router";
 import { AppRegistry } from 'react-native';
 import { PaperProvider } from 'react-native-paper';
 
@@ -11,11 +13,32 @@ import { Route } from 'expo-router/build/Route';
 
 import { Avatar, Button, Card, Text } from 'react-native-paper';
 import { Image } from "react-native";
+import { useAppSelector } from "../../redux/store";
+import axios from "../../../axios";
 
 
 
 export default function Dashboard() {
   const router = useRouter();
+
+  const currentUser = useAppSelector(state => state.user)
+
+  const apiURL = "https://fitzone-api-98e9a005d7bf.herokuapp.com/memberDashboard/:id";
+
+  axios.post(apiURL, currentUser.id)
+  .then((Response) =>{
+    console.log('data send to the backend successfully', Response.data);
+    
+  })
+  .catch((error) => {
+    console.log('error sending data to the backend', error);
+
+  });
+
+  console.log(currentUser);
+  
+
+
     return (
       <PaperProvider>
         <SafeAreaView>
@@ -55,7 +78,7 @@ export default function Dashboard() {
               />
             <View style={styles.WelcomeNameBar}>
               <Text style={styles.welcome}>Welcome</Text>
-              <Text style={styles.name}>Punsara Deshan</Text>
+              <Text style={styles.name}>{currentUser.first_name}&nbsp; {currentUser.last_name}</Text>
             </View>
 
           </View>
@@ -73,9 +96,9 @@ export default function Dashboard() {
               
             </View>
             <View style={styles.DateBox}>
-              <Text style={styles.Date}>29</Text>
-              <Text style={styles.Month}>July</Text>
-              <Text style={styles.Year}>2023</Text>
+              <Text style={styles.Date}>{new Date().getDate()}</Text>
+              <Text style={styles.Month}>{new Intl.DateTimeFormat('en-US',{month:'long'}).format(new Date())}</Text>
+              <Text style={styles.Year}>{new Date().getFullYear()}</Text>
             </View>
           </View>
 
