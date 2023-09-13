@@ -3,6 +3,8 @@ import styles from "../../../styles/dashboard.style";
 import {View, TouchableOpacity, SafeAreaView, ImageBackground, ScrollView} from 'react-native';
 
 import * as React from 'react';
+import { useEffect,useState } from "react";
+import {Stack, useLocalSearchParams } from "expo-router";
 import { AppRegistry } from 'react-native';
 import { PaperProvider } from 'react-native-paper';
 
@@ -12,6 +14,7 @@ import { Route } from 'expo-router/build/Route';
 import { Avatar, Button, Card, Text } from 'react-native-paper';
 import { Image } from "react-native";
 import { useAppSelector } from "../../redux/store";
+import axios from "../../../axios";
 
 
 
@@ -19,6 +22,18 @@ export default function Dashboard() {
   const router = useRouter();
 
   const currentUser = useAppSelector(state => state.user)
+
+  const apiURL = "https://fitzone-api-98e9a005d7bf.herokuapp.com/memberDashboard/:id";
+
+  axios.post(apiURL, currentUser.id)
+  .then((Response) =>{
+    console.log('data send to the backend successfully', Response.data);
+    
+  })
+  .catch((error) => {
+    console.log('error sending data to the backend', error);
+
+  });
 
   console.log(currentUser);
   
