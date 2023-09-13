@@ -2,11 +2,51 @@ import styles from '../../../styles/workoutSchedule.style';
 
 import {ImageBackground, SafeAreaView, ScrollView, TouchableOpacity, View, Image, Text} from 'react-native'
 import { Stack, useRouter } from 'expo-router';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Button, Card, PaperProvider } from 'react-native-paper';
 
+import axios from "../../../axios";
+
+// import baseUrl from '../../../axios';
+import moment from 'moment';
+
+interface WorkoutSchedule{
+    exercise_id:number;
+    name:string;
+    sets:number;
+    reps:number;
+}
+
 export default function workoutSchedule(){
+
+    const [workoutSchedule, setworkoutSchedule] = useState<WorkoutSchedule[]>([]);
+
+    useEffect(() => {
+        axios
+            .get('/workoutSchedule')
+            .then((response) => {
+                setworkoutSchedule(response.data.data);
+                console.log(response.data.data)
+            })
+            .catch((error) => console.error(error));
+    }, []);
+
+
+
     const router = useRouter
+
+    const [currentTimeWithMoment, setcurrentTimeWithMoment] = useState('')
+
+    useEffect(() => {
+
+        const interval = setInterval(() => {
+            let timeMoment =moment().utcOffset('+05:30').format('hh:mm')            
+            setcurrentTimeWithMoment(timeMoment);
+        }, 1000);
+
+        return () => clearInterval(interval);
+
+    } , []);
 
     return(
         <PaperProvider>
@@ -27,12 +67,12 @@ export default function workoutSchedule(){
                                 <View style={styles.medicheckup}>
                                     <View style={styles.smallbox}>
                                         <Text style={styles.smallboxtext}>Today burn calories</Text>
-                                        <Text style={styles.smallboxbigNumber}>220</Text>
+                                        <Text style={styles.smallboxbigNumber}>2500</Text>
                                     </View>
 
                                     <View style={styles.smallbox}>
                                         <Text style={styles.smallboxtext}>Clock</Text>
-                                        <Text style={styles.smallboxbigNumber}>01 : 30</Text>
+                                        <Text style={styles.smallboxbigNumber}>{currentTimeWithMoment}</Text>
                                     </View>
                                 </View>
                             
@@ -49,52 +89,18 @@ export default function workoutSchedule(){
                             </View>
 
                             <View style={styles.workouts}>
+                                    {workoutSchedule.map((workout) =>(
+
+                                        <View style={styles.textbox}>
+                                        <Text style={styles.item}>{workout.name}</Text>
+                                        <Text style={styles.setcount}>{workout.sets} set</Text>
+                                        <Text style={styles.repcount}>{workout.reps} reps</Text>
+                                            
+                                        </View>
+
+                                    ))}
                                     
-                                    <View style={styles.textbox}>
-                                    <Text style={styles.item}>Scot</Text>
-                                    <Text style={styles.setcount}>1 set</Text>
-                                    <Text style={styles.repcount}>12 reps</Text>
-                                        
-                                    </View>
 
-                                    <View style={styles.textbox}>
-                                    <Text style={styles.item}>Leg press</Text>
-                                    <Text style={styles.setcount}>2 set</Text>
-                                    <Text style={styles.repcount}>10 reps</Text>
-                                        
-                                    </View>
-
-                                    <View style={styles.textbox}>
-                                    <Text style={styles.item}>Leg calf</Text>
-                                    <Text style={styles.setcount}>1 set</Text>
-                                    <Text style={styles.repcount}>12 reps</Text>
-                                        
-                                    </View>
-
-                                    <View style={styles.textbox}>
-                                    <Text style={styles.item}>Dumbblee Pullover</Text>
-                                    <Text style={styles.setcount}>1 set</Text>
-                                    <Text style={styles.repcount}>12 reps</Text>
-                                        
-                                    </View>
-                                    <View style={styles.textbox}>
-                                    <Text style={styles.item}>Dumbblee Press</Text>
-                                    <Text style={styles.setcount}>1 set</Text>
-                                    <Text style={styles.repcount}>12 reps</Text>
-                                        
-                                    </View>
-                                    <View style={styles.textbox}>
-                                    <Text style={styles.item}>Chest Press</Text>
-                                    <Text style={styles.setcount}>1 set</Text>
-                                    <Text style={styles.repcount}>12 reps</Text>
-                                        
-                                    </View>
-                                    <View style={styles.textbox}>
-                                    <Text style={styles.item}>Sholder Press</Text>
-                                    <Text style={styles.setcount}>1 set</Text>
-                                    <Text style={styles.repcount}>12 reps</Text>
-                                        
-                                    </View>
                             </View>
 
                         </View>

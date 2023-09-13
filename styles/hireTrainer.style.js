@@ -119,6 +119,10 @@ const styles = StyleSheet.create({
   trainerPackage: {
     marginBottom: 18,
   },
+  packageswithradiobutton:{
+    flexDirection:"row",
+  },
+
   packages: {
     backgroundColor: "#222222",
     marginBottom: 16,

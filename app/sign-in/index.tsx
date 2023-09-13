@@ -3,7 +3,7 @@ import { View, Text,TextInput, Image, SafeAreaView,ImageBackground,TouchableOpac
 import { Stack , useRouter} from 'expo-router';
 import React,{useState} from 'react';
 import axios from 'axios';
-import baseUrl from '../../baseUrl';
+import baseUrl from '../../axios';
 // import Icon from 'react-native-paper/lib/typescript/src/components/Icon';
 
 const LoginScreen: React.FC =() => {
@@ -22,6 +22,7 @@ const LoginScreen: React.FC =() => {
         else{
             setError("");
             
+            router.push('(dashboard)/Dashboard')
             try {
                 const response = await axios.post(`${baseUrl}/auth/login`, {
                     email: email,
@@ -34,7 +35,6 @@ const LoginScreen: React.FC =() => {
                     if(response.data.success){
                        const currentUser = response.data.data;
                        console.log(currentUser);  
-                        router.push('(dashboard)/Dashboard')
                        // if cookie is set else add JWT token sessoin, local storage 
                        // add to the session
                        // state application state

@@ -8,7 +8,7 @@ import styles from '../../styles/signup.style';
 
 
 import axios from 'axios';
-import baseUrl from '../../baseUrl';
+import baseUrl from '../../axios';
 // import CheckBox from '@react-native-community/checkbox';
 
 //chat gpt function
