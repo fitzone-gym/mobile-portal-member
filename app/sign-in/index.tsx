@@ -31,7 +31,7 @@ const Login: React.FC =() => {
 
 
     const handleLogin = async () =>{
-        //simulating a simple login logic
+        //simulating a simple login logic       
 
         if(email === '' || password === ''){
             setError("Invalid Username or Password");
@@ -56,7 +56,7 @@ const Login: React.FC =() => {
                             id: currentUser.id,
                             first_name: currentUser.first_name,
                             image: currentUser.image,
-                            last_name: ''
+                            last_name: currentUser.last_name
                         }))
                         // dispatch(setUser(currentUser.id))
                         router.push('(dashboard)/Dashboard')

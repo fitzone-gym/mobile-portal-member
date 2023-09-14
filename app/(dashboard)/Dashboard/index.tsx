@@ -23,17 +23,22 @@ export default function Dashboard() {
 
   const currentUser = useAppSelector(state => state.user)
 
-  const apiURL = "https://fitzone-api-98e9a005d7bf.herokuapp.com/memberDashboard/:id";
+  const fetchDietPlan = () => {
+    axios.get(`/memberDashboard/${currentUser.id}`)
+    // axios.post(`/memberDashboard/`, currentUser.id)
+    .then((Response) =>{
+      console.log('data send to the backend successfully', Response.data);
+      
+    })
+    .catch((error) => {
+      console.log('error sending data to the backend', error);
+  
+    });
+  }
 
-  axios.post(apiURL, currentUser.id)
-  .then((Response) =>{
-    console.log('data send to the backend successfully', Response.data);
-    
+  useEffect(() => {
+    fetchDietPlan()
   })
-  .catch((error) => {
-    console.log('error sending data to the backend', error);
-
-  });
 
   console.log(currentUser);
   
