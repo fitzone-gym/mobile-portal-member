@@ -120,10 +120,17 @@ const styles = StyleSheet.create({
     marginBottom: 18,
   },
   packageswithradiobutton:{
-    flexDirection:"row",
+    
+  },
+  radiobutton:{
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingRight:10,
+    paddingLeft:0,
   },
 
   packages: {
+    flexDirection:"row",
     backgroundColor: "#222222",
     marginBottom: 16,
     paddingTop: 15,
