@@ -2,9 +2,16 @@ import React from 'react';
 import { Drawer } from 'expo-router/drawer';
 
 import { FontAwesome5 } from '@expo/vector-icons';
+import { Provider } from 'react-redux';
+import store, { useAppDispatch } from '../redux/store';
+import { useRouter } from 'expo-router';
 
 export default function Layout() {
+
+    const router = useRouter()
+
     return (
+        <Provider store={store}>
         <Drawer screenOptions={{
             drawerStyle: {
                 paddingTop: 50,
@@ -82,5 +89,15 @@ export default function Layout() {
                 }}
             />
         </Drawer >
+        </Provider>
+
     )
 }
+
+// function isLoggedIn(): any {
+//         throw new Error('Function not implemented.');
+//     }
+// function appRouter(): any {
+//     throw new Error('Function not implemented.');
+// }
+
