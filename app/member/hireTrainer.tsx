@@ -13,8 +13,10 @@ import { Stack, useLocalSearchParams, useRouter } from "expo-router";
 // import Unorderedlist from "react-native-unordered-list";
 import styles from "../../styles/hireTrainer.style";
 import { Button, RadioButton } from "react-native-paper";
+import { CheckBox } from '@rneui/themed';
 
 import axios from "../../axios";
+// import CheckBox from "@react-native-community/checkbox";
 // import baseUrl from "../../axios";
 
 type TrainerType = {
@@ -32,7 +34,6 @@ type TrainerType = {
 }
 
 export default function trainerProfile(){
-
   const router = useRouter()
   const localSearchParams = useLocalSearchParams()
   const [checked, setChecked] = React.useState('first')
@@ -97,13 +98,16 @@ export default function trainerProfile(){
 
         <View style={styles.trainerPackage}>
           {/* single shedule */}
-          <View style={styles.packageswithradiobutton}>
-            <RadioButton
-              value="first"
-              status={ checked === 'first' ? 'checked' : 'unchecked' }
-              onPress={() => setChecked('first')}
-            />
-            <View style={styles.packages}>
+          <View style={styles.packages}>
+            <View style={styles.radiobutton}>
+              <RadioButton
+                value="first"
+                status={ checked === 'first' ? 'checked' : 'unchecked' }
+                onPress={() => setChecked('first')}
+              />
+            </View>
+            
+            <View style={styles.packageswithradiobutton}>
               <View>
                 <Text style={styles.packageHeading}>
                   1 Month package
@@ -118,6 +122,8 @@ export default function trainerProfile(){
                   <Text style={styles.detail}>
                     1 Full body massage<Text style={{ color: "#E54646" }}> | </Text>{" "}
                   </Text>
+                </Text>
+                <Text>
                   <Text style={styles.detail}>
                     1 Foot massage<Text style={{ color: "#E54646" }}> | </Text>{" "}
                   </Text>
@@ -129,7 +135,7 @@ export default function trainerProfile(){
                   </Text>
                 </Text>
               </View>
-          </View>
+            </View>
 
           </View>
           
@@ -143,13 +149,15 @@ export default function trainerProfile(){
 
 
           {/* single shedule */}
-          <View style={styles.packageswithradiobutton}>
-            <RadioButton
-              value="second"
-              status={ checked === 'second' ? 'checked' : 'unchecked' }
-              onPress={() => setChecked('second')}
-            />
-            <View style={styles.packages}>
+          <View style={styles.packages}>
+            <View style={styles.radiobutton}>
+              <RadioButton
+                value="second"
+                status={ checked === 'second' ? 'checked' : 'unchecked' }
+                onPress={() => setChecked('second')}
+              />
+            </View>
+            <View style={styles.packageswithradiobutton}>
               <View>
                 <Text style={styles.packageHeading}>
                   6 Month plan
@@ -164,12 +172,16 @@ export default function trainerProfile(){
                   <Text style={styles.detail}>
                     2 Full body massage<Text style={{ color: "#E54646" }}> | </Text>{" "}
                   </Text>
+                </Text>
+                <Text>
                   <Text style={styles.detail}>
                     3 foot massage<Text style={{ color: "#E54646" }}> | </Text>{" "}
                   </Text>
                   <Text style={styles.detail}>
                     3 steam spa<Text style={{ color: "#E54646" }}> | </Text>{" "}
                   </Text>
+                </Text>
+                <Text>
                   <Text style={styles.detail}>
                     Kitchen<Text style={{ color: "#E54646" }}> | </Text>{" "}
                   </Text>
@@ -182,13 +194,15 @@ export default function trainerProfile(){
           </View>
 
           {/* single shedule */}
-          <View style={styles.packageswithradiobutton}>
-            <RadioButton
-              value="Third"
-              status={ checked === 'Third' ? 'checked' : 'unchecked' }
-              onPress={() => setChecked('Third')}
-            />
-            <View style={styles.packages}>
+          <View style={styles.packages}>
+            <View style={styles.radiobutton}>
+              <RadioButton
+                value="Third"
+                status={ checked === 'Third' ? 'checked' : 'unchecked' }
+                onPress={() => setChecked('Third')}
+              />
+            </View>
+            <View style={styles.packageswithradiobutton}>
               <View>
                 <Text style={styles.packageHeading}>
                   Annual paln
@@ -203,12 +217,16 @@ export default function trainerProfile(){
                   <Text style={styles.detail}>
                     4 Full body massage <Text style={{ color: "#E54646" }}> | </Text>{" "}
                   </Text>
+                </Text>
+                <Text>
                   <Text style={styles.detail}>
                     5 foot massage <Text style={{ color: "#E54646" }}> | </Text>{" "}
                   </Text>
                   <Text style={styles.detail}>
                     5 steam spa <Text style={{ color: "#E54646" }}> | </Text>{" "}
                   </Text>
+                </Text>
+                <Text>
                   <Text style={styles.detail}>
                     Pool Pass <Text style={{ color: "#E54646" }}> | </Text>{" "}
                   </Text>
@@ -220,16 +238,6 @@ export default function trainerProfile(){
               </View>
             </View>
           </View>
-
-          <RadioButton
-            value="first"
-            status={ checked === 'first' ? 'checked' : 'unchecked' }
-            onPress={() => setChecked('first')}
-          />
-          <Text style={styles.detail}>Washing room </Text>
-
-
-
 
         </View>
       </ImageBackground>
@@ -243,7 +251,7 @@ export default function trainerProfile(){
           <Text style={styles.hireBtnText}>Hire Now</Text>
         </TouchableOpacity> */}
 
-        <Button style={styles.startedbutton}  mode="contained" onPress={() => {router.push('/member') }} textColor='#FFFFFF'>
+        <Button style={styles.startedbutton}  mode="contained" onPress={() => {router.push({pathname:'/member/memberpay', params:{id:trainerDetails?.id,package:checked}}) }} textColor='#FFFFFF'>
             Hire Now
         </Button>
       </View>
