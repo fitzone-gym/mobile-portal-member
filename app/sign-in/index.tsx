@@ -53,7 +53,7 @@ const Login: React.FC =() => {
                         console.log(currentUser);  
 
                         dispatch(setUser({
-                            id: currentUser.id,
+                            user_id: currentUser.user_id,
                             first_name: currentUser.first_name,
                             image: currentUser.image,
                             last_name: currentUser.last_name

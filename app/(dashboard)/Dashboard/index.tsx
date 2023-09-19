@@ -16,15 +16,33 @@ import { Image } from "react-native";
 import { useAppSelector } from "../../redux/store";
 import axios from "../../../axios";
 
+type DashboardType = {
+  calories_per_day: number;
+  steps_per_day: number;
+  water_per_day: number;
+}
+
 
 
 export default function Dashboard() {
   const router = useRouter();
+  const localSearchParams = useLocalSearchParams();
+  const [dashboardDetails, setdashboardDetails] = useState<DashboardType>();
+
+  useEffect(() => {
+    axios
+        .get(`/memberDashboard/${localSearchParams.user_id}`)
+        .then((response) =>{
+            setdashboardDetails(response.data.data);
+            console.log(response.data.data)
+        })
+        .catch((error) => console.error(error))
+}, []);
 
   const currentUser = useAppSelector(state => state.user)
 
   const fetchDietPlan = () => {
-    axios.get(`/memberDashboard/${currentUser.id}`)
+    axios.get(`/memberDashboard/${currentUser.user_id}`)
     // axios.post(`/memberDashboard/`, currentUser.id)
     .then((Response) =>{
       console.log('data send to the backend successfully', Response.data);
@@ -127,7 +145,7 @@ export default function Dashboard() {
 
             <View style={styles.caloriesPerDayToDay}>
               <Text style={styles.caloriesPerDay}>Calories Per Day</Text>
-              <Text style={styles.caloriesCount}>2000</Text>
+              <Text style={styles.caloriesCount}>{dashboardDetails?.calories_per_day}</Text>
               <Text style={styles.calories}>Calories</Text>
             </View>
 
@@ -142,13 +160,13 @@ export default function Dashboard() {
 
             <View style={styles.StepsPerToday}>
               <Text style={styles.caloriesPerDay}>Steps Per Day</Text>
-              <Text style={styles.caloriesCount}>3000</Text>
+              <Text style={styles.caloriesCount}>{dashboardDetails?.steps_per_day}</Text>
               <Text style={styles.calories}>Steps</Text>
             </View>
 
             <View style={styles.waterPerDay}>
               <Text style={styles.caloriesPerDay}>Water Per Day</Text>
-              <Text style={styles.caloriesCount}>3</Text>
+              <Text style={styles.caloriesCount}>{dashboardDetails?.water_per_day}</Text>
               <Text style={styles.calories}>Liter</Text>
             </View>
           </View>
