@@ -55,7 +55,7 @@ export default function Dashboard() {
     });
   }
 
-  axios.post(apiURL, currentUser.id)
+  axios.post(`/memberDashboard/${currentUser.user_id}`, currentUser.user_id)
   .then((Response) =>{
     console.log('data send to the backend successfully', Response.data);
     
