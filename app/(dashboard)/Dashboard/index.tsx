@@ -4,7 +4,7 @@ import {View, TouchableOpacity, SafeAreaView, ImageBackground, ScrollView} from 
 
 import * as React from 'react';
 import { useEffect,useState } from "react";
-import {Stack, useLocalSearchParams } from "expo-router";
+import {Stack} from "expo-router";
 import { AppRegistry } from 'react-native';
 import { PaperProvider } from 'react-native-paper';
 
@@ -16,6 +16,12 @@ import { Image } from "react-native";
 import { useAppSelector } from "../../redux/store";
 import axios from "../../../axios";
 
+type diet_plan_dashboard = {
+  calories_per_day: number;
+  steps_per_day: number;
+  water_per_day: number;
+}
+
 
 
 export default function Dashboard() {
@@ -23,7 +29,31 @@ export default function Dashboard() {
 
   const currentUser = useAppSelector(state => state.user)
 
-  const apiURL = "https://fitzone-api-98e9a005d7bf.herokuapp.com/memberDashboard/:id";
+  const[diet_paln_dashboard_details,set_diet_paln_dashboard_details] = useState<diet_plan_dashboard>();
+
+  useEffect(() => {
+    axios.get(`/memberDashboard/${currentUser.user_id}`)
+    .then((Response)=>{
+      set_diet_paln_dashboard_details(Response.data.data);
+      console.log(Response.data.data)
+    })
+    .catch((error)=> console.log(error))
+  }, []);
+
+
+
+  const fetchDietPlan = () => {
+    axios.get(`/memberDashboard/${currentUser.user_id}`)
+    // axios.post(`/memberDashboard/`, currentUser.id)
+    .then((Response) =>{
+      console.log('data send to the backend successfully', Response.data);
+      
+    })
+    .catch((error) => {
+      console.log('error sending data to the backend', error);
+  
+    });
+  }
 
   axios.post(apiURL, currentUser.id)
   .then((Response) =>{
@@ -122,7 +152,7 @@ export default function Dashboard() {
 
             <View style={styles.caloriesPerDayToDay}>
               <Text style={styles.caloriesPerDay}>Calories Per Day</Text>
-              <Text style={styles.caloriesCount}>2000</Text>
+              <Text style={styles.caloriesCount}>{diet_paln_dashboard_details?.calories_per_day}</Text>
               <Text style={styles.calories}>Calories</Text>
             </View>
 
@@ -137,13 +167,13 @@ export default function Dashboard() {
 
             <View style={styles.StepsPerToday}>
               <Text style={styles.caloriesPerDay}>Steps Per Day</Text>
-              <Text style={styles.caloriesCount}>3000</Text>
+              <Text style={styles.caloriesCount}>{diet_paln_dashboard_details?.steps_per_day}</Text>
               <Text style={styles.calories}>Steps</Text>
             </View>
 
             <View style={styles.waterPerDay}>
               <Text style={styles.caloriesPerDay}>Water Per Day</Text>
-              <Text style={styles.caloriesCount}>3</Text>
+              <Text style={styles.caloriesCount}>{diet_paln_dashboard_details?.water_per_day}</Text>
               <Text style={styles.calories}>Liter</Text>
             </View>
           </View>
