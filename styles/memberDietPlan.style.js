@@ -117,10 +117,24 @@ const styles = StyleSheet.create({
       },
 
       workingextext:{
-        color:'#FFFFFF',
+        color:'#FFCC4D',
         fontWeight: 'bold',
         fontSize:14,
+        marginBottom:5,
       },
+
+      upworkingextext:{
+        color:'#ffffff',
+        fontWeight: 'bold',
+        fontSize:14,
+        marginBottom:5,
+      },
+
+      subworkingextext:{      
+        color:'#ffffff',
+        fontSize:14,
+      },
+
       workingexyers:{
         color:'#E54646',
         fontWeight: 'bold',

@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
 
     Month:{
         color:'#E54646',
-        fontSize:35,
+        fontSize:15,
         marginBottom:5,
         fontWeight:'bold',
     
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
 
     Year:{     
         color:'#ffffff',
-        fontSize:10,
+        fontSize:20,
         fontWeight:'bold',
     },
 

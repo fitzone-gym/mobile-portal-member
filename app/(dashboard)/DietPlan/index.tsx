@@ -37,11 +37,11 @@ export default function memberDietPlan(){
                             <Text style={styles.Extrasmalltextvalue}> 85 Kg</Text>
                         </View>
                         <View style={styles.extrasmallbox}>
-                            <Text style={styles.Extrasmalltext}>BMI :</Text>
-                            <Text style={styles.Extrasmalltextvalue}> 22</Text>
+                            <Text style={styles.Extrasmalltext}>Height :</Text>
+                            <Text style={styles.Extrasmalltextvalue}> 152 cm</Text>
                         </View>
                         <View style={styles.extrasmallbox}>
-                            <Text style={styles.Extrasmalltext}>BMR :</Text>
+                            <Text style={styles.Extrasmalltext}>BMI :</Text>
                             <Text style={styles.Extrasmalltextvalue}></Text>
                         </View>
                     </View>
@@ -51,11 +51,11 @@ export default function memberDietPlan(){
                         <View style={styles.textboxcontent}>
                         <View style={styles.smallbox}>
                             <Text style={styles.workingexyers}>290</Text>
-                            <Text style={styles.workingextext}>Calories per day</Text>
+                            <Text style={styles.upworkingextext}>Calories per day</Text>
                         </View>
                         <View style={styles.smallbox}>
                             <Text style={styles.workingexyers}>3000</Text>
-                            <Text style={styles.workingextext}>Steps per day</Text>
+                            <Text style={styles.upworkingextext}>Steps per day</Text>
                         </View>
                     </View>
                     
@@ -66,23 +66,50 @@ export default function memberDietPlan(){
 
                     <View style={styles.textboxcontent}>
                         <View style={styles.smallbox}>
-                            <Text style={styles.workingextext}>Proteins</Text>
-                            <Text style={styles.workingexyers}>50</Text>
-                            <Text style={styles.workingextext}>grams per day</Text>
+                            <Text style={styles.workingextext}>Protein Foods</Text>
+                            <Text style={styles.subworkingextext}>sea food</Text>
+                            <Text style={styles.subworkingextext}>meat</Text>
+                            <Text style={styles.subworkingextext}>egg</Text>
+                            <Text style={styles.subworkingextext}>beans</Text>
+                            <Text style={styles.subworkingextext}>lentils</Text>
+                            <Text style={styles.subworkingextext}>nuts</Text>
+                            <Text style={styles.subworkingextext}>seeds</Text>
+
+
                         </View>
                         <View style={styles.smallbox}>
-                            <Text style={styles.workingextext}>Suger</Text>
-                            <Text style={styles.workingexyers}>20</Text>
-                            <Text style={styles.workingextext}>grams per day</Text>
+                            <Text style={styles.workingextext}>Mineral Foods</Text>
+                            <Text style={styles.subworkingextext}>cereals</Text>
+                            <Text style={styles.subworkingextext}>dairy</Text>
+                            <Text style={styles.subworkingextext}>fruits</Text>
+                            <Text style={styles.subworkingextext}>vegetables</Text>
+                            <Text style={styles.subworkingextext}>bread</Text>
+                            <Text style={styles.subworkingextext}>tofu</Text>
                         </View>
                     </View>
 
                     <View style={styles.textboxcontent}>
                         <View style={styles.smallbox}>
-                            <Text style={styles.workingextext}>Carbohydrate</Text>
-                            <Text style={styles.workingexyers}>330</Text>
-                            <Text style={styles.workingextext}>grams per day</Text>
+                            <Text style={styles.workingextext}>Carbohydrate Foods</Text>
+                            <Text style={styles.subworkingextext}>popcorn</Text>
+                            <Text style={styles.subworkingextext}>cookies</Text>
+                            <Text style={styles.subworkingextext}>soft drinks</Text>
+                            <Text style={styles.subworkingextext}>pasta</Text>
+                            <Text style={styles.subworkingextext}>white rice</Text>
+                            <Text style={styles.subworkingextext}>baked products</Text>
+                            <Text style={styles.subworkingextext}>oats</Text>
+
+                            
                         </View>
+                        <View style={styles.smallbox}>
+                            <Text style={styles.workingextext}>Fat Foods</Text>
+
+                            <Text style={styles.subworkingextext}>liters per day</Text>
+                        </View>
+                    </View>
+
+                    <View style={styles.textboxcontent}>
+
                         <View style={styles.smallbox}>
                             <Text style={styles.workingextext}>Water</Text>
                             <Text style={styles.workingexyers}>3.7</Text>
