@@ -112,8 +112,8 @@ const styles = StyleSheet.create({
     DateBox:{        
         width:90,
         height:150,
-        backgroundColor:'#222222',
-        opacity:0.7,
+        backgroundColor:'#E54646',
+        opacity:0.8,
         borderRadius:20,
         paddingTop:10,
         paddingBottom:10,
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     },
 
     Month:{
-        color:'#E54646',
+        color:'#0B0B0B',
         fontSize:15,
         marginBottom:5,
         fontWeight:'bold',
@@ -335,6 +335,8 @@ const styles = StyleSheet.create({
         marginTop:10,
         textAlign:'center',
     },
+
+
 
 
 
