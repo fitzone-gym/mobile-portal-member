@@ -110,6 +110,11 @@ const styles = StyleSheet.create({
         marginTop:10,
       },
 
+      subtextbox:{
+        flexDirection:'row',
+        marginBottom:5,
+      },
+
       textboxcontent:{
         flexDirection:'row',
         alignItems: 'center',
@@ -194,6 +199,21 @@ const styles = StyleSheet.create({
 
       textboxtext:{
         color:'#FFFFFF',
+        fontWeight: 'bold',
+        marginLeft:10,
+        fontSize:14,
+      },
+
+      textgrams:{
+        color:'#50C878',
+        fontWeight: 'bold',
+        marginLeft:10,
+        fontSize:14,
+        
+      },
+
+      textcalories:{
+        color:'#FFCC4D',
         fontWeight: 'bold',
         marginLeft:10,
         fontSize:14,
