@@ -118,7 +118,7 @@ export default function appointment(){
                 <View style={styles.container}>
 
                     <Text style={styles.date}>Appointment Date</Text>
-                    <View style={{marginTop:20}}>
+                    <View >
                         <FlatList 
                                 showsHorizontalScrollIndicator={false}
                                 horizontal 
@@ -130,14 +130,20 @@ export default function appointment(){
                                             setSelectedDate(item.key)
                                         }}
                                         style={{
-                                            width:50,
+                                            width:60,
                                             height:50,
                                             borderRadius:10,
                                             justifyContent:'center',
                                             alignItems:'center',
-                                            backgroundColor:'red'
+                                            // backgroundColor: 'white',
+                                            borderColor: '#FF5A5A',
+                                            borderWidth: 1,
+                                            marginLeft:10
                                             }}>
-                                        <Text>{item.title}</Text>
+                                        <Text
+                                        style={{
+                                            color: 'white',
+                                        }}>{item.title}</Text>
                                     </TouchableOpacity>
                                 )
                         }}/>
@@ -161,7 +167,7 @@ export default function appointment(){
                                 return(
                                     <TouchableOpacity 
                                         style={[styles.TimeSlots,
-                                                {borderColor:selectedSlot==index?'red':'white', backgroundColor:selectedSlot==index? 'red' : ''}
+                                                {borderColor:selectedSlot==index?'#FF5A5A':'white', backgroundColor:selectedSlot==index? '#FF5A5A' : ''}
                                             ]}
                                             onPress={() =>{
                                                 setSelectedSlot(index);
@@ -175,7 +181,7 @@ export default function appointment(){
                         />
                     </View>
                     <TouchableOpacity style={styles.commonbtn} onPress={handleBookNow}>
-                        <Text>Book Now</Text>
+                        <Text style={{color:'white', fontSize:17,}}>Book Now</Text>
                     </TouchableOpacity>
 
 

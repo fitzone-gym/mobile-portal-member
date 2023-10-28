@@ -183,14 +183,16 @@ const styles = StyleSheet.create({
 
     container:{
         flex:1,
-        backgroundColor:'#9C9797',
+        backgroundColor:'#222222',
     },
 
     timeslot:{
         fontSize:20,
         fontWeight:'700',
         alignSelf: 'center',
-        marginTop:10,
+        marginTop:50,
+        marginBottom:10,
+        color:'#FF5A5A'
     },
 
     TimeSlots:{
@@ -204,12 +206,25 @@ const styles = StyleSheet.create({
     },
 
     commonbtn:{
-        width:'90%',
-        height:45,
+        alignItems: 'center',
+        backgroundColor: '#656565',
+        padding: 10,
+        marginLeft: 130,
+        marginRight: 130,
+        marginTop:20,
+        marginBottom:20,
+        borderRadius:5,
         
     },
 
-    date:{},
+    date:{
+        fontSize:20,
+        fontWeight:'700',
+        alignSelf: 'center',
+        marginTop:20,
+        marginBottom:20,
+        color:'#FF5A5A'
+    },
 
 
 
