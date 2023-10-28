@@ -235,7 +235,7 @@ const styles = StyleSheet.create({
       smallbox:{
         flex:1,
         opacity:0.8,
-        minHeight:70,
+        minHeight:50,
         backgroundColor:'#222222',
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
@@ -251,7 +251,7 @@ const styles = StyleSheet.create({
       smalltext1:{
         color:'#E54646',
         fontWeight: 'bold',
-        fontSize:50,
+        fontSize:20,
       },
 
       smalltext2:{
