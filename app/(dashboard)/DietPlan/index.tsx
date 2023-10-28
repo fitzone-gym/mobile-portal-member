@@ -101,7 +101,7 @@ export default function memberDietPlan(){
 
                         
 
-                        <View style={styles.textboxcontent}>
+                    <View style={styles.textboxcontent}>
                         <View style={styles.smallbox}>
                             <Text style={styles.workingexyers}>{dietPlanDetails?.calories_per_day}</Text>
                             <Text style={styles.upworkingextext}>Calories per day</Text>

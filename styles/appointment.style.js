@@ -226,6 +226,41 @@ const styles = StyleSheet.create({
         color:'#FF5A5A'
     },
 
+    textboxcontent:{
+        flexDirection:'row',
+        alignItems: 'center',
+
+      },
+
+      smallbox:{
+        flex:1,
+        opacity:0.8,
+        minHeight:70,
+        backgroundColor:'#222222',
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20,
+        justifyContent: 'center',
+        alignItems:'center',
+        padding:10,
+        margin:5,
+        marginTop:10,
+      },
+
+      smalltext1:{
+        color:'#E54646',
+        fontWeight: 'bold',
+        fontSize:50,
+      },
+
+      smalltext2:{
+        color:'#ffffff',
+        fontWeight: 'bold',
+        fontSize:14,
+        marginBottom:5,
+      },
+
 
 
 });

@@ -104,9 +104,17 @@ export default function appointment(){
 
                 <ImageBackground source={require('../../../assets/images/appointment.png')} style={{width:'100%', height:155 }}>
 
-
-
                     <Text style={styles.appointmentHeading}>Appointment</Text>
+                    <View style={styles.textboxcontent}>
+                    <View style={styles.smallbox}>
+                            <Text style={styles.smalltext1}></Text>
+                            <Text style={styles.smalltext2}>Date</Text>
+                        </View>
+                        <View style={styles.smallbox}>
+                            <Text style={styles.smalltext1}></Text>
+                            <Text style={styles.smalltext2}>Time</Text>
+                        </View>
+                    </View>
                 </ImageBackground>
 
 
