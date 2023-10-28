@@ -8,12 +8,94 @@ import { Slot, useRouter } from "expo-router";
 import{Route} from "expo-router/build/Route";
 import CalendarScreen from "../../../components/CalendarScreen";
 import { FlatList } from "react-native-gesture-handler";
+import { useEffect, useState } from "react";
 
+import getdays from "../../../utllis/getdays"
+import { useAppSelector } from "../../redux/store";
+import axios from "../../../axios";
 
 export default function appointment(){
 
-
     const router = useRouter();
+    const DayList = getdays(30);
+
+    const currentUser = useAppSelector(state => state.user)
+
+    const [selectedSlot, setSelectedSlot] = useState(0);
+    const [selectedDate, setSelectedDate] = useState('')
+    const [slots, setSlots] = useState([
+        {sloT:"08:00 AM - 10:00 AM", selected: false },
+        {sloT:"10:00 AM - 12:00 PM", selected: false },
+        {sloT:"01:00 PM - 03:00 PM", selected: false },
+        {sloT:"03:00 PM - 05:00 PM", selected: false },
+        {sloT:"06:00 PM - 08:00 PM", selected: false },
+        {sloT:"08:00 PM - 10:00 PM", selected: false },
+    ]);
+
+    // useEffect(()=>{
+    //     console.log(selectedDate);  
+    // },[selectedDate]);
+
+    const getDays=(month: number)=>{
+        let days =0;
+        if(month==1){
+            days=31;
+        }
+        else if(month==2){
+            days=28;
+        }
+        else if(month==3){
+            days=31;
+        }
+        else if(month==4){
+            days=30;
+        }
+        else if(month==5){
+            days=31;
+        }
+        else if(month==6){
+            days=30;
+        }
+        else if(month==7){
+            days=31;
+        }
+        else if(month==8){
+            days=31;
+        }
+        else if(month==9){
+            days=30;
+        }
+        else if(month==10){
+            days=31;
+        }
+        else if(month==11){
+            days=30;
+        }
+        else if(month==12){
+            days=31;
+        }
+        return days;
+    }
+
+    const handleBookNow = () => {
+        axios.post('/dsfkjl/dfj', {
+            selectedDate: selectedDate,
+            selectedTime: selectedSlot,
+            user_id: currentUser.user_id,
+            name: currentUser.first_name
+        }).then((res) => {
+            if(res.data.success){
+                alert("success")
+            }else {
+                alert("error")
+            }
+        }).catch((err) => {
+            console.log(err);
+            alert("error")  
+        })
+    }
+
+
     return (
         <SafeAreaView style={styles.appointmentSafeArea}>
             <ScrollView>
@@ -32,8 +114,70 @@ export default function appointment(){
                 </View> */}
 
                 <View style={styles.container}>
-                    <Text style={styles.timeslot}></Text>
-                   
+
+                    <Text style={styles.date}>Appointment Date</Text>
+                    <View style={{marginTop:20}}>
+                        <FlatList 
+                                showsHorizontalScrollIndicator={false}
+                                horizontal 
+                                data={DayList} 
+                                renderItem={({item,index})=> {
+                                return(
+                                    <TouchableOpacity 
+                                        onPress={() => {                                            
+                                            setSelectedDate(item.key)
+                                        }}
+                                        style={{
+                                            width:50,
+                                            height:50,
+                                            borderRadius:10,
+                                            justifyContent:'center',
+                                            alignItems:'center',
+                                            backgroundColor:'red'
+                                            }}>
+                                        <Text>{item.title}</Text>
+                                    </TouchableOpacity>
+                                )
+                        }}/>
+                    </View>
+
+                    <Text style={styles.timeslot}>Available Slots</Text>
+                    <View>
+                        <FlatList
+                        numColumns={2}
+                        data={slots}
+                        keyExtractor={(item, index) => index.toString()}
+                            // data={[
+                            //     '08:00 AM - 10:00 AM', 
+                            //     '10:00 AM - 12:00 PM', 
+                            //     '01:00 PM - 03:00 PM',
+                            //     '03:00 PM - 05:00 PM',
+                            //     '06:00 PM - 08:00 PM',
+                            //     '08:00 PM - 10:00 PM', 
+                            // ]}
+                            renderItem={({item, index}) =>{
+                                return(
+                                    <TouchableOpacity 
+                                        style={[styles.TimeSlots,
+                                                {borderColor:selectedSlot==index?'red':'white', backgroundColor:selectedSlot==index? 'red' : ''}
+                                            ]}
+                                            onPress={() =>{
+                                                setSelectedSlot(index);
+                                            }}>
+                                        <Text style={{color:selectedSlot==index? 'white' : 'white'}}>
+                                            {item.sloT}
+                                        </Text>
+                                    </TouchableOpacity>
+                                );
+                            }}
+                        />
+                    </View>
+                    <button style={styles.commonbtn}>
+                        <Text>Book Now</Text>
+                    </button>
+
+                    {/* TouchableOpacity
+                    onpress = handleBookNow */}
                 </View>
 
                 {/* <Text style={styles.specialEventHeading}>Special Events</Text>

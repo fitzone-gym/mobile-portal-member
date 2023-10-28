@@ -181,6 +181,36 @@ const styles = StyleSheet.create({
         textAlign:'center',
     },
 
+    container:{
+        flex:1,
+        backgroundColor:'#9C9797',
+    },
+
+    timeslot:{
+        fontSize:20,
+        fontWeight:'700',
+        alignSelf: 'center',
+        marginTop:10,
+    },
+
+    TimeSlots:{
+        width: '45%',
+        height:40,
+        borderRadius:10,
+        borderWidth:0.5,
+        margin:10,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+    commonbtn:{
+        width:'90%',
+        height:45,
+        
+    },
+
+    date:{},
+
 
 
 });
