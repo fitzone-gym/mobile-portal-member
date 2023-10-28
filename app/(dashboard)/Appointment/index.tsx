@@ -78,20 +78,22 @@ export default function appointment(){
     }
 
     const handleBookNow = () => {
-        axios.post('/dsfkjl/dfj', {
+        axios.post('/memberAppointment', {
             selectedDate: selectedDate,
             selectedTime: selectedSlot,
             user_id: currentUser.user_id,
-            name: currentUser.first_name
+            first_name: currentUser.first_name,
+            last_name: currentUser.last_name
+            
         }).then((res) => {
             if(res.data.success){
-                alert("success")
+                alert("Appointment Book successfully")
             }else {
-                alert("error")
+                alert("Error occurred in Appointment Book")
             }
         }).catch((err) => {
             console.log(err);
-            alert("error")  
+            alert("Error occurred in Appointment Book")  
         })
     }
 
@@ -172,9 +174,10 @@ export default function appointment(){
                             }}
                         />
                     </View>
-                    <button style={styles.commonbtn}>
+                    <TouchableOpacity style={styles.commonbtn} onPress={handleBookNow}>
                         <Text>Book Now</Text>
-                    </button>
+                    </TouchableOpacity>
+
 
                     {/* TouchableOpacity
                     onpress = handleBookNow */}
