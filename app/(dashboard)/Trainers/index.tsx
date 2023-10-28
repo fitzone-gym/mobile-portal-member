@@ -10,7 +10,7 @@ import axios from "../../../axios";
 import baseUrl from '../../../axios';
 
 interface Trainer{
-    id:string;
+    user_id:string;
     first_name:string;
     last_name:string;
     profile_picture:string;
@@ -68,10 +68,10 @@ export default function Home() {
                         onPress={()=>{
                             router.push({
                                 pathname:"member/trainerProfile", 
-                                params:{id:trainer.id}
+                                params:{user_id:trainer.user_id}
                                 })
                             }} 
-                            key={trainer.id}>
+                            key={trainer.user_id}>
                             <Image
                                 style={styles.trainerimage}
                                 // source={{ uri:`../../assets/images/Trainers/${trainer.profile_picture}`}}
