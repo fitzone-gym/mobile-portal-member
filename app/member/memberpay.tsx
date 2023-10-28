@@ -43,13 +43,23 @@ export default function trainerProfile(){
   
   useEffect(() => {
       axios
-          .get(`/ourTrainers/${localSearchParams.id}`)
+          .get(`/ourTrainers/${localSearchParams.user_id}`)
           .then((response) =>{
               setTrainerDetails(response.data.data);
               console.log(response.data.data)
           })
           .catch((error) => console.error(error))
   }, []);
+
+
+  const paymentSubmit = async () => {
+    // try{
+    //   await axios.post('/payments/intent', {
+    //     amount: ,
+    //   })
+    // }
+  }
+
   return(
   <SafeAreaView style={styles.container}>
     <Stack.Screen
@@ -73,8 +83,8 @@ export default function trainerProfile(){
       </ImageBackground>
 
       <View>
-        <Button style={styles.startedbutton}  mode="contained" onPress={() => {router.push('/member') }} textColor='#FFFFFF'>
-            PAY
+        <Button style={styles.startedbutton}  mode="contained" onPress={paymentSubmit} textColor='#FFFFFF'>
+            <Text>PAY</Text>
         </Button>
       </View>
 

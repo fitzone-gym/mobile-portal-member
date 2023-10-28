@@ -20,7 +20,7 @@ import axios from "../../axios";
 // import baseUrl from "../../axios";
 
 type TrainerType = {
-    id:string
+    user_id:string
     first_name:string
     last_name:string
     profile_picture:string
@@ -42,7 +42,7 @@ export default function trainerProfile(){
   
   useEffect(() => {
       axios
-          .get(`/ourTrainers/${localSearchParams.id}`)
+          .get(`/ourTrainers/${localSearchParams.user_id}`)
           .then((response) =>{
               setTrainerDetails(response.data.data);
               console.log(response.data.data)
@@ -251,7 +251,7 @@ export default function trainerProfile(){
           <Text style={styles.hireBtnText}>Hire Now</Text>
         </TouchableOpacity> */}
 
-        <Button style={styles.startedbutton}  mode="contained" onPress={() => {router.push({pathname:'/member/memberpay', params:{id:trainerDetails?.id,package:checked}}) }} textColor='#FFFFFF'>
+        <Button style={styles.startedbutton}  mode="contained" onPress={() => {router.push({pathname:'/member/memberpay', params:{user_id:trainerDetails?.user_id,package:checked}}) }} textColor='#FFFFFF'>
             Hire Now
         </Button>
       </View>

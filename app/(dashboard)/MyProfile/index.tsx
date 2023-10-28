@@ -164,7 +164,7 @@ export default function memberProfile(){
                                     />
                                     </TouchableOpacity>
                                     <Button style={styles.button} mode="contained" onPress={() => {
-                                                                router.push('/member/trainerProfile?id=10005')
+                                                                router.push('/member/trainerProfile?id=10003')
                                                             }}>
                                         View details
                                     </Button>
