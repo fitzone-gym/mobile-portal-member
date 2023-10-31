@@ -328,6 +328,26 @@ const styles = StyleSheet.create({
         marginLeft:65,
       },
 
+      subContent: {
+        fontSize: 17,
+        textAlign:'left',
+        color:'#E54646',
+        marginBottom:5,
+        marginTop:20,
+        marginLeft:10,
+    },
+
+    txtInput:{
+        fontSize: 14,
+        color: '#898A8D',
+        padding:3,
+        borderBottomWidth: 1, 
+        borderColor: '#E54646',
+        marginBottom:30,
+        marginLeft:10,
+        marginRight:10,
+    },
+
 
 
 });

@@ -1,6 +1,6 @@
 import styles from "../../../styles/appointment.style";
 
-import {View, TouchableOpacity, SafeAreaView, ImageBackground, Text, Image, ScrollView} from "react-native";
+import {View, TouchableOpacity, SafeAreaView, ImageBackground, Text, Image, ScrollView, TextInput} from "react-native";
 
 
 import * as React from "react";
@@ -19,24 +19,23 @@ export default function appointment(){
     const router = useRouter();
     const DayList = getdays(30);
 
-    
+    // const[reason, setreason] = useState<string>("");
 
     const currentUser = useAppSelector(state => state.user)
 
     const [selectedSlot, setSelectedSlot] = useState(0);
     const [selectedDate, setSelectedDate] = useState('')
     const [slots, setSlots] = useState([
-        {sloT:"08:00 AM - 10:00 AM", selected: false },
-        {sloT:"10:00 AM - 12:00 PM", selected: false },
-        {sloT:"01:00 PM - 03:00 PM", selected: false },
-        {sloT:"03:00 PM - 05:00 PM", selected: false },
-        {sloT:"06:00 PM - 08:00 PM", selected: false },
-        {sloT:"08:00 PM - 10:00 PM", selected: false },
+        {sloT:"06:00 PM - 06:30 PM", selected: false },
+        {sloT:"06:30 PM - 07:00 PM", selected: false },
+        {sloT:"07:00 PM - 07:30 PM", selected: false },
+        {sloT:"07:30 PM - 08:00 PM", selected: false },
+        {sloT:"08:00 PM - 08:30 PM", selected: false },
+        {sloT:"08:30 PM - 09:00 PM", selected: false },
+        {sloT:"09:00 PM - 09:30 PM", selected: false },
+        {sloT:"09:30 PM - 10:00 PM", selected: false },
     ]);
 
-    // useEffect(()=>{
-    //     console.log(selectedDate);  
-    // },[selectedDate]);
 
     const getDays=(month: number)=>{
         let days =0;
@@ -86,8 +85,7 @@ export default function appointment(){
             selectedDate: selectedDate,
             selectedTime: slots[selectedSlot].sloT,
             user_id: currentUser.user_id,
-            first_name: currentUser.first_name,
-            last_name: currentUser.last_name
+            // reason:setreason,
             
         }).then((res) => {
             if(res.data.insertedId){
@@ -106,9 +104,9 @@ export default function appointment(){
         <SafeAreaView style={styles.appointmentSafeArea}>
             <ScrollView>
 
-                <ImageBackground source={require('../../../assets/images/appointment.png')} style={{width:'100%', height:155 }}>
+                <ImageBackground source={require('../../../assets/images/payment.png')} style={{width:'100%', height:155 }}>
 
-                    <Text style={styles.appointmentHeading}>Appointment</Text>
+                    <Text style={styles.appointmentHeading}>Health Check</Text>
                     <View style={styles.textboxcontent}>
                     <View style={styles.smallbox}>
                             <Text style={styles.smalltext1}>{new Date().getDate()} {new Intl.DateTimeFormat('en-US',{month:'long'}).format(new Date())} {new Date().getFullYear()}</Text>
@@ -122,11 +120,6 @@ export default function appointment(){
                     </View>
                 </ImageBackground>
 
-
-                {/* <View style={styles.calenderView}>
-                    <CalendarScreen/>
-
-                </View> */}
 
                 <View style={styles.container}>
 
@@ -186,29 +179,18 @@ export default function appointment(){
                             }}
                         />
                     </View>
+
+                    {/* <Text style={styles.subContent}>Reason</Text>
+                    <TextInput style={styles.txtInput} id='reason' value={reason} onChange={(value) => setreason(value.nativeEvent.text) }/> */}
+
+
                     <TouchableOpacity style={styles.commonbtn} onPress={handleBookNow}>
                         <Text style={{color:'white', fontSize:17,}}>Book Now</Text>
                     </TouchableOpacity>
 
-
-                    {/* TouchableOpacity
-                    onpress = handleBookNow */}
                 </View>
 
-                {/* <Text style={styles.specialEventHeading}>Special Events</Text>
-                <View style={styles.specialEvents}>
-                    <Text style={styles.special_event_date}>29th Aug 2023</Text>
-                    <Text style={styles.special_event_heading}>New Zumba Class</Text>
-                    <Text style={styles.special_event_body}>Starting 29 th July on ward. Zumba class for all age members. From begin to end. Conducting by highly qualified zumba masters. </Text>
-                </View> */}
 
-                {/* <Text style={styles.specialAnnouncementsHeadings}>Special Announcements</Text> */}
-
-                {/* <View style={styles.specialAnnouncements}>
-                <Text style={styles.special_event_date}>25th Aug 2023</Text>
-                    <Text style={styles.special_event_heading}>Band Cardio Session</Text>
-                    <Text style={styles.special_event_body}>Starting 27 th July on ward. Zumba class for all age members. From begin to end. Conducting by highly qualified zumba masters.  </Text>                    
-                </View> */}
 
                 <Text style={styles.remainingAppointment}>Next Appointment</Text>
                 <View style={styles.appointmentHistory}>
