@@ -78,6 +78,8 @@ export default function appointment(){
     }
 
     const handleBookNow = () => {
+        console.log("test");
+        
         axios.post('/memberAppointment', {
             selectedDate: selectedDate,
             selectedTime: selectedSlot,
@@ -86,14 +88,14 @@ export default function appointment(){
             last_name: currentUser.last_name
             
         }).then((res) => {
-            if(res.data.success){
+            if(res.data.insertedId){
                 alert("Appointment Book successfully")
             }else {
                 alert("Error occurred in Appointment Book")
             }
         }).catch((err) => {
             console.log(err);
-            alert("Error occurred in Appointment Book")  
+            alert("Error occurred in Appointment Book dfdfd")  
         })
     }
 
@@ -145,9 +147,10 @@ export default function appointment(){
                                             justifyContent:'center',
                                             alignItems:'center',
                                             // backgroundColor: 'white',
-                                            borderColor: '#FF5A5A',
+                                            // borderColor: '#FF5A5A',
                                             borderWidth: 1,
-                                            marginLeft:10
+                                            marginLeft:10,
+                                            borderColor:item.key==selectedDate?'#FF5A5A':'white', backgroundColor:item.key==selectedDate? '#FF5A5A' : ''
                                             }}>
                                         <Text
                                         style={{
@@ -164,14 +167,6 @@ export default function appointment(){
                         numColumns={2}
                         data={slots}
                         keyExtractor={(item, index) => index.toString()}
-                            // data={[
-                            //     '08:00 AM - 10:00 AM', 
-                            //     '10:00 AM - 12:00 PM', 
-                            //     '01:00 PM - 03:00 PM',
-                            //     '03:00 PM - 05:00 PM',
-                            //     '06:00 PM - 08:00 PM',
-                            //     '08:00 PM - 10:00 PM', 
-                            // ]}
                             renderItem={({item, index}) =>{
                                 return(
                                     <TouchableOpacity 
@@ -215,6 +210,7 @@ export default function appointment(){
 
                 <Text style={styles.remainingAppointment}>Next Appointment</Text>
                 <View style={styles.appointmentHistory}>
+
                     <View style={styles.appointmentSubDate}>
                         <Text style={styles.appointmentDateHeading}>Date</Text>
                         <Text style={styles.appointmentDate}>2022.11.02</Text>
@@ -222,7 +218,7 @@ export default function appointment(){
 
                     <View style={styles.appointmentSubTime}>
                         <Text style={styles.appointmentTimeHeading}>Time</Text>
-                        <Text style={styles.appointmentTime}>10:00 AM</Text>
+                        <Text style={styles.appointmentTime}>10:00 AM - 12:00 AM</Text>
                     </View>
                 </View>
 

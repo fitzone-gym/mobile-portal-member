@@ -306,22 +306,26 @@ const styles = StyleSheet.create({
       },
 
       appointmentDate:{
-        color:'white'
+        color:'white',
+        fontWeight:'bold',
+        fontSize:'18px',
       },
 
       appointmentTime:{
-        color:'white'
+        color:'white',
+        fontWeight:'bold',
+        fontSize:'18px',
       },
 
       appointmentSubDate:{
-        marginLeft:30,
+        marginLeft:10,
         display: 'flex',
         flexDirection: 'column',
       },
 
       appointmentSubTime:{
         alignItems: 'flex-end',
-        marginLeft:100,
+        marginLeft:65,
       },
 
 
