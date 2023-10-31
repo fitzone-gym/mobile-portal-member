@@ -14,6 +14,7 @@ import getdays from "../../../utllis/getdays"
 import { useAppSelector } from "../../redux/store";
 import axios from "../../../axios";
 
+
 export default function appointment(){
 
     const router = useRouter();
@@ -22,6 +23,12 @@ export default function appointment(){
     // const[reason, setreason] = useState<string>("");
 
     const currentUser = useAppSelector(state => state.user)
+
+    const [selectedReason, setSelectedReason] = useState(0);
+    const [resons, setResons] = useState([
+        {sloT:"For basic heath check", selected: false },
+        {sloT:"Consultant purpose", selected: false },
+    ]);
 
     const [selectedSlot, setSelectedSlot] = useState(0);
     const [selectedDate, setSelectedDate] = useState('')
@@ -81,10 +88,11 @@ export default function appointment(){
     const handleBookNow = () => {
         console.log("test");
         
-        axios.post('/memberAppointment', {
+        axios.post('/memberHealthCheckAppointment', {
             selectedDate: selectedDate,
             selectedTime: slots[selectedSlot].sloT,
             user_id: currentUser.user_id,
+            selectedReason: resons[selectedReason].sloT
             // reason:setreason,
             
         }).then((res) => {
@@ -172,6 +180,30 @@ export default function appointment(){
                                                 setSelectedSlot(index);
                                             }}>
                                         <Text style={{color:selectedSlot==index? 'white' : 'white'}}>
+                                            {item.sloT}
+                                        </Text>
+                                    </TouchableOpacity>
+                                );
+                            }}
+                        />
+                    </View>
+
+                    <Text style={styles.timeslot}>Appointment Reason</Text>
+                    <View>
+                        <FlatList
+                        numColumns={2}
+                        data={resons}
+                        keyExtractor={(item, index) => index.toString()}
+                            renderItem={({item, index}) =>{
+                                return(
+                                    <TouchableOpacity 
+                                        style={[styles.TimeSlots,
+                                                {borderColor:selectedReason==index?'#FF5A5A':'white', backgroundColor:selectedReason==index? '#FF5A5A' : ''}
+                                            ]}
+                                            onPress={() =>{
+                                                setSelectedReason(index);
+                                            }}>
+                                        <Text style={{color:selectedReason==index? 'white' : 'white'}}>
                                             {item.sloT}
                                         </Text>
                                     </TouchableOpacity>
