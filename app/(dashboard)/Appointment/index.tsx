@@ -213,6 +213,19 @@ export default function appointment(){
                     <Text style={styles.special_event_body}>Starting 27 th July on ward. Zumba class for all age members. From begin to end. Conducting by highly qualified zumba masters.  </Text>                    
                 </View> */}
 
+                <Text style={styles.remainingAppointment}>Next Appointment</Text>
+                <View style={styles.appointmentHistory}>
+                    <View style={styles.appointmentSubDate}>
+                        <Text style={styles.appointmentDateHeading}>Date</Text>
+                        <Text style={styles.appointmentDate}>2022.11.02</Text>
+                    </View>
+
+                    <View style={styles.appointmentSubTime}>
+                        <Text style={styles.appointmentTimeHeading}>Time</Text>
+                        <Text style={styles.appointmentTime}>10:00 AM</Text>
+                    </View>
+                </View>
+
         </ScrollView>
     </SafeAreaView>
     )

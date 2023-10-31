@@ -213,7 +213,8 @@ const styles = StyleSheet.create({
         marginRight: 130,
         marginTop:20,
         marginBottom:20,
-        borderRadius:5,
+        borderRadius:10,
+        fontWeight: 'bold',
         
     },
 
@@ -259,6 +260,68 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize:14,
         marginBottom:5,
+      },
+
+      remainingAppointment:{
+        color:'#E54646',
+        alignSelf: 'center',
+        marginBottom:10,
+        fontSize:20,
+        fontWeight:'700',
+      },
+
+      appointmentHistory:{
+        
+        borderRadius:10,
+        borderWidth:1,
+        borderColor:'#E54646',
+        marginLeft:10,
+        marginRight:10,
+        borderRadius:10,
+        paddingTop:10,
+        paddingBottom:10,
+        paddingLeft:10,
+        paddingRight:10,
+        height:100,
+        marginBottom:10,
+        display:'flex',
+        flexDirection: 'row',
+
+      },
+
+      appointmentDateHeading:{
+        color:'#828282',
+        fontSize:'15px',
+        fontWeight:'bold',
+        marginTop:10,
+        marginBottom:5,
+      },
+
+      appointmentTimeHeading:{
+        color:'#828282',
+        fontSize:'15px',
+        fontWeight:'bold',
+        marginTop:10,
+        marginBottom:5,
+      },
+
+      appointmentDate:{
+        color:'white'
+      },
+
+      appointmentTime:{
+        color:'white'
+      },
+
+      appointmentSubDate:{
+        marginLeft:30,
+        display: 'flex',
+        flexDirection: 'column',
+      },
+
+      appointmentSubTime:{
+        alignItems: 'flex-end',
+        marginLeft:100,
       },
 
 
