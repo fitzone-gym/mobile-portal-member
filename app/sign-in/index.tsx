@@ -18,7 +18,7 @@ const LoginScreen: React.FC =() => {
             <Login />
              </PersistGate>
 
-    // </Provider>;
+   </Provider>;
 
 }
 const Login: React.FC =() => {   
