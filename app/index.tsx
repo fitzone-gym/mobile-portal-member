@@ -4,18 +4,13 @@ import styles from '../styles/home.style';
 import { View, Text, TouchableOpacity, SafeAreaView, ScrollView,Image, ImageBackground, Button} from 'react-native';
 import {Provider} from 'react-redux';
 import { Route } from 'expo-router/build/Route';
-import store, { pstore, useAppDispatch } from './redux/store';
 import { Redirect, Stack, useRouter } from 'expo-router';
 import { PaperProvider } from 'react-native-paper';
-import { PersistGate } from 'redux-persist/integration/react';
 
 export default function Home() {
 
     const router = useRouter()
     return (
-
-        <Provider store={store}>
-        <PersistGate loading={null} persistor={pstore}>
                 <PaperProvider>
                 <SafeAreaView>
 
@@ -54,9 +49,7 @@ export default function Home() {
 
                 </SafeAreaView>
                 </PaperProvider>
-                </PersistGate>
 
-</Provider>
 
     )
 }

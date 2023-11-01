@@ -3,13 +3,44 @@ import styles from '../../styles/memberProfile.style';
 import { View, Text, Image, SafeAreaView, ScrollView, ImageBackground, TouchableOpacity } from 'react-native';
 
 import { Stack, useRouter } from 'expo-router';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button, Card, PaperProvider } from 'react-native-paper';
+import { useAppSelector } from '../redux/store';
+import axios from 'axios';
 
 
 export default function memberProfile(){
 
     const router = useRouter()
+    const currentUser = useAppSelector(state => state.user)
+
+    // useEffect(() => {
+    //     axios
+    //         .post("/memberprofile")
+    //         .then((response) =>{
+    //             setTrainerDetails(response.data.data);
+    //             console.log(response.data.data)
+    //         })
+    //         .catch((error) => console.error(error))
+    // }, []);
+
+    useEffect(() => {
+        if (currentUser && currentUser.user_id) {
+          // Assuming that 'id' is the property containing the user's ID
+          const sendDataToBackend = async () => {
+            try {
+              const response = await axios.post('/memberprofile', {
+                userId: currentUser.user_id,
+              });
+              console.log(response.data);
+            } catch (error) {
+              console.error('Error:', error);
+            }
+          };
+    
+          sendDataToBackend();
+        }
+      }, [currentUser]);
 
     return(
         <PaperProvider>
@@ -125,17 +156,17 @@ export default function memberProfile(){
                                 <View style={styles.trainerimage}>
                                     <Text style={styles.topictext}>My Trainer</Text>
                                     <TouchableOpacity onPress={() => {
-                                        router.push('/member/trainerProfile?id=10005')
+                                        router.push('/member/trainerProfile?id=10004')
                                     }}>
                                     <Image
                                             style={styles.imagepicture}
                                             // source={require('../../assets/images/Trainer.jpg')}
-                                            source={{ uri:"https://stylioo.blob.core.windows.net/images/Devin.jpg"}}
+                                            source={{ uri:"https://stylioo.blob.core.windows.net/images/Tharasara.jpg"}}
                                             resizeMode='cover'
                                     />
                                     </TouchableOpacity>
                                     <Button style={styles.button} mode="contained" onPress={() => {
-                                                                router.push('/member/trainerProfile?id=10005')
+                                                                router.push('/member/trainerProfile?id=10004')
                                                             }}>
                                         View details
                                     </Button>

@@ -27,6 +27,15 @@
     "web": {
       "bundler": "metro",
       "favicon": "./assets/images/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "@stripe/stripe-react-native",
+        {
+          "merchantIdentifier": "string | string []",
+          "enableGooglePay": "boolean"
+        }
+      ]
+    ]
   }
 }

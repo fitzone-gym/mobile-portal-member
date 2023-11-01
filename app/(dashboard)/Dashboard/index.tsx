@@ -45,7 +45,7 @@ export default function Dashboard() {
   const fetchDietPlan = () => {
     axios.get(`/memberDashboard/${currentUser.user_id}`)
     .then((Response) =>{
-      console.log('data send to the backend successfully', Response.data);
+      // console.log('data send to the backend successfully', Response.data);
       setdashboardDetails(Response.data.data);
 
       
@@ -60,7 +60,7 @@ export default function Dashboard() {
     fetchDietPlan()
   },[])
 
-  console.log(currentUser);
+  // console.log(currentUser);
   
 
 

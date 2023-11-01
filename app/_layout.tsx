@@ -5,6 +5,9 @@ import { SplashScreen, Stack } from 'expo-router';
 import React from 'react';
 import { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
+import { Provider } from 'react-redux';
+import store, { pstore, useAppDispatch } from './redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -38,9 +41,13 @@ function RootLayoutNav() {
 
   return (
     <>
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <Stack screenOptions={{headerShown:false}}/>
-      </ThemeProvider>
+        <Provider store={store}>
+        <PersistGate loading={null} persistor={pstore}>
+          <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+            <Stack screenOptions={{headerShown:false}}/>
+          </ThemeProvider>
+        </PersistGate>
+        </Provider>
     </>
   );
 }

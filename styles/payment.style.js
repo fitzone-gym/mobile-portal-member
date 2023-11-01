@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     PayementRecords:{
         backgroundColor:'#222222',
         width:'93%',
-        height:112 , 
+        height:130 , 
         marginTop:10, 
         marginLeft:13, 
         borderRadius:20,
