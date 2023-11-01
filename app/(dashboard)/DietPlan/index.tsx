@@ -101,7 +101,7 @@ export default function memberDietPlan(){
 
                         
 
-                        <View style={styles.textboxcontent}>
+                    <View style={styles.textboxcontent}>
                         <View style={styles.smallbox}>
                             <Text style={styles.workingexyers}>{dietPlanDetails?.calories_per_day}</Text>
                             <Text style={styles.upworkingextext}>Calories per day</Text>
@@ -157,7 +157,15 @@ export default function memberDietPlan(){
                         <View style={styles.smallbox}>
                             <Text style={styles.workingextext}>Fat Foods</Text>
 
-                            <Text style={styles.subworkingextext}>liters per day</Text>
+                            <Text style={styles.subworkingextext}>Almonds</Text>
+                            <Text style={styles.subworkingextext}>Avacado</Text>
+                            <Text style={styles.subworkingextext}>Cashews</Text>
+                            <Text style={styles.subworkingextext}>Cheese</Text>
+                            <Text style={styles.subworkingextext}>Avacado</Text>
+                            <Text style={styles.subworkingextext}>Peanut Butter</Text>
+                            <Text style={styles.subworkingextext}>chicken breast</Text>
+                            
+
                         </View>
                     </View>
 
@@ -175,13 +183,13 @@ export default function memberDietPlan(){
                         <View style={styles.textbox}>
                             <View style={styles.subtextbox}>
                                 <Text style={styles.textboxtext}>Protein</Text>
-                                <Text style={styles.textgrams}>{dietPlanDetails?.breakfast_protein_gram}g</Text>
+                                <Text style={styles.textgrams1}>{dietPlanDetails?.breakfast_protein_gram}g</Text>
                                 <Text style={styles.textcalories}>{(dietPlanDetails?.breakfast_protein_gram)*4} Calories</Text>
                             </View>
 
                             <View style={styles.subtextbox}>
                                 <Text style={styles.textboxtext}>Mineral</Text>
-                                <Text style={styles.textgrams}>{dietPlanDetails?.breakfast_mineral_gram}g</Text>
+                                <Text style={styles.textgrams2}>{dietPlanDetails?.breakfast_mineral_gram}g</Text>
                                 <Text style={styles.textcalories}>{(dietPlanDetails?.breakfast_mineral_gram)*4} Calories</Text>
                             </View>
 
@@ -193,7 +201,7 @@ export default function memberDietPlan(){
 
                             <View style={styles.subtextbox}>
                                 <Text style={styles.textboxtext}>Fat</Text>
-                                <Text style={styles.textgrams}>{dietPlanDetails?.breakfast_fat_gram}g</Text>
+                                <Text style={styles.textgrams3}>{dietPlanDetails?.breakfast_fat_gram}g</Text>
                                 <Text style={styles.textcalories}>{(dietPlanDetails?.breakfast_fat_gram)*9} Calories</Text>
                             </View>
 
@@ -205,13 +213,13 @@ export default function memberDietPlan(){
                         <View style={styles.textbox}>
                             <View style={styles.subtextbox}>
                                 <Text style={styles.textboxtext}>Protein</Text>
-                                <Text style={styles.textgrams}>{dietPlanDetails?.lunch_protein_gram}g</Text>
+                                <Text style={styles.textgrams1}>{dietPlanDetails?.lunch_protein_gram}g</Text>
                                 <Text style={styles.textcalories}>{(dietPlanDetails?.lunch_protein_gram)*4} Calories</Text>
                             </View>
 
                             <View style={styles.subtextbox}>
                                 <Text style={styles.textboxtext}>Mineral</Text>
-                                <Text style={styles.textgrams}>{dietPlanDetails?.lunch_mineral_gram}g</Text>
+                                <Text style={styles.textgrams2}>{dietPlanDetails?.lunch_mineral_gram}g</Text>
                                 <Text style={styles.textcalories}>{(dietPlanDetails?.lunch_mineral_gram)*4} Calories</Text>
                             </View>
 
@@ -223,7 +231,7 @@ export default function memberDietPlan(){
 
                             <View style={styles.subtextbox}>
                                 <Text style={styles.textboxtext}>Fat</Text>
-                                <Text style={styles.textgrams}>{dietPlanDetails?.lunch_fat_gram}g</Text>
+                                <Text style={styles.textgrams3}>{dietPlanDetails?.lunch_fat_gram}g</Text>
                                 <Text style={styles.textcalories}>{(dietPlanDetails?.lunch_fat_gram)*4} Calories</Text>
                             </View>
 
@@ -235,13 +243,13 @@ export default function memberDietPlan(){
                         <View style={styles.textbox}>
                             <View style={styles.subtextbox}>
                                 <Text style={styles.textboxtext}>Protein</Text>
-                                <Text style={styles.textgrams}>{dietPlanDetails?.dinner_protein_gram}g</Text>
+                                <Text style={styles.textgrams1}>{dietPlanDetails?.dinner_protein_gram}g</Text>
                                 <Text style={styles.textcalories}>{(dietPlanDetails?.dinner_protein_gram)*4} Calories</Text>
                             </View>
 
                             <View style={styles.subtextbox}>
                                 <Text style={styles.textboxtext}>Mineral</Text>
-                                <Text style={styles.textgrams}>{dietPlanDetails?.dinner_mineral_gram}g</Text>
+                                <Text style={styles.textgrams2}>{dietPlanDetails?.dinner_mineral_gram}g</Text>
                                 <Text style={styles.textcalories}>{(dietPlanDetails?.dinner_mineral_gram)*4} Calories</Text>
                             </View>
 
@@ -253,7 +261,7 @@ export default function memberDietPlan(){
 
                             <View style={styles.subtextbox}>
                                 <Text style={styles.textboxtext}>Fat</Text>
-                                <Text style={styles.textgrams}>{dietPlanDetails?.dinner_fat_gram}g</Text>
+                                <Text style={styles.textgrams3}>{dietPlanDetails?.dinner_fat_gram}g</Text>
                                 <Text style={styles.textcalories}>{(dietPlanDetails?.dinner_fat_gram)*4} Calories</Text>
                             </View>
 

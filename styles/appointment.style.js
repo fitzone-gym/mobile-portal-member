@@ -183,14 +183,16 @@ const styles = StyleSheet.create({
 
     container:{
         flex:1,
-        backgroundColor:'#9C9797',
+        backgroundColor:'#222222',
     },
 
     timeslot:{
         fontSize:20,
         fontWeight:'700',
         alignSelf: 'center',
-        marginTop:10,
+        marginTop:50,
+        marginBottom:10,
+        color:'#FF5A5A'
     },
 
     TimeSlots:{
@@ -204,12 +206,147 @@ const styles = StyleSheet.create({
     },
 
     commonbtn:{
-        width:'90%',
-        height:45,
+        alignItems: 'center',
+        backgroundColor: '#656565',
+        padding: 10,
+        marginLeft: 130,
+        marginRight: 130,
+        marginTop:20,
+        marginBottom:20,
+        borderRadius:10,
+        fontWeight: 'bold',
         
     },
 
-    date:{},
+    date:{
+        fontSize:20,
+        fontWeight:'700',
+        alignSelf: 'center',
+        marginTop:20,
+        marginBottom:20,
+        color:'#FF5A5A'
+    },
+
+    textboxcontent:{
+        flexDirection:'row',
+        alignItems: 'center',
+
+      },
+
+      smallbox:{
+        flex:1,
+        opacity:0.8,
+        minHeight:50,
+        backgroundColor:'#222222',
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20,
+        justifyContent: 'center',
+        alignItems:'center',
+        padding:10,
+        margin:5,
+        marginTop:10,
+      },
+
+      smalltext1:{
+        color:'#E54646',
+        fontWeight: 'bold',
+        fontSize:20,
+      },
+
+      smalltext2:{
+        color:'#ffffff',
+        fontWeight: 'bold',
+        fontSize:14,
+        marginBottom:5,
+      },
+
+      remainingAppointment:{
+        color:'#E54646',
+        alignSelf: 'center',
+        marginBottom:10,
+        fontSize:20,
+        fontWeight:'700',
+      },
+
+      appointmentHistory:{
+        
+        borderRadius:10,
+        borderWidth:1,
+        borderColor:'#E54646',
+        marginLeft:10,
+        marginRight:10,
+        borderRadius:10,
+        paddingTop:10,
+        paddingBottom:10,
+        paddingLeft:10,
+        paddingRight:10,
+        height:100,
+        marginBottom:10,
+        display:'flex',
+        flexDirection: 'row',
+
+      },
+
+      appointmentDateHeading:{
+        color:'#828282',
+        fontSize:'15px',
+        fontWeight:'bold',
+        marginTop:10,
+        marginBottom:5,
+      },
+
+      appointmentTimeHeading:{
+        color:'#828282',
+        fontSize:'15px',
+        fontWeight:'bold',
+        marginTop:10,
+        marginBottom:5,
+      },
+
+      appointmentDate:{
+        color:'white',
+        fontWeight:'bold',
+        fontSize:'12px',
+      },
+
+      appointmentTime:{
+        color:'white',
+        fontWeight:'bold',
+        fontSize:'12px',
+      },
+
+      appointmentSubDate:{
+        marginLeft:10,
+        display: 'flex',
+        flexDirection: 'column',
+      },
+
+      appointmentSubTime:{
+        alignItems: 'flex-end',
+        marginLeft:65,
+      },
+
+      subContent: {
+        fontSize: 17,
+        textAlign:'left',
+        color:'#E54646',
+        marginBottom:5,
+        marginTop:20,
+        marginLeft:10,
+    },
+
+    txtInput:{
+        fontSize: 14,
+        color: '#898A8D',
+        padding:3,
+        borderBottomWidth: 1, 
+        borderColor: '#E54646',
+        marginBottom:30,
+        marginLeft:10,
+        marginRight:10,
+    },
 
 
 

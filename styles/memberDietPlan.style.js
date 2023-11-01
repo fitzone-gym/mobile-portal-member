@@ -207,7 +207,31 @@ const styles = StyleSheet.create({
       textgrams:{
         color:'#50C878',
         fontWeight: 'bold',
-        marginLeft:10,
+        marginLeft:30,
+        fontSize:14,
+        
+      },
+
+      textgrams1:{
+        color:'#50C878',
+        fontWeight: 'bold',
+        marginLeft:70,
+        fontSize:14,
+        
+      },
+
+      textgrams2:{
+        color:'#50C878',
+        fontWeight: 'bold',
+        marginLeft:68,
+        fontSize:14,
+        
+      },
+
+      textgrams3:{
+        color:'#50C878',
+        fontWeight: 'bold',
+        marginLeft:100,
         fontSize:14,
         
       },
@@ -215,7 +239,7 @@ const styles = StyleSheet.create({
       textcalories:{
         color:'#FFCC4D',
         fontWeight: 'bold',
-        marginLeft:10,
+        marginLeft:60,
         fontSize:14,
       },
 

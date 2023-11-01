@@ -80,6 +80,16 @@ export default function Layout() {
             />
 
             <Drawer.Screen
+                name="Health"
+                options={{
+                    drawerLabel: 'Health',
+                    title: 'Health',
+                    drawerIcon: ({ size, color }) => (
+                        <FontAwesome5 name="heart" style={{ width: 25 }} size={size} color={color} />)
+                }}
+            />
+
+            <Drawer.Screen
                 name="MyProfile"
                 options={{
                     drawerLabel: 'My Profile',

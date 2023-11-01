@@ -118,9 +118,9 @@ export default function Dashboard() {
             <View style={styles.specialAnnouncements}>
                     {/* <Image style={{resizeMode: 'stretch',height: 100,width: 200,}} source={require('../../../assets/images/special-announcement.png')}/> */}
 
-                    <Text style={styles.special_event_date}>29th Aug 2023</Text>
+                    <Text style={styles.special_event_date}>03 rd Nov 2023</Text>
                     <Text style={styles.special_event_heading}>New Zumba Class</Text>
-                    <Text style={styles.special_event_body}>Starting 29 th July on ward. Zumba class for all age members. From begin to end. Conducting by highly qualified zumba masters. </Text>
+                    <Text style={styles.special_event_body}>Starting 03 rd Nov on ward. Zumba class for all age members. From begin to end. Conducting by highly qualified zumba masters. </Text>
               
             </View>
             
@@ -130,12 +130,6 @@ export default function Dashboard() {
               <Text style={styles.Year}>{new Date().getFullYear()}</Text>
             </View>
           </View>
-
-
-
-          <Text style={styles.WorkingProgressTitle}>Working Progress</Text>
-
-          <View style={styles.workoutProgress}></View>
 
           <View style={styles.caloriesAndMortivationBox}>
 
