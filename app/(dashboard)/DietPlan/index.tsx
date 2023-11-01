@@ -102,7 +102,7 @@ export default function memberDietPlan(){
 
                         
 
-                    <View style={styles.textboxcontent}>
+                    {/* <View style={styles.textboxcontent}>
                         <View style={styles.smallbox}>
                             <Text style={styles.workingexyers}>{dietPlanDetails?.calories_per_day}</Text>
                             <Text style={styles.upworkingextext}>Calories per day</Text>
@@ -111,7 +111,7 @@ export default function memberDietPlan(){
                             <Text style={styles.workingexyers}>{dietPlanDetails?.steps_per_day}</Text>
                             <Text style={styles.upworkingextext}>Steps per day</Text>
                         </View>
-                    </View>
+                    </View> */}
                     
                     </ImageBackground>              
                 </View>
@@ -170,14 +170,14 @@ export default function memberDietPlan(){
                         </View>
                     </View>
 
-                    <View style={styles.textboxcontent}>
+                    {/* <View style={styles.textboxcontent}>
 
                         <View style={styles.smallbox}>
                             <Text style={styles.workingextext}>Water</Text>
                             <Text style={styles.workingexyers}>{dietPlanDetails?.water_per_day}</Text>
                             <Text style={styles.workingextext}>liters per day</Text>
                         </View>
-                    </View>
+                    </View> */}
 
                     {
                         dietPlanDetails?.breakfast &&

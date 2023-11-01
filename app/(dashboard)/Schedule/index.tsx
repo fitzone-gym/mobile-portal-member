@@ -94,13 +94,12 @@ export default function workoutSchedule(){
                             </View>
 
                             <View style={styles.workouts}>
-                                    {workoutSchedule.map((workout) =>(
+                                    {workoutSchedule.map((workout, index) =>(
 
-                                        <View style={styles.textbox}>
-                                        <Text style={styles.item}>{workout.name}</Text>
-                                        <Text style={styles.setcount}>{workout.sets} set</Text>
-                                        <Text style={styles.repcount}>{workout.reps} reps</Text>
-                                            
+                                        <View key={index} style={styles.textbox}>
+                                            <Text style={styles.item}>{workout.name}</Text>
+                                            <Text style={styles.setcount}>{workout.sets} set</Text>
+                                            <Text style={styles.repcount}>{workout.reps} reps</Text>   
                                         </View>
 
                                     ))}
