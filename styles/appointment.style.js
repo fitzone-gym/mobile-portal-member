@@ -291,7 +291,7 @@ const styles = StyleSheet.create({
 
       appointmentDateHeading:{
         color:'#828282',
-        fontSize:'15px',
+        fontSize:15,
         fontWeight:'bold',
         marginTop:10,
         marginBottom:5,
@@ -299,7 +299,7 @@ const styles = StyleSheet.create({
 
       appointmentTimeHeading:{
         color:'#828282',
-        fontSize:'15px',
+        fontSize:15,
         fontWeight:'bold',
         marginTop:10,
         marginBottom:5,
@@ -308,13 +308,13 @@ const styles = StyleSheet.create({
       appointmentDate:{
         color:'white',
         fontWeight:'bold',
-        fontSize:'12px',
+        fontSize:12,
       },
 
       appointmentTime:{
         color:'white',
         fontWeight:'bold',
-        fontSize:'12px',
+        fontSize:12,
       },
 
       appointmentSubDate:{

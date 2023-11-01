@@ -137,12 +137,10 @@ export default function appointment(){
 
                     <Text style={styles.appointmentHeading}>Appointment</Text>
                     <View style={styles.textboxcontent}>
-                    <View style={styles.smallbox}>
-                            <Text style={styles.smalltext1}>{new Date().getDate()} {new Intl.DateTimeFormat('en-US',{month:'long'}).format(new Date())} {new Date().getFullYear()}</Text>
-                            
+                        <View style={styles.smallbox}>
+                            <Text style={styles.smalltext1}>{new Date().getDate()} {new Intl.DateTimeFormat('en-US',{month:'long'}).format(new Date())} {new Date().getFullYear()}</Text>                            
                             <Text style={styles.smalltext2}></Text>
                         </View>
-
                     </View>
                 </ImageBackground>
 

@@ -12,37 +12,38 @@ type dietPlanType ={
     calories_per_day:number;
     steps_per_day:number;
     water_per_day:number;
-    breakfast_protein_gram:number;
-    breakfast_mineral_gram:number;
-    breakfast_carbohydrate_gram:number;
-    breakfast_fat_gram:number;
-    lunch_protein_gram:number;
-    lunch_mineral_gram:number;
-    lunch_carbohydrate_gram:number;
-    lunch_fat_gram:number;
-    dinner_protein_gram:number;
-    dinner_mineral_gram:number;
-    dinner_carbohydrate_gram:number;
-    dinner_fat_gram:number;
-    protein_suppliment:string;
-    weight_gainer:string;
-    creatine:string;
-    preworkout:string;
-    glutamin:string;
+    // protein_gram:number;
+    // mineral_gram:number;
+    // carbohydrate_gram:number;
+    // fat_gram:number;
+    // protein_gram:number;
+    // mineral_gram:number;
+    // carbohydrate_gram:number;
+    // fat_gram:number;
+    // protein_gram:number;
+    // mineral_gram:number;
+    // carbohydrate_gram:number;
+    // fat_gram:number;
+    // protein_suppliment:string;
+    // weight_gainer:string;
+    // creatine:string;
+    // preworkout:string;
+    // glutamin:string;
 
-    height:number;
-    weight:number;
+    // height:number;
+    // weight:number;
 };
 
 export default function memberDietPlan(){
 
     const router = useRouter()
     const localSearchParams = useLocalSearchParams();
-    const[dietPlanDetails, setdietPlanDetails] = useState<dietPlanType>();
+    const[dietPlanDetails, setdietPlanDetails] = useState<any>();
 
     const currentUser = useAppSelector(state => state.user)
 
     const fetchDietPlan = () => {
+        console.log("diet plan member id front end",currentUser.user_id);
       axios.get(`/memberDietPlan/${currentUser.user_id}`)
       .then((Response) =>{
         console.log('data send to the backend successfully', Response.data);
@@ -178,95 +179,105 @@ export default function memberDietPlan(){
                         </View>
                     </View>
 
-                    <View >
+                    {
+                        dietPlanDetails?.breakfast &&
+                        
+                        <View >
                         <Text style={styles.topictext}>Breakfast</Text>
                         <View style={styles.textbox}>
                             <View style={styles.subtextbox}>
                                 <Text style={styles.textboxtext}>Protein</Text>
-                                <Text style={styles.textgrams1}>{dietPlanDetails?.breakfast_protein_gram}g</Text>
-                                <Text style={styles.textcalories}>{(dietPlanDetails?.breakfast_protein_gram)*4} Calories</Text>
+                                <Text style={styles.textgrams1}>{dietPlanDetails?.breakfast.protein_gram}g</Text>
+                                <Text style={styles.textcalories}>{(dietPlanDetails?.breakfast.protein_gram)*4} Calories</Text>
                             </View>
 
                             <View style={styles.subtextbox}>
                                 <Text style={styles.textboxtext}>Mineral</Text>
-                                <Text style={styles.textgrams2}>{dietPlanDetails?.breakfast_mineral_gram}g</Text>
-                                <Text style={styles.textcalories}>{(dietPlanDetails?.breakfast_mineral_gram)*4} Calories</Text>
+                                <Text style={styles.textgrams2}>{dietPlanDetails?.mineral_gram}g</Text>
+                                <Text style={styles.textcalories}>{(dietPlanDetails?.breakfast.breakfast.mineral_gram)*4} Calories</Text>
                             </View>
 
                             <View style={styles.subtextbox}>
                                 <Text style={styles.textboxtext}>Carbohydrate</Text>
-                                <Text style={styles.textgrams}>{dietPlanDetails?.breakfast_carbohydrate_gram}g</Text>
-                                <Text style={styles.textcalories}>{(dietPlanDetails?.breakfast_carbohydrate_gram)*4} Calories</Text>
+                                <Text style={styles.textgrams}>{dietPlanDetails?.breakfast.carbohydrate_gram}g</Text>
+                                <Text style={styles.textcalories}>{(dietPlanDetails?.breakfast.carbohydrate_gram)*4} Calories</Text>
                             </View>
 
                             <View style={styles.subtextbox}>
                                 <Text style={styles.textboxtext}>Fat</Text>
-                                <Text style={styles.textgrams3}>{dietPlanDetails?.breakfast_fat_gram}g</Text>
-                                <Text style={styles.textcalories}>{(dietPlanDetails?.breakfast_fat_gram)*9} Calories</Text>
+                                <Text style={styles.textgrams3}>{dietPlanDetails?.breakfast.fat_gram}g</Text>
+                                <Text style={styles.textcalories}>{(dietPlanDetails?.breakfast.fat_gram)*9} Calories</Text>
                             </View>
 
                         </View>
                     </View>
+                    }
 
-                    <View >
+{
+                        dietPlanDetails?.lunch &&
+                        
+                        <View >
                         <Text style={styles.topictext}>Lunch</Text>
                         <View style={styles.textbox}>
                             <View style={styles.subtextbox}>
                                 <Text style={styles.textboxtext}>Protein</Text>
-                                <Text style={styles.textgrams1}>{dietPlanDetails?.lunch_protein_gram}g</Text>
-                                <Text style={styles.textcalories}>{(dietPlanDetails?.lunch_protein_gram)*4} Calories</Text>
+                                <Text style={styles.textgrams1}>{dietPlanDetails?.lunch.protein_gram}g</Text>
+                                <Text style={styles.textcalories}>{(dietPlanDetails?.lunch.protein_gram)*4} Calories</Text>
                             </View>
 
                             <View style={styles.subtextbox}>
                                 <Text style={styles.textboxtext}>Mineral</Text>
-                                <Text style={styles.textgrams2}>{dietPlanDetails?.lunch_mineral_gram}g</Text>
-                                <Text style={styles.textcalories}>{(dietPlanDetails?.lunch_mineral_gram)*4} Calories</Text>
+                                <Text style={styles.textgrams2}>{dietPlanDetails?.lunch.mineral_gram}g</Text>
+                                <Text style={styles.textcalories}>{(dietPlanDetails?.lunch.mineral_gram)*4} Calories</Text>
                             </View>
 
                             <View style={styles.subtextbox}>
                                 <Text style={styles.textboxtext}>Carbohydrate</Text>
-                                <Text style={styles.textgrams}>{dietPlanDetails?.lunch_carbohydrate_gram}g</Text>
-                                <Text style={styles.textcalories}>{(dietPlanDetails?.lunch_carbohydrate_gram)*4} Calories</Text>
+                                <Text style={styles.textgrams}>{dietPlanDetails?.lunch.carbohydrate_gram}g</Text>
+                                <Text style={styles.textcalories}>{(dietPlanDetails?.lunch.carbohydrate_gram)*4} Calories</Text>
                             </View>
 
                             <View style={styles.subtextbox}>
                                 <Text style={styles.textboxtext}>Fat</Text>
-                                <Text style={styles.textgrams3}>{dietPlanDetails?.lunch_fat_gram}g</Text>
-                                <Text style={styles.textcalories}>{(dietPlanDetails?.lunch_fat_gram)*4} Calories</Text>
+                                <Text style={styles.textgrams3}>{dietPlanDetails?.lunch.fat_gram}g</Text>
+                                <Text style={styles.textcalories}>{(dietPlanDetails?.lunch.fat_gram)*4} Calories</Text>
                             </View>
 
                         </View>
                     </View>
-
+                    }
+{
+                        dietPlanDetails?.lunch &&
                     <View >
                         <Text style={styles.topictext}>Dinner</Text>
                         <View style={styles.textbox}>
                             <View style={styles.subtextbox}>
                                 <Text style={styles.textboxtext}>Protein</Text>
-                                <Text style={styles.textgrams1}>{dietPlanDetails?.dinner_protein_gram}g</Text>
-                                <Text style={styles.textcalories}>{(dietPlanDetails?.dinner_protein_gram)*4} Calories</Text>
+                                <Text style={styles.textgrams1}>{dietPlanDetails?.dinner.protein_gram}g</Text>
+                                <Text style={styles.textcalories}>{(dietPlanDetails?.dinner.protein_gram)*4} Calories</Text>
                             </View>
 
                             <View style={styles.subtextbox}>
                                 <Text style={styles.textboxtext}>Mineral</Text>
-                                <Text style={styles.textgrams2}>{dietPlanDetails?.dinner_mineral_gram}g</Text>
-                                <Text style={styles.textcalories}>{(dietPlanDetails?.dinner_mineral_gram)*4} Calories</Text>
+                                <Text style={styles.textgrams2}>{dietPlanDetails?.dinner.mineral_gram}g</Text>
+                                <Text style={styles.textcalories}>{(dietPlanDetails?.dinner.mineral_gram)*4} Calories</Text>
                             </View>
 
                             <View style={styles.subtextbox}>
                                 <Text style={styles.textboxtext}>Carbohydrate</Text>
-                                <Text style={styles.textgrams}>{dietPlanDetails?.dinner_carbohydrate_gram}g</Text>
-                                <Text style={styles.textcalories}>{(dietPlanDetails?.dinner_carbohydrate_gram)*4} Calories</Text>
+                                <Text style={styles.textgrams}>{dietPlanDetails?.dinner.carbohydrate_gram}g</Text>
+                                <Text style={styles.textcalories}>{(dietPlanDetails?.dinner.carbohydrate_gram)*4} Calories</Text>
                             </View>
 
                             <View style={styles.subtextbox}>
                                 <Text style={styles.textboxtext}>Fat</Text>
-                                <Text style={styles.textgrams3}>{dietPlanDetails?.dinner_fat_gram}g</Text>
-                                <Text style={styles.textcalories}>{(dietPlanDetails?.dinner_fat_gram)*4} Calories</Text>
+                                <Text style={styles.textgrams3}>{dietPlanDetails?.dinner.fat_gram}g</Text>
+                                <Text style={styles.textcalories}>{(dietPlanDetails?.dinner.fat_gram)*4} Calories</Text>
                             </View>
 
                         </View>
                     </View>
+}
 
                     <View >
                         <Text style={styles.topictext}>Supplements</Text>
