@@ -4,7 +4,7 @@ import {View, TouchableOpacity, SafeAreaView, ImageBackground, ScrollView} from 
 
 import * as React from 'react';
 import { useEffect,useState } from "react";
-import {Stack, useLocalSearchParams } from "expo-router";
+import {Stack} from "expo-router";
 import { AppRegistry } from 'react-native';
 import { PaperProvider } from 'react-native-paper';
 
@@ -16,7 +16,7 @@ import { Image } from "react-native";
 import { useAppSelector } from "../../redux/store";
 import axios from "../../../axios";
 
-type DashboardType = {
+type diet_plan_dashboard = {
   calories_per_day: number;
   steps_per_day: number;
   water_per_day: number;
@@ -26,28 +26,27 @@ type DashboardType = {
 
 export default function Dashboard() {
   const router = useRouter();
-  const localSearchParams = useLocalSearchParams();
-  const [dashboardDetails, setdashboardDetails] = useState<DashboardType>();
-
-//? not use this function , for get data using fetch function
-//   useEffect(() => {
-//     axios
-//         .get(`/memberDashboard/${localSearchParams.user_id}`)
-//         .then((response) =>{
-//             setdashboardDetails(response.data.data);
-//             console.log(response.data.data)
-//         })
-//         .catch((error) => console.error(error))
-// }, []);
 
   const currentUser = useAppSelector(state => state.user)
 
+  const[diet_paln_dashboard_details,set_diet_paln_dashboard_details] = useState<diet_plan_dashboard>();
+
+  useEffect(() => {
+    axios.get(`/memberDashboard/${currentUser.user_id}`)
+    .then((Response)=>{
+      set_diet_paln_dashboard_details(Response.data.data);
+      console.log(Response.data.data)
+    })
+    .catch((error)=> console.log(error))
+  }, []);
+
+
+
   const fetchDietPlan = () => {
     axios.get(`/memberDashboard/${currentUser.user_id}`)
+    // axios.post(`/memberDashboard/`, currentUser.id)
     .then((Response) =>{
-      // console.log('data send to the backend successfully', Response.data);
-      setdashboardDetails(Response.data.data);
-
+      console.log('data send to the backend successfully', Response.data);
       
     })
     .catch((error) => {
@@ -56,11 +55,17 @@ export default function Dashboard() {
     });
   }
 
-  useEffect(() => {
-    fetchDietPlan()
-  },[])
+  axios.post(`/memberDashboard/${currentUser.user_id}`, currentUser.user_id)
+  .then((Response) =>{
+    console.log('data send to the backend successfully', Response.data);
+    
+  })
+  .catch((error) => {
+    console.log('error sending data to the backend', error);
 
-  // console.log(currentUser);
+  });
+
+  console.log(currentUser);
   
 
 
@@ -114,22 +119,24 @@ export default function Dashboard() {
 
 
           <View style={styles.specialAnnouncementAndDateBox}>
-            
             <View style={styles.specialAnnouncements}>
-                    {/* <Image style={{resizeMode: 'stretch',height: 100,width: 200,}} source={require('../../../assets/images/special-announcement.png')}/> */}
-
-                    <Text style={styles.special_event_date}>03 rd Nov 2023</Text>
+            <Text style={styles.special_event_date}>29th Aug 2023</Text>
                     <Text style={styles.special_event_heading}>New Zumba Class</Text>
-                    <Text style={styles.special_event_body}>Starting 03 rd Nov on ward. Zumba class for all age members. From begin to end. Conducting by highly qualified zumba masters. </Text>
+                    <Text style={styles.special_event_body}>Starting 29 th July on ward. Zumba class for all age members. From begin to end. Conducting by highly qualified zumba masters. </Text>
               
             </View>
-            
             <View style={styles.DateBox}>
               <Text style={styles.Date}>{new Date().getDate()}</Text>
               <Text style={styles.Month}>{new Intl.DateTimeFormat('en-US',{month:'long'}).format(new Date())}</Text>
               <Text style={styles.Year}>{new Date().getFullYear()}</Text>
             </View>
           </View>
+
+
+
+          <Text style={styles.WorkingProgressTitle}>Working Progress</Text>
+
+          <View style={styles.workoutProgress}></View>
 
           <View style={styles.caloriesAndMortivationBox}>
 
@@ -145,7 +152,7 @@ export default function Dashboard() {
 
             <View style={styles.caloriesPerDayToDay}>
               <Text style={styles.caloriesPerDay}>Calories Per Day</Text>
-              <Text style={styles.caloriesCount}>{dashboardDetails?.calories_per_day}</Text>
+              <Text style={styles.caloriesCount}>{diet_paln_dashboard_details?.calories_per_day}</Text>
               <Text style={styles.calories}>Calories</Text>
             </View>
 
@@ -160,13 +167,13 @@ export default function Dashboard() {
 
             <View style={styles.StepsPerToday}>
               <Text style={styles.caloriesPerDay}>Steps Per Day</Text>
-              <Text style={styles.caloriesCount}>{dashboardDetails?.steps_per_day}</Text>
+              <Text style={styles.caloriesCount}>{diet_paln_dashboard_details?.steps_per_day}</Text>
               <Text style={styles.calories}>Steps</Text>
             </View>
 
             <View style={styles.waterPerDay}>
               <Text style={styles.caloriesPerDay}>Water Per Day</Text>
-              <Text style={styles.caloriesCount}>{dashboardDetails?.water_per_day}</Text>
+              <Text style={styles.caloriesCount}>{diet_paln_dashboard_details?.water_per_day}</Text>
               <Text style={styles.calories}>Liter</Text>
             </View>
           </View>

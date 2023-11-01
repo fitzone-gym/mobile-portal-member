@@ -3,7 +3,7 @@ import { View, Text,TextInput, Image, SafeAreaView,ImageBackground,TouchableOpac
 import { Stack , useRouter} from 'expo-router';
 import React,{useState} from 'react';
 import axios from '../../axios';
-// import baseUrl from '../../axios';
+
 import {useSelector, useDispatch} from 'react-redux';
 import {Provider} from 'react-redux';
 import store, { pstore, useAppDispatch } from '../redux/store';
@@ -16,7 +16,7 @@ const LoginScreen: React.FC =() => {
     return <Provider store={store}>
             <PersistGate loading={null} persistor={pstore}>
             <Login />
-             </PersistGate>
+            </PersistGate>
 
    </Provider>;
 
@@ -25,9 +25,9 @@ const Login: React.FC =() => {
 
     const dispatch = useAppDispatch()
 
-    const [email,setEmail] = useState("");
-    const [password,setPassword] = useState("");
-    const [error,setError] = useState("");
+    const [email,setEmail] = useState<string>("");
+    const [password,setPassword] = useState<string>("");
+    const [error,setError] = useState<string>("");
 
 
     const handleLogin = async () =>{
@@ -65,6 +65,11 @@ const Login: React.FC =() => {
                                // state application state
                                //define the route                       
                             }
+                    else{
+                        setError(response.data.error)
+                        console.log(response.data.error)
+                        alert(response.data.error)
+                    }        
                 })
                 
                 // console.log(response.data);
