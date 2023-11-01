@@ -121,10 +121,7 @@ export default function appointment(){
                             
                             <Text style={styles.smalltext2}></Text>
                         </View>
-                        <View style={styles.smallbox}>
-                            <Text style={styles.smalltext1}></Text>
-                            <Text style={styles.smalltext2}>Time</Text>
-                        </View>
+
                     </View>
                 </ImageBackground>
 
@@ -234,7 +231,7 @@ export default function appointment(){
 
                     <View style={styles.appointmentSubTime}>
                         <Text style={styles.appointmentTimeHeading}>Time</Text>
-                        <Text style={styles.appointmentTime}>10:00 AM - 12:00 AM</Text>
+                        <Text style={styles.appointmentTime}>07:00 PM - 07:30 PM</Text>
                     </View>
                 </View>
 

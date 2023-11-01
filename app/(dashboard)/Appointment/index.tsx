@@ -142,10 +142,7 @@ export default function appointment(){
                             
                             <Text style={styles.smalltext2}></Text>
                         </View>
-                        <View style={styles.smallbox}>
-                            <Text style={styles.smalltext1}></Text>
-                            <Text style={styles.smalltext2}>Time</Text>
-                        </View>
+
                     </View>
                 </ImageBackground>
 
