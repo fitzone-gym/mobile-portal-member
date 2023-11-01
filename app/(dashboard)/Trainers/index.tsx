@@ -26,6 +26,7 @@ export default function Home() {
             .get("/ourTrainers")
             .then((response) => {
                 setTrainerDetails(response.data.data);
+                // console.log(response.data);
                 console.log(trainerDetails)
             })
             .catch((error) => console.error(error));
@@ -80,9 +81,9 @@ export default function Home() {
                             <Text
                                 style={styles.trainercardname}
                             >{trainer.first_name}&nbsp;{trainer.last_name}</Text>
-                            <Text
+                            {/* <Text
                                 style={styles.trainercardtext}
-                            >9 Members</Text>
+                            >9 Members</Text> */}
                         </TouchableOpacity>
 
                         )

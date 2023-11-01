@@ -192,6 +192,11 @@ const styles = StyleSheet.create({
     margin:20,
     backgroundColor: '#E54646',
   },
+  startedbuttonhired:{
+    margin:20,
+    backgroundColor: '#c47070',
+  },
+
   
 });
 

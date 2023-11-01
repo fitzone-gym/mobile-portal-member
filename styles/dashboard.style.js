@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     },
 
     specialAnnouncementAndDateBox:{
-        width:350,
+        width:360,
         height:150,
         marginLeft:13,
         flexDirection:'row',
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
 
     },
     DateBox:{        
-        width:90,
+        width:100,
         height:150,
         backgroundColor:'#E54646',
         opacity:0.8,
@@ -215,7 +215,7 @@ const styles = StyleSheet.create({
 
     caloriesCount:{
         color:'white',
-        fontSize:70,
+        fontSize:50,
         fontWeight:'bold',
         textAlign:'center',
         

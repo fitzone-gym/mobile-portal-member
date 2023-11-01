@@ -110,14 +110,14 @@ export default function trainerProfile(){
                                             </View>
                                     </View>
 
-                                    <View >
+                                    {/* <View >
                                             <Text style={styles.topictext}>Member Rating</Text>
                                             <View style={styles.newtextbox}>
                                             
                                             </View>
-                                    </View>
+                                    </View> */}
 
-                                    <View >
+                                    {/* <View >
                                             <Text style={styles.topictext}>Member Reviews</Text>
 
                                             <Card  style={styles.newtextbox}>
@@ -144,7 +144,7 @@ export default function trainerProfile(){
                                                 <Text style={styles.textboxtext}>Training with my gym trainer has been a game-changer! Their vast knowledge of fitness and nutrition has completely transformed my lifestyle. Not only have I seen remarkable improvements in my physical strength and endurance, but I've also developed a better understanding of how to fuel my body for optimal performance. They constantly challenge and push me beyond my limits, helping me achieve goals I never thought possible. If you're serious about achieving real results and making lasting changes, I highly recommend working with this exceptional gym trainer!</Text>
                                                 </Card.Content>
                                             </Card>
-                                    </View>
+                                    </View> */}
 
 
                                     <Button style={styles.startedbutton}  mode="contained" onPress={() => {router.push

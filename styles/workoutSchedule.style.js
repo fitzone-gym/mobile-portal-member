@@ -71,6 +71,12 @@ const styles = StyleSheet .create({
         alignItems: 'center',
       },
 
+      Date:{
+        color:'white',
+        fontSize:30,
+        fontWeight:'bold',
+    },
+
       smallboxbigNumber:{
         color:'#E54646',
         fontWeight: 'bold',

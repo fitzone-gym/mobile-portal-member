@@ -2,17 +2,124 @@ import styles from '../../../styles/memberProfile.style';
 
 import { View, Text, Image, SafeAreaView, ScrollView, ImageBackground, TouchableOpacity } from 'react-native';
 
-import { Stack, useRouter } from 'expo-router';
-import React, { useState } from 'react';
+import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
+import React, { useEffect, useState } from 'react';
 import { Button, Card, PaperProvider } from 'react-native-paper';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
 import { removeUser } from '../../redux/features/userSlice';
+import axios from '../../../axios';
 
+interface profileDetails{
+first_name:string
+  last_name:string
+  profile_picture:string
+  age:number
+  dob:string
+  phone_no:number
+  email:string
+  gender:string
+}
+
+interface packageDetails{
+    trainer_id:string
+    payment_details:string
+    }
+
+interface healthDetails{
+    weight:number
+    suger_level:string
+    height:number
+    cholesterol_level:string
+    blood_presure:string
+    diabetes_level:string
+    injuries:string
+    package:string
+    }
+
+interface trainerDetails{
+    user_id:string;
+    first_name:string;
+    last_name:string;
+    profile_picture:string;
+}
 
 export default function memberProfile(){
 
     const user = useAppSelector(state => state.user)
     const dispatch = useAppDispatch()
+    const router = useRouter()
+
+    const localSearchParams = useLocalSearchParams()
+    const currentUser = useAppSelector(state => state.user)
+    const [profileDetails, setprofileDetails] = useState<profileDetails>();
+    const [packageDetails, setpackageDetails] = useState<packageDetails>();
+    const [healthDetails, setHealthDetails] = useState<healthDetails>();
+    const [trainerDetails, setTrainerDetails] = useState<trainerDetails>();
+    const [trainerId, setTrainerId] = useState<string>();
+    // useEffect(() => {
+    //     if (currentUser && currentUser.user_id) {
+    //       // Assuming that 'id' is the property containing the user's ID
+    //       const sendDataToBackend = async () => {
+    //         try {
+    //           const response = await axios.post('/memberprofile', {
+    //             user_id: currentUser.user_id,
+    //           });
+    //           console.log(response.data);
+    //         } catch (error) {
+    //           console.error('Error:', error);
+    //         }
+    //       };
+    
+    //       sendDataToBackend();
+    //     }
+    //   }, [currentUser]);
+
+    //   console.log("params"+localSearchParams);
+
+      useEffect(() => {
+        // console.log("user_id",currentUser.user_id);
+        axios.get(`/memberprofile/profileDetails/${currentUser.user_id}`)
+        .then((response) => {
+            setprofileDetails(response.data.data);
+            // console.log("data",response.data.data)
+        })
+        .catch((error) => console.error(error))
+      },[]);
+
+      useEffect(() => {
+        axios.get(`/memberprofile/packageDetails/${currentUser.user_id}`)
+        .then((response) => {
+            setpackageDetails(response.data.data);
+            console.log("package",response.data.data)
+            axios.get(`/memberprofile/trainerDetails/${response.data.data.trainer_id}`)
+            .then((response) => {
+                setTrainerDetails(response.data.data);
+                console.log("trainer",response.data.data)
+            })
+            .catch((error) => console.error(error))
+        })
+        .catch((error) => console.error(error))
+      },[]);
+
+
+    //   useEffect(() => {
+    //     axios.get(`/memberprofile/trainerDetails/${trainerId}`)
+    //     .then((response) => {
+    //         setTrainerDetails(response.data.data);
+    //         // console.log("trainer",response.data.data)
+    //     })
+    //     .catch((error) => console.error(error))
+    //   },[trainerId]);
+
+      useEffect(() => {
+        axios.get(`/memberprofile/healthDetails/${currentUser.user_id}`)
+        .then((response) => {
+            setHealthDetails(response.data.data);
+            // console.log("Health",response.data.data)
+        })
+        .catch((error) => console.error(error))
+      },[]);
+    //   console.log("package", packageDetails)
 
     // currentUser.id -> axios.get(/profie/:id) --> myData
     
@@ -29,7 +136,6 @@ export default function memberProfile(){
     //     getMyData()
     // }, [])
         
-    const router = useRouter()
 
 
     const handleSignout = () => {
@@ -69,32 +175,32 @@ export default function memberProfile(){
                                             <Text style={styles.labelofbasicinfo}>Email</Text>
                                         </View>
                                         <View>
-                                            <Text style={styles.basicinfo}>{user.first_name}</Text>
-                                            <Text style={styles.basicinfo}>25</Text>
-                                            <Text style={styles.basicinfo}>Male</Text>
-                                            <Text style={styles.basicinfo}>0717591952</Text>
-                                            <Text style={styles.basicinfo}>punsaradeshana@gmail.com</Text>
+                                            <Text style={styles.basicinfo}>{profileDetails?.first_name}&nbsp;{profileDetails?.last_name}</Text>
+                                            <Text style={styles.basicinfo}>{profileDetails?.age}</Text>
+                                            <Text style={styles.basicinfo}>{profileDetails?.gender === 'M' ? 'Male' : 'Female'}</Text>
+                                            <Text style={styles.basicinfo}>0{profileDetails?.phone_no}</Text>
+                                            <Text style={styles.basicinfo}>{profileDetails?.email}</Text>
                                         </View>
                                     </View>
 
                                         <Button style={styles.editbutton} icon="pencil" mode="outlined" onPress={() => { router.push('/member/memberDetailUpdate')}} textColor='#E54646'>
                                             Edit Profile
                                         </Button>
-                                        <Button style={styles.editbutton} icon="signout" mode="outlined" onPress={handleSignout} textColor='#E54646'>
+                                        {/* <Button style={styles.editbutton} icon="signout" mode="outlined" onPress={handleSignout} textColor='#E54646'>
                                             Sign Out
-                                        </Button>
+                                        </Button> */}
 
 
                                 </View>
 
                                 <View>
 
-                                    <View >
+                                    {/* <View >
                                             <Text style={styles.topictext}>Working progress</Text>
                                             <View style={styles.textbox}>
                                                 
                                             </View>
-                                    </View>
+                                    </View> */}
 
                                     <View style={styles.workingExandmembers}>
                                         <View style={styles.smallbox}>
@@ -112,21 +218,21 @@ export default function memberProfile(){
                                 <View style={styles.medicheckup}>
                                     <View style={styles.smallbox}>
                                         <Text style={styles.smallboxtext}>Suger level</Text>
-                                        <Text style={styles.smallboxbigNumber}>220</Text>
+                                        <Text style={styles.smallboxbigNumber}>{healthDetails?.suger_level}</Text>
                                     </View>
 
                                     <View style={styles.smallbox}>
                                         <Text style={styles.smallboxtext}>Cholesterol level</Text>
-                                        <Text style={styles.smallboxbigNumber}>120</Text>
+                                        <Text style={styles.smallboxbigNumber}>{healthDetails?.cholesterol_level}</Text>
                                     </View>
                                 </View>
 
                                 <View style={styles.smallbox}>
                                         <Text style={styles.smallboxtext}>Blood preasure</Text>
-                                        <Text style={styles.smallboxbigNumber}>110</Text>
+                                        <Text style={styles.smallboxbigNumber}>{healthDetails?.blood_presure}</Text>
                                 </View>
 
-                                <View style={styles.medicheckup}>
+                                {/* <View style={styles.medicheckup}>
                                     <View style={styles.smallbox}>
                                         <Text style={styles.workingextext}>Water per day</Text>
                                         <Text style={styles.workingexyers}>3</Text>
@@ -138,15 +244,36 @@ export default function memberProfile(){
                                         <Text style={styles.workingexyers}>350</Text>
                                         <Text style={styles.workingextext}>calories</Text>
                                     </View>
-                                </View>
+                                </View> */}
 
                                 <View >
                                         <Text style={styles.topictext}>My package</Text>
                                         <View style={styles.textbox}>
-                                            <Text style={styles.packagedetails}>Premium annual package</Text>
-                                            <Text style={styles.packagedetails}>    3 Full body messages remaining</Text>
-                                            <Text style={styles.packagedetails}>    3 foot messages remaining</Text>
-                                            <Text style={styles.packagedetails}>    4 steam spa remaining</Text>
+                                            <Text style={styles.packagedetails}>{packageDetails?.payment_details} package</Text>
+                                            
+
+                                            {packageDetails?.payment_details === "Monthly" ? (
+                                                <View>
+                                                <Text style={styles.packagedetails}>    1 Full body massage</Text>
+                                                <Text style={styles.packagedetails}>    1 Foot massage </Text>
+                                                </View>
+                                            ) 
+                                            : packageDetails?.payment_details === "6 Month" ? (
+                                                <View>
+                                                <Text style={styles.packagedetails}>    2 Full body massage</Text>
+                                                <Text style={styles.packagedetails}>    3 Foot massage </Text>
+                                                <Text style={styles.packagedetails}>    3 Steam spa </Text>
+                                                </View>
+                                            )
+                                            :(
+                                                <View>
+                                                <Text style={styles.packagedetails}>    4 Full body massage</Text>
+                                                <Text style={styles.packagedetails}>    5 Foot massage </Text>
+                                                <Text style={styles.packagedetails}>    5 Steam spa </Text>
+                                                </View>
+                                            )
+                                        
+                                        }
 
                                         </View>
                                 </View>
@@ -154,20 +281,20 @@ export default function memberProfile(){
                                 <View style={styles.trainerimage}>
                                     <Text style={styles.topictext}>My Trainer</Text>
                                     <TouchableOpacity onPress={() => {
-                                        router.push('/member/trainerProfile?id=10005')
+                                        router.push({pathname:"/member/trainerProfile", params:{user_id:trainerDetails?.user_id}})
                                     }}>
                                     <Image
                                             style={styles.imagepicture}
                                             // source={require('../../assets/images/Trainer.jpg')}
-                                            source={{ uri:"https://stylioo.blob.core.windows.net/images/Devin.jpg"}}
+                                            source={{ uri:`https://stylioo.blob.core.windows.net/images/${trainerDetails?.profile_picture}`}}
                                             resizeMode='cover'
                                     />
                                     </TouchableOpacity>
-                                    <Button style={styles.button} mode="contained" onPress={() => {
-                                                                router.push('/member/trainerProfile?id=10003')
+                                    {/* <Button style={styles.button} mode="contained" onPress={() => {
+                                                                router.push('/member/trainerProfile?id=10004')
                                                             }}>
                                         View details
-                                    </Button>
+                                    </Button> */}
                                 </View>
                                 
 

@@ -65,13 +65,18 @@ export default function workoutSchedule(){
 
                                 <Text style={styles.text}>Workout schedule</Text>
                                 <View style={styles.medicheckup}>
-                                    <View style={styles.smallbox}>
+                                    {/* <View style={styles.smallbox}>
                                         <Text style={styles.smallboxtext}>Today burn calories</Text>
                                         <Text style={styles.smallboxbigNumber}>2500</Text>
-                                    </View>
+                                    </View> */}
 
                                     <View style={styles.smallbox}>
-                                        <Text style={styles.smallboxtext}>Clock</Text>
+                                        {/* <Text style={styles.smallboxtext}>Clock</Text> */}
+                                        {/* date view */}
+                                        <Text style={styles.Date}>{new Date().getDate()} {new Intl.DateTimeFormat('en-US',{month:'long'}).format(new Date())} {new Date().getFullYear()}</Text>
+                                        {/* <Text style={styles.Month}>{new Intl.DateTimeFormat('en-US',{month:'long'}).format(new Date())}</Text> */}
+                                        {/* <Text style={styles.Year}>{new Date().getFullYear()}</Text> */}
+
                                         <Text style={styles.smallboxbigNumber}>{currentTimeWithMoment}</Text>
                                     </View>
                                 </View>
