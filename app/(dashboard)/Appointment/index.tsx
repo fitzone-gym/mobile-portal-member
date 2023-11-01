@@ -13,6 +13,12 @@ import { useEffect, useState } from "react";
 import getdays from "../../../utllis/getdays"
 import { useAppSelector } from "../../redux/store";
 import axios from "../../../axios";
+import { useLocalSearchParams } from "expo-router";
+
+type HistoryType = {
+    selectedDate: string;
+    selectedTime: string;
+  }
 
 export default function appointment(){
 
@@ -92,6 +98,7 @@ export default function appointment(){
         }).then((res) => {
             if(res.data.insertedId){
                 alert("Appointment Book successfully")
+                fetchAppointmentHistory();
             }else {
                 alert("Error occurred in Appointment Book")
             }
@@ -100,6 +107,26 @@ export default function appointment(){
             alert("Error occurred in Appointment Book dfdfd")  
         })
     }
+
+    //get appointment history
+
+    const localSearchParams = useLocalSearchParams();
+    const [AppointmentHistoryDetails, setAppointmentHistoryDetails] = useState<HistoryType[]>([]);
+
+    const fetchAppointmentHistory = () => {
+        axios.get(`/memberAppointmentHistory/${currentUser.user_id}`)
+        .then((Response) =>{
+        //   console.log('data send to the backend successfully', Response.data);
+          setAppointmentHistoryDetails(Response.data.data);
+          console.log(Response.data.data);
+    
+          
+        })
+        .catch((error) => {
+          console.log('error sending data to the backend', error);
+      
+        });
+      }
 
 
     return (
@@ -211,18 +238,21 @@ export default function appointment(){
                 </View> */}
 
                 <Text style={styles.remainingAppointment}>Next Appointment</Text>
-                <View style={styles.appointmentHistory}>
+
+                {AppointmentHistoryDetails?.map((AppointmentDetails, index) => (
+                <View key={index} style={styles.appointmentHistory}>
 
                     <View style={styles.appointmentSubDate}>
                         <Text style={styles.appointmentDateHeading}>Date</Text>
-                        <Text style={styles.appointmentDate}>2022.11.02</Text>
+                        <Text style={styles.appointmentDate}>{AppointmentDetails.selectedDate}</Text>
                     </View>
 
                     <View style={styles.appointmentSubTime}>
                         <Text style={styles.appointmentTimeHeading}>Time</Text>
-                        <Text style={styles.appointmentTime}>10:00 AM - 12:00 AM</Text>
+                        <Text style={styles.appointmentTime}>{AppointmentDetails.selectedTime}</Text>
                     </View>
                 </View>
+                ))}
 
         </ScrollView>
     </SafeAreaView>

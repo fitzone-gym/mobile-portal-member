@@ -308,13 +308,13 @@ const styles = StyleSheet.create({
       appointmentDate:{
         color:'white',
         fontWeight:'bold',
-        fontSize:'18px',
+        fontSize:'12px',
       },
 
       appointmentTime:{
         color:'white',
         fontWeight:'bold',
-        fontSize:'18px',
+        fontSize:'12px',
       },
 
       appointmentSubDate:{
