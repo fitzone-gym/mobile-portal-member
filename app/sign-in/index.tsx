@@ -18,7 +18,7 @@ const LoginScreen: React.FC =() => {
             <Login />
              </PersistGate>
 
-     </Provider>;
+   </Provider>;
 
 }
 const Login: React.FC =() => {   
@@ -96,7 +96,7 @@ const Login: React.FC =() => {
                 }}
             />
                 <View style={styles.container}>
-                    <ImageBackground source= {require('../../assets/images/login-new.png')} resizeMode='cover' style={styles.backgroundImage}>
+                    <ImageBackground source= {require('../../assets/images/login-new.png')}resizeMode='cover' style={styles.backgroundImage}>
                         <View style={styles.upper}>
                             <View style={styles.top}>
                                 <Image style= {styles.logo}source={require('../../assets/images/logo.png')}/>
